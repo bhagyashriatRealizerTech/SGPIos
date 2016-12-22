@@ -1,0 +1,6 @@
+framework module Pods_School_GenieVer1_0 {
+  umbrella header "Pods-School-GenieVer1.0-umbrella.h"
+
+  export *
+  module * { export * }
+}
