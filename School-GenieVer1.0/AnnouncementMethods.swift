@@ -66,23 +66,15 @@ class AnnouncementMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-              
-                let anntext:String = trans.value(forKey: "announcementText") as! String
-                let ancategory:String = trans.value(forKey: "category") as! String
-                let anndate:String = trans.value(forKey: "createTS") as! String
-               /* let catini:[String] = ancategory.components(separatedBy: " ")
-                var initial = String()
                 
-                for index in 0...(catini.count - 1){
-                    if(index == 0){
-                    initial = String(describing: catini[index][catini[index].startIndex]).capitalized
-                    }
-                    else{
-                        initial = initial + String(describing: catini[index][catini[index].startIndex]).capitalized
-                    }
-                }*/
+                var anntext:String = ""
+                anntext = trans.value(forKey: "announcementText") as! String
+                var ancategory:String = ""
+                ancategory = trans.value(forKey: "category") as! String
+                var anndate:String = ""
+                anndate = trans.value(forKey: "createTS") as! String
                 
-               let alert = Alerts(category: ancategory, msgText: anntext, attachmentExists: false, attachimage: ancategory, aldate: anndate, initial: ancategory)
+                let alert = Alerts(category: ancategory, msgText: anntext, attachmentExists: false, attachimage: ancategory, aldate: anndate, initial: ancategory)
                 alertArr.append(alert)
                 print(anntext)
                 //print("\(trans.value(forKey: "fName"))")

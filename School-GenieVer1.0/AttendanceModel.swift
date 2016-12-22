@@ -28,13 +28,13 @@ class AttendanceModel:Mappable {
     required init?(map: Map) {
         
         /*AttendanceId = map["AttendanceId"].value()
-        attendanceDate = map["attendanceDate"].value()
-        SchoolCode = map["SchoolCode"].value()
-        Std = map["Std"].value()
-        Div = map["Div"].value()
-        AttendanceBy = map["AttendanceBy"].value()
-        Attendees = map["Attendees"].value()
-        Absenties = map["Absenties"].value()*/
+         attendanceDate = map["attendanceDate"].value()
+         SchoolCode = map["SchoolCode"].value()
+         Std = map["Std"].value()
+         Div = map["Div"].value()
+         AttendanceBy = map["AttendanceBy"].value()
+         Attendees = map["Attendees"].value()
+         Absenties = map["Absenties"].value()*/
         
         attDate = map["attDate"].value()
         isPresent = map["isPresent"].value()
@@ -42,6 +42,16 @@ class AttendanceModel:Mappable {
     }
     
     func mapping(map: Map) {
+        
+    }
+    
+    init() {
+        
+    }
+    
+    func setUpValue(attdate:String, ispresent:Bool){
+        attDate = attdate
+        isPresent = ispresent
         
     }
     

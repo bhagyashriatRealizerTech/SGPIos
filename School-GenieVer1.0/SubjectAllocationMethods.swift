@@ -41,7 +41,7 @@ class SubjectAllocationMethods{
             } catch {
                 
             }
-
+            
         }
         
     }
@@ -51,7 +51,7 @@ class SubjectAllocationMethods{
         
         var subjects = [String]()
         //create a fetch request, telling it about the entity
-    let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "SubjectAllocationCoreData")
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "SubjectAllocationCoreData")
         //let fetchRequest: NSFetchRequest<PupilInformation> = PupilInformation.fetchRequest()
         
         do {
@@ -64,7 +64,10 @@ class SubjectAllocationMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                let sub = trans.value(forKey: "subject")  as! String
+                var sub = ""
+                if(trans.value(forKey: "subject") != nil){
+                    sub = trans.value(forKey: "subject") as! String
+                }
                 print(sub)
                 subjects.append(sub)
                 //print("\(trans.value(forKey: "fName"))")

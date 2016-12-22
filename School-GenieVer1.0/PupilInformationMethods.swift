@@ -74,7 +74,7 @@ class PupilInformationMethods{
     
     func getStudentDetail() -> StudentDetail {
         
-
+        
         var studedetail = StudentDetail()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PupilInformation")
@@ -92,9 +92,9 @@ class PupilInformationMethods{
                 
                 let temp =  trans.value(forKey: "fName")
                 print(temp)
-               studedetail = setValue(nsObj: trans)
+                studedetail = setValue(nsObj: trans)
                 
-               
+                
             }
         } catch {
             print("Error with request: \(error)")
@@ -145,15 +145,15 @@ class PupilInformationMethods{
         {
             academicYear = nsObj.value(forKey: "academicYear")! as! String
         }
-         if((nsObj.value(forKey: "address")) != nil)
-         {
-             adrs = nsObj.value(forKey: "address")! as! String
+        if((nsObj.value(forKey: "address")) != nil)
+        {
+            adrs = nsObj.value(forKey: "address")! as! String
             
         }
         if((nsObj.value(forKey: "bldGrp")) != nil)
         {
-             bldgrp = nsObj.value(forKey: "bldGrp")! as! String
-
+            bldgrp = nsObj.value(forKey: "bldGrp")! as! String
+            
         }
         
         if((nsObj.value(forKey: "classRollNo")) != nil)
@@ -163,8 +163,8 @@ class PupilInformationMethods{
         
         if((nsObj.value(forKey: "comments")) != nil)
         {
-             comnts = nsObj.value(forKey: "comments")! as! String
-
+            comnts = nsObj.value(forKey: "comments")! as! String
+            
         }
         
         if((nsObj.value(forKey: "contactNo")) != nil)
@@ -174,11 +174,11 @@ class PupilInformationMethods{
         
         if((nsObj.value(forKey: "contactNo")) != nil)
         {
-           contctno = nsObj.value(forKey: "contactNo")! as! String
+            contctno = nsObj.value(forKey: "contactNo")! as! String
         }
         if((nsObj.value(forKey: "division")) != nil)
         {
-             div = nsObj.value(forKey: "division")! as! String
+            div = nsObj.value(forKey: "division")! as! String
         }
         if((nsObj.value(forKey: "dob")) != nil)
         {
@@ -199,7 +199,7 @@ class PupilInformationMethods{
         if((nsObj.value(forKey: "emergencyContactNo")) != nil)
         {
             emrgncyno = nsObj.value(forKey: "emergencyContactNo")! as! String
-                   }
+        }
         if((nsObj.value(forKey: "fName")) != nil)
         {
             fname = nsObj.value(forKey: "fName")! as! String
@@ -212,7 +212,7 @@ class PupilInformationMethods{
         }
         if((nsObj.value(forKey: "hobbies")) != nil)
         {
-           hobs = nsObj.value(forKey: "hobbies")! as! String
+            hobs = nsObj.value(forKey: "hobbies")! as! String
             
         }
         if((nsObj.value(forKey: "isActive")) != nil)
@@ -225,7 +225,7 @@ class PupilInformationMethods{
             lname = nsObj.value(forKey: "lName")! as! String
             
         }
-       
+        
         if((nsObj.value(forKey: "mName")) != nil)
         {
             mname = nsObj.value(forKey: "mName")! as! String
@@ -268,12 +268,12 @@ class PupilInformationMethods{
         }
         if((nsObj.value(forKey: "userId")) != nil)
         {
-           userid = nsObj.value(forKey: "userId")! as! String
-         }
+            userid = nsObj.value(forKey: "userId")! as! String
+        }
         
-            let studedtl = StudentDetail()
-       
-       
+        let studedtl = StudentDetail()
+        
+        
         studedtl.setStudentdetail(_ActiveTill: "", _RegistrationCodes: regcode, _ThumbnailURL: thumburl, _academicYear: academicYear, _address: adrs, _bldGrp: bldgrp, _classRollNo: clasrno, _comments: comnts, _contactNo: contctno, _division: div, _dob: dob, _emailId: emailid, _emergencyContactNo: emrgncyno, _fName: fname, _fatherName: fathername, _hobbies: hobs, _isActive: isactive, _lName: lname, _mName: mname, _magicWord: magicwrd, _motherName: mothrname, _pwd: password, _rollNo: rno, _schoolCode: schoolcode, _smallThumbnailURL: smallthumburl, _std: std, _userId: userid)
         
         return studedtl

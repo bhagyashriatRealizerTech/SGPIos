@@ -44,7 +44,9 @@ class PublicHolidayMethods{
     }
     
     
-    func getPublicHoliday() {
+    func getPublicHoliday() -> [PublicHoliday] {
+        
+        var holdayList = [PublicHoliday]()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PublicHolidayCoreData")
         //let fetchRequest: NSFetchRequest<PupilInformation> = PupilInformation.fetchRequest()
@@ -59,15 +61,40 @@ class PublicHolidayMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                let name = trans.value(forKey: "holiday")!
-                print(name)
+                var holidayObj = PublicHoliday()
+                var holiday:String = ""
+                if(trans.value(forKey: "holiday") != nil){
+                    holiday = trans.value(forKey: "holiday")as! String
+                }
+                
+                var created:String = ""
+                if(trans.value(forKey: "createdBy") != nil){
+                    created = trans.value(forKey: "createdBy")as! String
+                }
+                
+                var enddate:String = ""
+                if(trans.value(forKey: "phEndDate") != nil){
+                    enddate = trans.value(forKey: "phEndDate")as! String
+                }
+                
+                var startdate:String = ""
+                if(trans.value(forKey: "phStartDate") != nil){
+                    startdate = trans.value(forKey: "phStartDate")as! String
+                }
+                
+                holidayObj.setUpValue(createdby: created, holiday: holiday, enddate: enddate, startDate: startdate)
+                
+                holdayList.append(holidayObj)
+                //print(name)
                 //print("\(trans.value(forKey: "fName"))")
             }
         } catch {
             print("Error with request: \(error)")
         }
+        
+        return holdayList
     }
-
+    
     
     func deletePublicHoliday(){
         // Create Fetch Request

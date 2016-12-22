@@ -23,14 +23,22 @@ class PublicHoliday:Mappable{
         Holiday = map["Holiday"].value()
         PHEndDate = map["PHEndDate"].value()
         PHStartDate = map["PHStartDate"].value()
-        
-        
     }
     
     func mapping(map: Map) {
         
     }
     
+    init() {
+        
+    }
+    
+    func setUpValue(createdby:String, holiday:String, enddate:String, startDate:String){
+        CreatedBy = createdby
+        Holiday = holiday
+        PHEndDate = enddate
+        PHStartDate = startDate
+    }
     
     
 }

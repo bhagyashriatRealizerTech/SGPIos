@@ -36,32 +36,32 @@ class TimeTableMethods{
             
             for timetable in timetables as [TimeTableModel]
             {
-            let transc = NSManagedObject(entity: entity!, insertInto: context)
-            
-            
-            //set the entity values
-            transc.setValue(timetable.schoolCode, forKey: "schoolCode")
-            transc.setValue(timetable.Std, forKey: "std")
-            transc.setValue(timetable.division, forKey: "division")
-            transc.setValue(timetable.AcademicYr, forKey: "academicYr")
-            transc.setValue(timetable.Description, forKey: "descriptiontxt")
-            transc.setValue(timetable.UploadedBy, forKey: "uploadedBy")
-            transc.setValue(timetable.fileName, forKey: "fileName")
-            transc.setValue(timetable.TimeTableText, forKey: "timeTableText")
-            transc.setValue(timetable.UploadDate, forKey: "uploadDate")
-            transc.setValue(timetable.TimeTableImage, forKey: "timeTableImage")
-            transc.setValue(syncDate, forKey: "lastSyncUpDate")
-            
-            //save the object
-            do {
-                try context.save()
-                print("saved!")
-            } catch let error as NSError  {
-                print("Could not save \(error), \(error.userInfo)")
-            } catch {
+                let transc = NSManagedObject(entity: entity!, insertInto: context)
                 
+                
+                //set the entity values
+                transc.setValue(timetable.schoolCode, forKey: "schoolCode")
+                transc.setValue(timetable.Std, forKey: "std")
+                transc.setValue(timetable.division, forKey: "division")
+                transc.setValue(timetable.AcademicYr, forKey: "academicYr")
+                transc.setValue(timetable.Description, forKey: "descriptiontxt")
+                transc.setValue(timetable.UploadedBy, forKey: "uploadedBy")
+                transc.setValue(timetable.fileName, forKey: "fileName")
+                transc.setValue(timetable.TimeTableText, forKey: "timeTableText")
+                transc.setValue(timetable.UploadDate, forKey: "uploadDate")
+                transc.setValue(timetable.TimeTableImage, forKey: "timeTableImage")
+                transc.setValue(syncDate, forKey: "lastSyncUpDate")
+                
+                //save the object
+                do {
+                    try context.save()
+                    print("saved!")
+                } catch let error as NSError  {
+                    print("Could not save \(error), \(error.userInfo)")
+                } catch {
+                    
+                }
             }
-          }
             
         }
         
@@ -86,18 +86,34 @@ class TimeTableMethods{
             for trans in searchResults as! [NSManagedObject] {
                 var timeTable = TimeTable()
                 //get the Key Value pairs (although there may be a better way to do that...
-                let title:String = trans.value(forKey: "timeTableText") as! String
-                let description:String  = trans.value(forKey: "descriptiontxt")as! String
-                let givenby:String = trans.value(forKey: "uploadedBy")as! String
-                let dateT:String = trans.value(forKey: "uploadDate")as! String
-                let images:String  = trans.value(forKey: "timeTableImage")as! String
+                var title:String = ""
+                if(trans.value(forKey: "timeTableText") != nil){
+                    title = trans.value(forKey: "timeTableText") as! String
+                }
+                var description:String = ""
+                if(trans.value(forKey: "descriptiontxt") != nil){
+                    description = trans.value(forKey: "descriptiontxt")as! String
+                }
+                var givenby:String = ""
+                if(trans.value(forKey: "uploadedBy") != nil){
+                    givenby = trans.value(forKey: "uploadedBy")as! String
+                }
+                var dateT:String = ""
+                if(trans.value(forKey: "uploadDate") != nil){
+                    dateT = trans.value(forKey: "uploadDate")as! String
+                }
+                var images:String  = ""
+                if(trans.value(forKey: "timeTableImage") != nil){
+                    images = trans.value(forKey: "timeTableImage")as! String
+                    
+                }
                 print(images)
                 
                 if(images.isEmpty){
                     timeTable = TimeTable(timetableGivenBy: givenby, timeTableDate: dateT, timeTableTitle: title, timeTableAttachment: false, timeTableDesc: description, timeTableAttachmentUrl: "")
                 }
                 else{
-                     timeTable = TimeTable(timetableGivenBy: givenby, timeTableDate: dateT, timeTableTitle: title, timeTableAttachment: true, timeTableDesc: description, timeTableAttachmentUrl: images)
+                    timeTable = TimeTable(timetableGivenBy: givenby, timeTableDate: dateT, timeTableTitle: title, timeTableAttachment: true, timeTableDesc: description, timeTableAttachmentUrl: images)
                 }
                 
                 timeTableList.append(timeTable)
@@ -117,7 +133,7 @@ class TimeTableMethods{
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "TimeTableCoreData")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastSyncUpDate", ascending: false)]
         fetchRequest.fetchLimit = 1
-        var name:String = ""
+        var date:String = ""
         
         do {
             //go get the results
@@ -129,18 +145,18 @@ class TimeTableMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                name = trans.value(forKey: "lastSyncUpDate") as! String
-                print(name)
-                //print("\(trans.value(forKey: "fName"))")
+                if(trans.value(forKey: "lastSyncUpDate") != nil){
+                    date = trans.value(forKey: "lastSyncUpDate") as! String
+                }
             }
         } catch {
             print("Error with request: \(error)")
         }
         
-        return name
+        return date
     }
     
-
+    
     
     
     func deleteTimeTable(){

@@ -29,13 +29,13 @@ class HomeworkMethods{
             
             let syncDate = String(currentY)+"/"+String(currentM)+"/"+String(currentD)
             
-
-        //retrieve the entity that we just created
-        let entity =  NSEntityDescription.entity(forEntityName: "HomeworkCoreData", in: context)
-        
-        
+            
+            //retrieve the entity that we just created
+            let entity =  NSEntityDescription.entity(forEntityName: "HomeworkCoreData", in: context)
+            
+            
             let transc = NSManagedObject(entity: entity!, insertInto: context)
-        
+            
             
             //set the entity values
             transc.setValue(homework.SchoolCode, forKey: "schoolCode")
@@ -83,23 +83,27 @@ class HomeworkMethods{
             for trans in searchResults as! [NSManagedObject] {
                 var homework = HomeWork()
                 //get the Key Value pairs (although there may be a better way to do that...
-                let subject:String = trans.value(forKey: "subject") as! String
-                let hwDate:String = trans.value(forKey: "hwDate") as! String
-                let hwText:String = trans.value(forKey: "hwTxtLst") as! String
-                let hwImage:String = trans.value(forKey: "hwImage64Lst") as! String
-                let givenBy:String = trans.value(forKey: "givenBy") as! String
-                print(subject)
-                
-             /*   homework.hwDate = hwDate
-                homework.subject = subject
-                
-                if(hwText.isEmpty){
-                    
-                    homework.subjectText = ""
+                var subject:String = ""
+                if(trans.value(forKey: "subject") != nil){
+                    subject = trans.value(forKey: "subject") as! String
                 }
-                else{
-                homework.subjectText = hwText
-                }*/
+                var hwDate:String = ""
+                if(trans.value(forKey: "hwDate") != nil){
+                    hwDate = trans.value(forKey: "hwDate") as! String
+                }
+                var hwText:String = ""
+                if(trans.value(forKey: "hwTxtLst") != nil){
+                    hwText = trans.value(forKey: "hwTxtLst") as! String
+                }
+                var hwImage:String = ""
+                if(trans.value(forKey: "hwImage64Lst") != nil){
+                    hwImage = trans.value(forKey: "hwImage64Lst") as! String
+                }
+                var givenBy:String = ""
+                if(trans.value(forKey: "givenBy") != nil){
+                    givenBy = trans.value(forKey: "givenBy") as! String
+                }
+                
                 
                 if(hwImage.isEmpty)
                 {
@@ -109,8 +113,6 @@ class HomeworkMethods{
                     homework = HomeWork(subject: subject, subjectText: hwText, attachmentExists: true, attachimage: hwImage, givenby: givenBy,hwDate: hwDate)
                 }
                 
-                
-               // homework.givenBy = givenBy
                 
                 homeworkList.append(homework)
                 
@@ -124,14 +126,14 @@ class HomeworkMethods{
     }
     
     
-    //Get Last Date 
+    //Get Last Date
     
     func getLastHomeworkDate() ->String {
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "HomeworkCoreData")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastSyncDateHw", ascending: false)]
         fetchRequest.fetchLimit = 1
-        var name:String = ""
+        var date:String = ""
         
         do {
             //go get the results
@@ -143,15 +145,16 @@ class HomeworkMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                name = trans.value(forKey: "lastSyncDateHw") as! String
-                print(name)
-                //print("\(trans.value(forKey: "fName"))")
+                if(trans.value(forKey: "lastSyncDateHw") != nil){
+                    date = trans.value(forKey: "lastSyncDateHw") as! String
+                }
+                
             }
         } catch {
             print("Error with request: \(error)")
         }
         
-        return name
+        return date
     }
     
     
@@ -173,10 +176,11 @@ class HomeworkMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                let sub:String = trans.value(forKey: "subject") as! String
-                subjects.append(sub)
-                print(sub)
-                //print("\(trans.value(forKey: "fName"))")
+                var sub:String = ""
+                if(trans.value(forKey: "subject") != nil){
+                    sub = trans.value(forKey: "subject") as! String
+                    subjects.append(sub)
+                }
             }
         } catch {
             print("Error with request: \(error)")
@@ -184,9 +188,9 @@ class HomeworkMethods{
         
         return subjects
     }
-
     
-
+    
+    
     
     
     func deleteHomework(){

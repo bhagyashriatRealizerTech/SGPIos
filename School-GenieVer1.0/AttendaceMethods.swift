@@ -43,7 +43,9 @@ class AttendaceMethods{
     }
     
     
-    func getAttendace() {
+    func getAttendace() -> [AttendanceModel]{
+        
+        var attList = [AttendanceModel]()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "AttendanceCoreData")
         //let fetchRequest: NSFetchRequest<PupilInformation> = PupilInformation.fetchRequest()
@@ -58,13 +60,26 @@ class AttendaceMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                let name = trans.value(forKey: "isPresent")!
-                print(name)
-                //print("\(trans.value(forKey: "fName"))")
+                var attModel = AttendanceModel()
+                var dateatt:String = ""
+                var presentsta:Bool = true
+                
+                if(trans.value(forKey: "attDate") != nil){
+                    dateatt = trans.value(forKey: "attDate") as! String
+                }
+                if(trans.value(forKey: "isPresent") != nil){
+                    presentsta = trans.value(forKey: "isPresent") as! Bool
+                }
+                
+                attModel.setUpValue(attdate: dateatt, ispresent: presentsta)
+                attList.append(attModel)
+                
             }
         } catch {
             print("Error with request: \(error)")
         }
+        
+        return attList
     }
     
     

@@ -33,38 +33,38 @@ class ClassworkMethods{
             
             let syncDate = String(currentY)+"/"+String(currentM)+"/"+String(currentD)
             
-
-        
-        //retrieve the entity that we just created
-        let entity =  NSEntityDescription.entity(forEntityName: "ClassworkCoreData", in: context)
-        
-        
-        let transc = NSManagedObject(entity: entity!, insertInto: context)
-        
-        
-        //set the entity values
-        transc.setValue(classwork.SchoolCode, forKey: "schoolCode")
-        transc.setValue(classwork.cwDate, forKey: "cwDate")
-        transc.setValue(classwork.Std, forKey: "std")
-        transc.setValue(classwork.div, forKey: "div")
-        transc.setValue(classwork.subject, forKey: "subject")
-        transc.setValue(classwork.CwTxtLst?.joined(separator: "@@@"), forKey: "cwTxtLst")
-        transc.setValue(classwork.cwImage64Lst?.joined(separator: "@@@"), forKey: "cwImage64Lst")
-        transc.setValue(classwork.givenBy, forKey: "givenBy")
+            
+            
+            //retrieve the entity that we just created
+            let entity =  NSEntityDescription.entity(forEntityName: "ClassworkCoreData", in: context)
+            
+            
+            let transc = NSManagedObject(entity: entity!, insertInto: context)
+            
+            
+            //set the entity values
+            transc.setValue(classwork.SchoolCode, forKey: "schoolCode")
+            transc.setValue(classwork.cwDate, forKey: "cwDate")
+            transc.setValue(classwork.Std, forKey: "std")
+            transc.setValue(classwork.div, forKey: "div")
+            transc.setValue(classwork.subject, forKey: "subject")
+            transc.setValue(classwork.CwTxtLst?.joined(separator: "@@@"), forKey: "cwTxtLst")
+            transc.setValue(classwork.cwImage64Lst?.joined(separator: "@@@"), forKey: "cwImage64Lst")
+            transc.setValue(classwork.givenBy, forKey: "givenBy")
             transc.setValue(syncDate, forKey: "lastSyncdateCw")
-
-        
-        //save the object
-        do {
-            try context.save()
-            print("saved!")
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        } catch {
+            
+            
+            //save the object
+            do {
+                try context.save()
+                print("saved!")
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            } catch {
+                
+            }
             
         }
-        
-    }
         
     }
     
@@ -87,14 +87,29 @@ class ClassworkMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                let subject:String = trans.value(forKey: "subject") as! String
-                let cwDate:String =  trans.value(forKey: "cwDate") as! String
-                let cwText:String =  trans.value(forKey: "cwTxtLst") as! String
-                let cwImage:String = trans.value(forKey: "cwImage64Lst") as! String
-                let givenBy:String = trans.value(forKey: "givenBy") as! String
+                var subject:String = ""
+                if(trans.value(forKey: "subject") != nil){
+                    subject = trans.value(forKey: "subject") as! String
+                }
+                var cwDate:String = ""
+                if(trans.value(forKey: "cwDate") != nil){
+                    cwDate = trans.value(forKey: "cwDate") as! String
+                }
+                var cwText:String = ""
+                if(trans.value(forKey: "cwTxtLst") != nil){
+                    cwText = trans.value(forKey: "cwTxtLst") as! String
+                }
+                var cwImage:String = ""
+                if(trans.value(forKey: "cwImage64Lst") != nil){
+                    cwImage = trans.value(forKey: "cwImage64Lst") as! String
+                }
+                var givenBy:String = ""
+                if(trans.value(forKey: "givenBy") != nil){
+                    givenBy = trans.value(forKey: "givenBy") as! String
+                }
                 
                 if(cwImage.isEmpty){
-                classwork = ClassWork(subject: subject, subjectText: cwText, attachmentExists: false, attachimage: "", gevinBy: givenBy, cwDate: cwDate)
+                    classwork = ClassWork(subject: subject, subjectText: cwText, attachmentExists: false, attachimage: "", gevinBy: givenBy, cwDate: cwDate)
                 }
                 else{
                     classwork = ClassWork(subject: subject, subjectText: cwText, attachmentExists: true, attachimage: cwImage, gevinBy: givenBy, cwDate: cwDate)
@@ -115,7 +130,7 @@ class ClassworkMethods{
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ClassworkCoreData")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastSyncdateCw", ascending: false)]
         fetchRequest.fetchLimit = 1
-        var name:String = ""
+        var datesync:String = ""
         
         do {
             //go get the results
@@ -127,15 +142,17 @@ class ClassworkMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                name = trans.value(forKey: "lastSyncdateCw") as! String
-                print(name)
+                if(trans.value(forKey: "lastSyncdateCw") != nil){
+                    datesync = trans.value(forKey: "lastSyncdateCw") as! String
+                }
+                //print(datesync)
                 //print("\(trans.value(forKey: "fName"))")
             }
         } catch {
             print("Error with request: \(error)")
         }
         
-        return name
+        return datesync
     }
     
     
@@ -157,10 +174,12 @@ class ClassworkMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
-                let sub:String = trans.value(forKey: "subject") as! String
-                subjects.append(sub)
-                print(sub)
-                //print("\(trans.value(forKey: "fName"))")
+                var sub:String = ""
+                if(trans.value(forKey: "subject") != nil){
+                    sub = trans.value(forKey: "subject") as! String
+                    subjects.append(sub)
+                }
+                
             }
         } catch {
             print("Error with request: \(error)")
@@ -168,7 +187,7 @@ class ClassworkMethods{
         
         return subjects
     }
-
+    
     
     
     func deleteClasswork(){
