@@ -50,7 +50,7 @@ class DateFile{
         var datetimevalue:String = ""
         
         let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyyy-MM-dd"
+        dateformatter.dateFormat = "MM/dd/yyyy"
         let d=dateformatter.date(from: date)
         
         
@@ -151,6 +151,26 @@ class DateFile{
             }
         }
         return datetimevalue;
+    }
+    
+    func getMediumDate(date:String) ->String{
+        var datetimevalue:String = date
+        
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "MM/dd/yyyy"
+        let d=dateformatter.date(from: date)
+        
+        
+        
+        
+        let  dateformatter1 = DateFormatter()
+        dateformatter1.dateFormat = "dd  MMM yyyy"
+        
+        let dateTemp = dateformatter.date(from: date)
+        if(dateTemp != nil){
+        datetimevalue = dateformatter1.string(from: dateTemp!)
+        }
+        return datetimevalue
     }
 
 }

@@ -984,11 +984,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="0.98483573717948714" green="0.79357610086790664" blue="0.40255117179911715" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableCell" id="ZMa-Zn-Bn3" customClass="MenuTableCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableCell" id="ZMa-Zn-Bn3" customClass="MenuTableCell" customModule="School_GenieVer1_0" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZMa-Zn-Bn3" id="pRr-Ed-qsx">
-                                                    <frame key="frameInset" width="375" height="49.5"/>
+                                                    <frame key="frameInset" width="375" height="49"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="rWa-VQ-JlP">
@@ -1280,11 +1280,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="1" green="0.82189944319999997" blue="0.36787973610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="ClassWorkCell" rowHeight="45" id="LM4-Tu-xjo" userLabel="ClassworkCell" customClass="ClassWorkCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="ClassWorkCell" rowHeight="45" id="LM4-Tu-xjo" userLabel="ClassworkCell" customClass="ClassWorkCell" customModule="School_GenieVer1_0" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="338" height="45"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LM4-Tu-xjo" id="3nZ-Sd-2pO">
-                                                    <frame key="frameInset" width="338" height="44.5"/>
+                                                    <frame key="frameInset" width="338" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="TopLeft" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SqG-wk-eNH" userLabel="SVCW">
@@ -1810,7 +1810,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fv7-sV-F4C" id="q4y-CI-ITi">
-                                            <frame key="frameInset" width="343" height="69.5"/>
+                                            <frame key="frameInset" width="343" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Uu4-Ev-Nxx" userLabel="MainSV">
@@ -2126,7 +2126,7 @@
                                                 <rect key="frame" x="0.0" y="1" width="368" height="77"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HCR-Vw-mh1" id="Di8-0z-6lO">
-                                                    <frame key="frameInset" width="368" height="76.5"/>
+                                                    <frame key="frameInset" width="368" height="76"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="d2m-Fp-Yuc" userLabel="SVLastMsg">
@@ -2269,7 +2269,7 @@
                                                 <rect key="frame" x="0.0" y="1" width="368" height="77"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vf5-RX-ENM" id="Kj1-RR-sA8">
-                                                    <frame key="frameInset" width="368" height="76.5"/>
+                                                    <frame key="frameInset" width="368" height="76"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="g6x-Wq-kR3" userLabel="SVLastMsg">
@@ -2793,11 +2793,11 @@
                                 </constraints>
                                 <color key="separatorColor" red="0.9655253775" green="0.83484255559999998" blue="0.43737644209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ViewStarCell" rowHeight="65" id="Utp-BO-QxD" customClass="ViewStarCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ViewStarCell" rowHeight="65" id="Utp-BO-QxD" customClass="ViewStarCell" customModule="School_GenieVer1_0" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="333" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Utp-BO-QxD" id="Qzw-YQ-TM9">
-                                            <frame key="frameInset" width="333" height="64.5"/>
+                                            <frame key="frameInset" width="333" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoQ-QZ-KQU">
@@ -3282,11 +3282,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="1" green="0.82189944319999997" blue="0.36787973610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="CellHomeWork" rowHeight="45" id="Ygl-mb-wQu" userLabel="HomeworkCell" customClass="CellHomeWork" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="CellHomeWork" rowHeight="45" id="Ygl-mb-wQu" userLabel="HomeworkCell" customClass="CellHomeWork" customModule="School_GenieVer1_0" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="338" height="45"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ygl-mb-wQu" id="sEz-MH-bvO">
-                                                    <frame key="frameInset" width="338" height="44.5"/>
+                                                    <frame key="frameInset" width="338" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="TopLeft" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kds-5h-gcI" userLabel="SVCW">
@@ -3936,7 +3936,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="368" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z0b-yq-91m" id="dQV-w5-scl">
-                                                    <frame key="frameInset" width="368" height="61.5"/>
+                                                    <frame key="frameInset" width="368" height="61"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="center" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q9k-Qz-LNT">

@@ -193,8 +193,20 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         case 10:
             //synk
 
-            let manualsync = SyncUpCall()
-            manualsync.syncUpData()
+            if Reachability.isConnectedToNetwork() == true {
+                let manualsync = SyncUpCall()
+                manualsync.syncUpData()
+
+            } else {
+                
+                let credentialerror = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler:nil)
+                
+                credentialerror.addAction(cancelAction)
+                self.present(credentialerror, animated: true, completion: {  })
+                
+            }
             break;
             
            case 11:

@@ -63,10 +63,11 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         if let destination = segue.destination as? ViewHomeWorkVC
         {
             if let HW = sender as? HomeWork{
-              /*  let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd MMM yyyy"
-                let dateString = dateFormatter.string(from: hWdatePicker.date)
-                HW.hwDate =  dateString*/
+            
+                var datestring:String = HW.hwDate
+                let datefile = DateFile()
+                datestring = datefile.getMediumDate(date: HW.hwDate.components(separatedBy: " ")[0])
+                HW.hwDate =  datestring
                 destination.HWDtls = HW
                 
                
@@ -107,6 +108,11 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate
             {
                 subText = homework.subjectText
             }
+            
+            var datestring:String = homework.hwDate
+            let datefile = DateFile()
+ datestring = datefile.getDate(date: homework.hwDate.components(separatedBy: " ")[0], FLAG: "D")
+
             
             cell.updateCell(SubjectText: subText, Subject: homework.subject,isAttachment: homework.attachmentExists)
             return cell

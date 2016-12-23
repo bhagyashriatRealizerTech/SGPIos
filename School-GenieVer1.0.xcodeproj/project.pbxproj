@@ -74,6 +74,9 @@
 		03EB23A91DDC636900B2DCCB /* HomeWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EB23A81DDC636900B2DCCB /* HomeWork.swift */; };
 		03EB23AB1DDC65B800B2DCCB /* ViewHomeWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EB23AA1DDC65B800B2DCCB /* ViewHomeWorkVC.swift */; };
 		03EE72521E0BA0A70099988C /* ring-alt.gif in Resources */ = {isa = PBXBuildFile; fileRef = 03EE72511E0BA0A70099988C /* ring-alt.gif */; };
+		03EE72761E0BD95B0099988C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE72751E0BD95B0099988C /* Reachability.swift */; };
+		03EE72781E0BE9000099988C /* SendMessageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE72771E0BE9000099988C /* SendMessageAPI.swift */; };
+		03EE727A1E0BEE080099988C /* ChatMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EE72791E0BEE080099988C /* ChatMethods.swift */; };
 		03EF6E531DC7168C004283AA /* ForgotPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF6E521DC7168C004283AA /* ForgotPwdVC.swift */; };
 		03EFB1A71DEE8A19004DB24B /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EFB1A61DEE8A19004DB24B /* LoginScreenVC.swift */; };
 		03EFB1AB1DEE9B8E004DB24B /* MyPupiScreenlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EFB1AA1DEE9B8E004DB24B /* MyPupiScreenlVC.swift */; };
@@ -185,6 +188,9 @@
 		03EB23A81DDC636900B2DCCB /* HomeWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWork.swift; sourceTree = "<group>"; };
 		03EB23AA1DDC65B800B2DCCB /* ViewHomeWorkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHomeWorkVC.swift; sourceTree = "<group>"; };
 		03EE72511E0BA0A70099988C /* ring-alt.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ring-alt.gif"; sourceTree = "<group>"; };
+		03EE72751E0BD95B0099988C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		03EE72771E0BE9000099988C /* SendMessageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageAPI.swift; sourceTree = "<group>"; };
+		03EE72791E0BEE080099988C /* ChatMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMethods.swift; sourceTree = "<group>"; };
 		03EF6E521DC7168C004283AA /* ForgotPwdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPwdVC.swift; sourceTree = "<group>"; };
 		03EFB1A61DEE8A19004DB24B /* LoginScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
 		03EFB1AA1DEE9B8E004DB24B /* MyPupiScreenlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPupiScreenlVC.swift; sourceTree = "<group>"; };
@@ -339,6 +345,7 @@
 				039E71601DBE5A1500E856EC /* Info.plist */,
 				032BA2151DED8AE200EC7739 /* School-GenieVer1.0-Bridging-Header.h */,
 				03F2B0321E0032B5000AF6CB /* SchoolGenie.xcdatamodeld */,
+				03EE72751E0BD95B0099988C /* Reachability.swift */,
 			);
 			path = "School-GenieVer1.0";
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 				03EB09651E029C0D00145941 /* TimeTableAPI.swift */,
 				03EB09691E02A5DE00145941 /* FunCenterEventAPI.swift */,
 				03EB096D1E02B05400145941 /* FunCenterImageAPI.swift */,
+				03EE72771E0BE9000099988C /* SendMessageAPI.swift */,
 			);
 			name = APICall;
 			sourceTree = "<group>";
@@ -416,6 +424,7 @@
 				03EB096B1E02A9B900145941 /* FunCenterEventMethods.swift */,
 				03EB096F1E02B38A00145941 /* FunCenterImageMethods.swift */,
 				03EA704C1E0A81D4001CA57A /* DateFile.swift */,
+				03EE72791E0BEE080099988C /* ChatMethods.swift */,
 			);
 			name = DatabaseFunction;
 			sourceTree = "<group>";
@@ -603,6 +612,7 @@
 				03442A481DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift in Sources */,
 				03A1B3241DE5C7DE003FF914 /* FuncentergalleryVC.swift in Sources */,
 				033A43811E0165ED000410F8 /* TextToImage.swift in Sources */,
+				03EE72761E0BD95B0099988C /* Reachability.swift in Sources */,
 				03EB096A1E02A5DE00145941 /* FunCenterEventAPI.swift in Sources */,
 				03F2AF371E00129E000AF6CB /* SWRevealViewController.m in Sources */,
 				03FD7EC81DDAD03800CF12F1 /* VerifyMailVC.swift in Sources */,
@@ -616,6 +626,7 @@
 				03F2B0271E001D2D000AF6CB /* SubjectAllocate.swift in Sources */,
 				03EB23A51DDC5AD200B2DCCB /* CellHomeWork.swift in Sources */,
 				03B1CCC91DE81DA200929665 /* Classworkimagecell.swift in Sources */,
+				03EE72781E0BE9000099988C /* SendMessageAPI.swift in Sources */,
 				03FD7ECE1DDB132100CF12F1 /* VerifyMagicWordVC.swift in Sources */,
 				03291A3C1DE5CA1F00608066 /* MyCollectioncell.swift in Sources */,
 				03EB096C1E02A9B900145941 /* FunCenterEventMethods.swift in Sources */,
@@ -637,6 +648,7 @@
 				03EA704D1E0A81D4001CA57A /* DateFile.swift in Sources */,
 				036166631DE2AF3900A9D375 /* SelectMessageCenterListVC.swift in Sources */,
 				039FEE9C1DE993670040513D /* ShowAlertsVC.swift in Sources */,
+				03EE727A1E0BEE080099988C /* ChatMethods.swift in Sources */,
 				03C33D5B1DBF6ECB00F728F3 /* DashboardVC.swift in Sources */,
 				03F2B0341E0032B5000AF6CB /* SchoolGenie.xcdatamodeld in Sources */,
 				03F2B0171E001C0E000AF6CB /* FunCenterImageList.swift in Sources */,

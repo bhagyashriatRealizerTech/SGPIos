@@ -33,31 +33,6 @@ class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSour
         timeTableList.dataSource = self
         }
         
-      /*  let t1 = TimeTable(timetableGivenBy: "Bhagyashri Salgare", timeTableDate: "23 Nov 2016", timeTableTitle: "Exam Time Table - 1", timeTableAttachment: true)
-        
-        timeTable.append(t1)
-        
-        let t2 = TimeTable(timetableGivenBy: "Pravin Jadhav", timeTableDate: "22 Nov 2016", timeTableTitle: "Exam Time Table - 2", timeTableAttachment: true)
-        
-        timeTable.append(t2)
-        
-        
-        let t3 = TimeTable(timetableGivenBy: "Farhan Bodale", timeTableDate: "21 Nov 2016", timeTableTitle: "Exam Time Table - 3", timeTableAttachment: true)
-        
-        timeTable.append(t3)
-        
-        let t4 = TimeTable(timetableGivenBy: "RamChandra Magar", timeTableDate: "20 Nov 2016", timeTableTitle: "Exam Time Table - 4", timeTableAttachment: true)
-        
-        timeTable.append(t4)
-        
-        let t5 = TimeTable(timetableGivenBy: "Satish Sawant", timeTableDate: "19 Nov 2016", timeTableTitle: "Exam Time Table - 5", timeTableAttachment: true)
-        
-        timeTable.append(t5)
-        
-        let t6 = TimeTable(timetableGivenBy: "Swapnali Shrawage", timeTableDate: "18 Nov 2016", timeTableTitle: "Exam Time Table - 6", timeTableAttachment: true)
-        
-        timeTable.append(t6)*/
-        
         
         // Do any additional setup after loading the view.
     }
@@ -85,7 +60,12 @@ class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSour
             }
             
             timeTable1.timeTableDesc = description
-
+            
+            
+            var datestring:String = timeTable1.timeTableDate
+            let datefile = DateFile()
+            datestring = datefile.getDate(date: timeTable1.timeTableDate.components(separatedBy: " ")[0], FLAG: "D")
+            timeTable1.timeTableDate = datestring
             
             cell.updateUI(timeTable1)
             

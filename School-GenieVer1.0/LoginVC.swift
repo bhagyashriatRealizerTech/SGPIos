@@ -107,8 +107,20 @@ func isValidEmail(testStr:String) -> Bool {
 
         Current_Url = "\(BASE_URL)\(methodName)\(Username)\(Password)\(Device_Id)"
         print(Current_Url)
+            
+            if Reachability.isConnectedToNetwork() == true {
+                downloadLoginDetails{}
+            } else {
+                
+                let credentialerror = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler:nil)
+                
+                credentialerror.addAction(cancelAction)
+                self.present(credentialerror, animated: true, completion: {  })
+
+            }
         
-        downloadLoginDetails{}
         }
         
     }

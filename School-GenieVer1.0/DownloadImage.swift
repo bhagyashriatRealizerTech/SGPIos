@@ -23,10 +23,23 @@ class DownloadImage{
             
         else
         {
-            let urlString = imageurlString
-            let request = PhotosDataManager.sharedManager.getNetworkImage(urlString: urlString) {image in
-                userImg = image
+            if Reachability.isConnectedToNetwork() == true {
+                let urlString = imageurlString
+                let request = PhotosDataManager.sharedManager.getNetworkImage(urlString: urlString) {image in
+                    userImg = image
+                }
+            } else {
+                
+               /* let credentialerror = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: .alert)
+                
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler:nil)
+                
+                credentialerror.addAction(cancelAction)
+                present(credentialerror, animated: true, completion: {  })*/
+                
             }
+
+            
             
             
             
@@ -45,14 +58,13 @@ class DownloadImage{
             
         else
         {
-            let urlString = imageurlString
-            let request = PhotosDataManager.sharedManager.getNetworkImage(urlString: urlString) {image in
-                userImg = image
-                imageView.image = userImg
+            if Reachability.isConnectedToNetwork() == true {
+                let urlString = imageurlString
+                let request = PhotosDataManager.sharedManager.getNetworkImage(urlString: urlString) {image in
+                    userImg = image
+                    imageView.image = userImg
+                }
             }
-            
-            
-            
         }
         
     }

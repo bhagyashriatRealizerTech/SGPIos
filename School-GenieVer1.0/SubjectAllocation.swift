@@ -35,4 +35,15 @@ class SubjectAllocation:Mappable{
     func mapping(map: Map) {
         
     }
+    
+    init() {
+        
+    }
+    
+    func setUpValue(tname:String, userId:String, url:String,Subject:String){
+        TeacherName = tname
+        TeacherUserId = userId
+        ThumbNailURL = url
+        subject = Subject
+    }
 }

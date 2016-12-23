@@ -15,6 +15,15 @@
         <attribute name="attDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isPresent" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="ChatCoreData" syncable="YES">
+        <attribute name="fromId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromTeacher" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="messageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="messageTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ClassworkCoreData" syncable="YES">
         <attribute name="cwDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cwImage64Lst" optional="YES" attributeType="String" syncable="YES"/>
@@ -123,5 +132,6 @@
         <element name="PupilInformation" positionX="-54" positionY="144" width="128" height="435"/>
         <element name="SubjectAllocationCoreData" positionX="-36" positionY="315" width="128" height="150"/>
         <element name="TimeTableCoreData" positionX="27" positionY="342" width="128" height="210"/>
+        <element name="ChatCoreData" positionX="0" positionY="297" width="128" height="150"/>
     </elements>
 </model>

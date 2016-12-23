@@ -25,22 +25,12 @@ var alert=[Alerts]()
         menualert.action = #selector(SWRevealViewController.revealToggle(_:))
         alertview.addGestureRecognizer(revealViewController().panGestureRecognizer())
 
-        /*       let A1=Alerts(category: "Sports Day", msgText: "Today need to play the cricket", attachmentExists: true, attachimage: "SD",aldate: "9.30 AM",initial: "SD")
-        
-        let A2=Alerts(category: "Class Meeting", msgText: "All students parent will be present in meeting", attachmentExists: true, attachimage: "CT",aldate: "11.00 AM",initial: "CM")
-        
-        
-        let A3=Alerts(category: "Culture Activity", msgText: "Celebrating the events...with our folk song", attachmentExists: true, attachimage: "CD",aldate: "Yesterday",initial: "CA")
-        
-
-        alert.append(A1)
-        alert.append(A2)
-        alert.append(A3)*/
-        
+     
         let announcement = AnnouncementMethods()
         alert = announcement.getAnnouncement()
         
         if(alert.count>0){
+            alert.reverse()
         alertTableview.dataSource=self
         alertTableview.delegate=self
        
@@ -56,10 +46,11 @@ var alert=[Alerts]()
         if let destination=segue.destination as? ShowAlertsVC
         {
             if let AL=sender as? Alerts{
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MM-dd-yy"
-                let dateString = dateFormatter.string(from: NSDate() as Date!)
-               AL.AlDate=dateString
+                
+                var datestring:String = AL.aldate
+                let datefile = DateFile()
+                datestring = datefile.getMediumDate(date: AL.aldate.components(separatedBy: " ")[0])
+               AL.aldate = datestring
     
                 destination.ALDtls=AL
  
@@ -109,26 +100,19 @@ var alert=[Alerts]()
                 
             }
             
-            
-            print(st)
-          cell.updateCell(category: at.category, msgtext: subText, isAttachment:at.attachmentExists, msgtime: at.aldate,initial: st)
+            var datestring:String = at.aldate
+            let datefile = DateFile()
+            datestring = datefile.getDate(date: at.aldate.components(separatedBy: " ")[0], FLAG: "D")
+            //print(st)
+          cell.updateCell(category: at.category, msgtext: subText, isAttachment:at.attachmentExists, msgtime: datestring,initial: st)
         
            return cell
             
         }
             
  return UITableViewCell()
-            
-        
-        
         
     }
-    
-    
-        
-        
-        
-  
     
 
 }

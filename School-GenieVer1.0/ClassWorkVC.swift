@@ -31,13 +31,13 @@ class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate {
         if let destination = segue.destination as? ViewClassWorkVC
         {
             if let CW = sender as? ClassWork{
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd MMM yyyy"
-                let dateString = dateFormatter.string(from: datepickercontrol.date)
-                CW.cwDate =  dateString
+                
+                var datestring:String = CW.cwDate
+                var datefile = DateFile()
+                datestring = datefile.getMediumDate(date: CW.cwDate.components(separatedBy: " ")[0])
+                CW.cwDate =  datestring
                 destination.CWDtls = CW
                 
-              
             }
         }
     }

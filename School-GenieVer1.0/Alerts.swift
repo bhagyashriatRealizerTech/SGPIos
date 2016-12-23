@@ -30,7 +30,14 @@ class Alerts
     }
     
     var aldate:String{
-        return _aldate
+        get {
+            return _aldate
+            
+        }
+        set
+        {
+            _aldate = newValue
+        }
     }
     
     var category:String

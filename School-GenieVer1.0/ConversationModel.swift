@@ -18,6 +18,7 @@ class ConversationModel:Mappable {
     var to:String?
     var text:String?
     var sentTime:String?
+    var profileUrl:String?
     
     required init?(map: Map) {
         
@@ -25,6 +26,22 @@ class ConversationModel:Mappable {
     
     func mapping(map: Map) {
         
+    }
+    
+    init() {
+        
+    }
+    
+    func setMessage(chatId:String, fromteacher:Bool, schoolCode:String, fromId:String,toId:String,message:String,msgTime:String,profilePic:String){
+
+        ConversationId = chatId
+        fromTeacher = fromteacher
+        SchoolCode = schoolCode
+        from = fromId
+        to = toId
+        text = message
+        sentTime = msgTime
+        profileUrl = profilePic
     }
     
 }

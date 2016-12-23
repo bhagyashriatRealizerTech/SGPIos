@@ -79,6 +79,59 @@ class SubjectAllocationMethods{
         return subjects
     }
     
+    
+    func getAllTeacher() -> [SubjectAllocation] {
+        
+        var teacherlist = [SubjectAllocation]()
+        //create a fetch request, telling it about the entity
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "SubjectAllocationCoreData")
+        //let fetchRequest: NSFetchRequest<PupilInformation> = PupilInformation.fetchRequest()
+        
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            //I like to check the size of the returned results!
+            print ("num of results = \(searchResults.count)")
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for trans in searchResults as! [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+                
+                var teacher = SubjectAllocation()
+                
+                var sub = ""
+                if(trans.value(forKey: "subject") != nil){
+                    sub = trans.value(forKey: "subject") as! String
+                }
+                
+                var name = ""
+                if(trans.value(forKey: "teacherName") != nil){
+                    name = trans.value(forKey: "teacherName") as! String
+                }
+                
+                var userid = ""
+                if(trans.value(forKey: "teacherUserId") != nil){
+                    userid = trans.value(forKey: "teacherUserId") as! String
+                }
+                
+                var profilrurl = ""
+                if(trans.value(forKey: "thumbNailURL") != nil){
+                    profilrurl = trans.value(forKey: "thumbNailURL") as! String
+                }
+                
+                teacher.setUpValue(tname: name, userId: userid, url: profilrurl, Subject: sub)
+                teacherlist.append(teacher)
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        return teacherlist
+    }
+    
+
+    
     func deleteSubjectAllocation(){
         // Create Fetch Request
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "SubjectAllocationCoreData")

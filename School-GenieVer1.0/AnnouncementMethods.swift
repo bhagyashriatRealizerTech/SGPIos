@@ -68,11 +68,17 @@ class AnnouncementMethods{
                 //get the Key Value pairs (although there may be a better way to do that...
                 
                 var anntext:String = ""
+                if(trans.value(forKey: "announcementText") != nil){
                 anntext = trans.value(forKey: "announcementText") as! String
+                }
                 var ancategory:String = ""
+                if(trans.value(forKey: "category") != nil){
                 ancategory = trans.value(forKey: "category") as! String
+                }
                 var anndate:String = ""
+                if(trans.value(forKey: "createTS") != nil){
                 anndate = trans.value(forKey: "createTS") as! String
+                }
                 
                 let alert = Alerts(category: ancategory, msgText: anntext, attachmentExists: false, attachimage: ancategory, aldate: anndate, initial: ancategory)
                 alertArr.append(alert)

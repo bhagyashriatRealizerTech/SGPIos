@@ -13,7 +13,11 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
     @IBOutlet weak var textviewmsg: UITextView!
     @IBOutlet weak var selectteacherbtn: UIButton!
     @IBOutlet weak var selectTecherpicker: UIPickerView!
-    let teacher=["Neha Patil","Ani Mehera","Pratiksha Mahajan"]
+    var teacher=[String]()
+    var teacherId=[String]()
+    var teacherImage=[String]()
+    var suballocation = [SubjectAllocation]()
+    var selectedteacher = String()
     @IBAction func selectteacherclick(_ sender: AnyObject) {
         
         selectTecherpicker.isHidden=false
@@ -24,8 +28,26 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
         
         textviewmsg.layer.borderColor=UIColor.black.cgColor
         textviewmsg.layer.borderWidth=1
-        selectTecherpicker.dataSource=self
-        selectTecherpicker.delegate=self
+        
+        let suballocationmethod = SubjectAllocationMethods()
+        suballocation = suballocationmethod.getAllTeacher()
+        
+        if(suballocation.count > 0){
+            
+            for index in 0...(suballocation.count - 1){
+                if(!suballocation[index].TeacherName?.isEmpty){
+                teacher.append(suballocation[index].TeacherName)
+                teacherId.append(suballocation[index].TeacherUserId)
+                teacherImage.append(suballocation[index].ThumbNailURL)
+                }
+            }
+            
+            if(teacher.count > 0){
+                selectTecherpicker.dataSource=self
+                selectTecherpicker.delegate=self
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -37,7 +59,7 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return teacher.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return teacher[row]
@@ -45,38 +67,31 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectteacherbtn.setTitle(teacher[row], for: UIControlState())
         selectTecherpicker.isHidden=true
+        selectedteacher = teacherId[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
         let  myView = UIView(frame: CGRect(x: 0, y: 0, width:pickerView.bounds.width-30 ,height: 10))
-        let img = ["flower.jpg"]
-        let imgview:UIImageView = UIImageView(frame:CGRect(x: 0, y: 10, width: 30, height: 30))
-        let myImage:UIImage=UIImage(named:"flower.jpg")!
+        
+        
+        let imgview:UIImageView = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
+        
+        //let myImage:UIImage=UIImage(named:"flower.jpg")!
         imgview.layer.cornerRadius=15
         imgview.clipsToBounds=true
         imgview.layer.masksToBounds=false
+        imgview.layer.borderColor = UIColor.gray.cgColor
         
         var rowString = String()
+        rowString = teacher[row]
         
-        switch row {
-        case 0:
-            rowString="Neha Patil"
-            imgview.image = myImage
-            
-        case 1:
-            rowString = "Ani Mehera"
-            imgview.image = myImage
-        case  2:
-            rowString = "Patiksha Mahajan"
-            imgview.image = myImage
-        case 2: break
-        default:
-            
-            imgview.image = nil
-            //return imgview
-        }
+        let imagedownload = DownloadImage()
+        let temp = teacherImage[row]
+        imagedownload.setImage(imageurlString: temp, imageView: imgview)
         
-        let myLabel=UILabel(frame:(CGRect(x:100, y: 10, width: 200, height: 50)))
+        
+        let myLabel=UILabel(frame:(CGRect(x:100, y: 0, width: 200, height: 50)))
         
         
         myLabel.text = rowString
@@ -86,5 +101,7 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
         myView.addSubview(imgview)
         return myView
     }
+    
+    
     
 }
