@@ -29,6 +29,7 @@
 		033A43811E0165ED000410F8 /* TextToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A437E1E0165ED000410F8 /* TextToImage.swift */; };
 		03442A481DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */; };
 		036166631DE2AF3900A9D375 /* SelectMessageCenterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */; };
+		0389DC0E1E0D0B8500FB7D9E /* ChatInitiateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */; };
 		038CE3B81DDD9CBC00E34DD2 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CE3B71DDD9CBC00E34DD2 /* Chat.swift */; };
 		039190191DD49F7A00F1E8A5 /* ViewClassWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039190181DD49F7A00F1E8A5 /* ViewClassWorkVC.swift */; };
 		039E71551DBE5A1500E856EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039E71541DBE5A1500E856EC /* AppDelegate.swift */; };
@@ -141,6 +142,7 @@
 		033A437E1E0165ED000410F8 /* TextToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToImage.swift; sourceTree = "<group>"; };
 		03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPopupVC.swift; sourceTree = "<group>"; };
 		036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMessageCenterListVC.swift; sourceTree = "<group>"; };
+		0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInitiateMethods.swift; sourceTree = "<group>"; };
 		038CE3B71DDD9CBC00E34DD2 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		039190181DD49F7A00F1E8A5 /* ViewClassWorkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassWorkVC.swift; sourceTree = "<group>"; };
 		039E71511DBE5A1500E856EC /* School-GenieVer1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School-GenieVer1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -425,6 +427,7 @@
 				03EB096F1E02B38A00145941 /* FunCenterImageMethods.swift */,
 				03EA704C1E0A81D4001CA57A /* DateFile.swift */,
 				03EE72791E0BEE080099988C /* ChatMethods.swift */,
+				0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */,
 			);
 			name = DatabaseFunction;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				031DF8231DDF3A3900FDE382 /* selectChat.swift in Sources */,
 				039E71571DBE5A1500E856EC /* LoginVC.swift in Sources */,
 				03374E3B1DE5ACB200BCA2E7 /* FuncenterVC.swift in Sources */,
+				0389DC0E1E0D0B8500FB7D9E /* ChatInitiateMethods.swift in Sources */,
 				03EFB1A71DEE8A19004DB24B /* LoginScreenVC.swift in Sources */,
 				03EF6E531DC7168C004283AA /* ForgotPwdVC.swift in Sources */,
 				03EB09601E02871000145941 /* HomeworkMethods.swift in Sources */,

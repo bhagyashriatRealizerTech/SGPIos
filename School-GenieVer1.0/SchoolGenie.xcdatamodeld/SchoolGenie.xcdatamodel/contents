@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AnnouncementCoreData" syncable="YES">
         <attribute name="academicYr" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="announcementId" optional="YES" attributeType="String" syncable="YES"/>
@@ -65,6 +65,15 @@
         <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="InitiateThread" representedClassName="InitiateThread" syncable="YES" codeGenerationType="class">
+        <attribute name="lastmsgSenderId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastmsgSenderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastmsgText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastmsgTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lstmsgSenderpic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="threadId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="threadName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="PublicHolidayCoreData" syncable="YES">
         <attribute name="createdBy" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="holiday" optional="YES" attributeType="String" syncable="YES"/>
@@ -124,6 +133,7 @@
     <elements>
         <element name="AnnouncementCoreData" positionX="-36" positionY="297" width="128" height="180"/>
         <element name="AttendanceCoreData" positionX="-27" positionY="306" width="128" height="75"/>
+        <element name="ChatCoreData" positionX="0" positionY="297" width="128" height="150"/>
         <element name="ClassworkCoreData" positionX="9" positionY="333" width="128" height="180"/>
         <element name="FunCenterEventCoreData" positionX="45" positionY="351" width="128" height="150"/>
         <element name="FunCenterImageCoreData" positionX="0" positionY="297" width="128" height="165"/>
@@ -132,6 +142,6 @@
         <element name="PupilInformation" positionX="-54" positionY="144" width="128" height="435"/>
         <element name="SubjectAllocationCoreData" positionX="-36" positionY="315" width="128" height="150"/>
         <element name="TimeTableCoreData" positionX="27" positionY="342" width="128" height="210"/>
-        <element name="ChatCoreData" positionX="0" positionY="297" width="128" height="150"/>
+        <element name="InitiateThread" positionX="0" positionY="297" width="128" height="150"/>
     </elements>
 </model>

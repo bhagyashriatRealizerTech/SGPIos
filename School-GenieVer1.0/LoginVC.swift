@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 import ObjectMapper
 
-class LoginVC : UIViewController {
+class LoginVC : UIViewController , UITextFieldDelegate{
     @IBOutlet weak var menubar: UIBarButtonItem!
 
     @IBOutlet weak var FWbtnsubmit: UIButton!
@@ -253,12 +253,7 @@ func isValidEmail(testStr:String) -> Bool {
     @IBAction func verifyBtnclick(_ sender: AnyObject) {
         
         if (isValidEmail(testStr: VerifyEmailtxt.text!)) {
-            
-            
-            
-            
-            
-            
+                        
             let emailBtn = UIAlertController(title: "Verification Suceed!!!!", message: "welcome....", preferredStyle: .alert )
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler:nil)
             
@@ -315,8 +310,6 @@ func isValidEmail(testStr:String) -> Bool {
             
             present(popup, animated: true, completion: {  })
             
-            
-            
         }
         
     }
@@ -335,12 +328,21 @@ func isValidEmail(testStr:String) -> Bool {
         //menu.action=SWRevealViewController.revealToggle(self)
       //  menubar.action = #selector(SWRevealViewController.revealToggle(_:))
        // self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-        
-
+       
        self.navigationController?.isNavigationBarHidden=true;
+        
+                
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(LoginVC.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
         
      
     }
+    
+    func didTapView(){
+        self.view.endEditing(true)
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return UIStatusBarStyle.default;
     }
@@ -387,6 +389,5 @@ func isValidEmail(testStr:String) -> Bool {
         }
     }
     
-
 }
 

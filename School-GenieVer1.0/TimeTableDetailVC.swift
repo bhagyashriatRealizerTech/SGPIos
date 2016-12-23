@@ -29,6 +29,7 @@ class TimeTableDetailVC: UIViewController , UICollectionViewDataSource, UICollec
             _timeTableModel = newValue
         }
     }
+    
     var myImages=[String]()
 
     override func viewDidLoad() {
@@ -79,19 +80,23 @@ class TimeTableDetailVC: UIViewController , UICollectionViewDataSource, UICollec
             let temp = self.myImages[indexPath.row]
             let imagedownload = DownloadImage()
             imagedownload.setImage(imageurlString: temp, imageView: cell.imgtimetable)
-            
-           /* let profileimage = imagedownload.userImage(imageurlString: temp)
-            
-            if(profileimage != nil){
-                cell.imgtimetable.image = profileimage
-                cell.updateCell(url: temp)
-                
-            }*/
-            return cell
+                       return cell
         }
         else{
             return UICollectionViewCell()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SelectMessageCenterListVC
+        {
+            if let thread1 = sender as? LastMsgDtls{
+                destination.threadModel = thread1
+            }
+            
+        }
+    }
+    
+
 
 }

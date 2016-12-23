@@ -23,35 +23,16 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         
         chatview.addGestureRecognizer(revealViewController().panGestureRecognizer())
+    
+        let chatinitiatemethod = ChatInitiateMethods()
+        LastMsgList = chatinitiatemethod.getThreadList()
         
-
-        
-        let m1=LastMsgDtls(LastMsgSender: "Neha", Lastmsgtext: "Hello There, How are you, what's up ?", LastMsgTime: "09:30 AM", LastmsgSenderimage: "car.jpg")
-        
-        let m2=LastMsgDtls(LastMsgSender: "Swpnali", Lastmsgtext: "Please Resolve Swift issues, its taing time ", LastMsgTime: "07:30 AM", LastmsgSenderimage: "car.jpg")
-        
-        let m3=LastMsgDtls(LastMsgSender: "Bhagyashri", Lastmsgtext: "Android APK is deployed and ready for Demo", LastMsgTime: "Yesterday", LastmsgSenderimage: "car.jpg")
-        
-        let m4=LastMsgDtls(LastMsgSender: "Pravin", Lastmsgtext: "Could Deploy and connect to couchbase. please check assignment", LastMsgTime: "Yesterday", LastmsgSenderimage: "car.jpg")
-        
-        let m5=LastMsgDtls(LastMsgSender: "Ram", Lastmsgtext: "Sir, I have tested and shared defect list", LastMsgTime: "Thursday", LastmsgSenderimage: "car.jpg")
-        
-        let m6=LastMsgDtls(LastMsgSender: "Farhan", Lastmsgtext: "I am on Sick Leave. Please note", LastMsgTime: "Wednesday", LastmsgSenderimage: "car.jpg")
-        
-        
-        LastMsgList.append(m1)
-        LastMsgList.append(m2)
-        LastMsgList.append(m3)
-        LastMsgList.append(m4)
-        LastMsgList.append(m5)
-        LastMsgList.append(m6)
-        
+        if(LastMsgList.count>0)
+        {
         tableview.dataSource=self
         tableview.delegate=self
-        // TableLastMsgs.delegate=self
+        }
         
-        
-        // Do any additional setup after loading the view.
     }
     
     
@@ -65,7 +46,7 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return LastMsgList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,36 +55,28 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
             
             let LastMsg=LastMsgList[indexPath.row]
             var msg = "\(LastMsg.LastMsgSender):\(LastMsg.Lastmsgtext)"
-            cell.updateCell(lastMsgUser: LastMsg.LastMsgSender, lastMsgtext: "\(LastMsg.LastMsgSender):\(LastMsg.Lastmsgtext)", lastMsgSenderImg: LastMsg.LastmsgSenderimage, LastMsgTime: LastMsg.LastMsgTime)
+            cell.updateCell(lastMsgUser: LastMsg.ThreadName, lastMsgtext: "\(LastMsg.LastMsgSender):\(LastMsg.Lastmsgtext)", lastMsgSenderImg: LastMsg.LastmsgSenderimage, LastMsgTime: LastMsg.LastMsgTime)
+            
             return cell
-            
-            
-            //\(comhour):\(comminute)
         }
         return UITableViewCell()
     }
     
-    //  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    // return UITableViewCell()
-    // if let cell=TableLastMsgs.dequeueReusableCell(withIdentifier: "LastMsgTableCell", for:indexPath) as? LastMsgTableCell
-    
-    //    {
-    //  let LastMsg=LastMsgList[indexPath.row]
-    //    cell.updateCell(lastMsgUser: LastMsg.LastMsgSender, lastMsgtext: LastMsg.Lastmsgtext, lastMsgSenderImg: LastMsg.LastmsgSenderimage, LastMsgTime: LastMsg.LastMsgTime)
-    //  return cell
-    
-    //   }
-    //   return UITableViewCell()
-    //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let LastMsg=LastMsgList[indexPath.row]
         performSegue(withIdentifier: "SgueMessageCenter", sender: LastMsg)
         
     }
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     let chat=ChatArr[indexPath.row]
-     performSegue(withIdentifier: "SgueSelectChatCell", sender: chat)
-     }*/
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SelectMessageCenterListVC
+        {
+            if let timeTable1 = sender as? LastMsgDtls{
+                destination.threadModel = timeTable1
+            }
+            
+        }
+    }
+       
 }

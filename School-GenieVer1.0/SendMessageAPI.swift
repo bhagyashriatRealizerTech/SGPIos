@@ -26,10 +26,11 @@ class SendMessageAPI{
         
             let accesstoken:String = UserDefaults.standard.value(forKey: "Accesstoken") as! String
             let schoolcode:String = UserDefaults.standard.value(forKey: "SchoolCode") as! String
+            let userId:String = UserDefaults.standard.value(forKey: "UserId") as! String
         
-            let parameters1 = ["SchoolCode":schoolcode,"ConversationId":msgObj.ConversationId,"fromTeacher":msgObj.fromTeacher,"from":msgObj.from,
-                "to":msgObj.to,"text":msgObj.text,"sentTime":msgObj.sentTime]
-            
+            let parameters1 = ["SchoolCode":schoolcode,"ConversationId":msgObj.ConversationId!,"fromTeacher":msgObj.fromTeacher!,"from":userId,
+                "to":msgObj.to!,"text":msgObj.text!,"sentTime":msgObj.sentTime?.components(separatedBy: " ")[0]] as [String : Any]
+        
             let headers1:HTTPHeaders = ["AccessToken":accesstoken,
                                         "Content-Type": "application/json",
                                         "Accept": "application/json"]

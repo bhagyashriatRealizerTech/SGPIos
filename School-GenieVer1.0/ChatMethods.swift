@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Foundation
 import CoreData
 
 class ChatMethods{
@@ -15,7 +14,7 @@ class ChatMethods{
     func storeMessage (chatObj: ConversationModel) {
         let context = getContext()
         
-        deleteAnnouncement()
+    
         
         //retrieve the entity that we just created
         let entity =  NSEntityDescription.entity(forEntityName: "ChatCoreData", in: context)
@@ -28,8 +27,9 @@ class ChatMethods{
             transc.setValue(chatObj.fromTeacher, forKey: "fromTeacher")
             transc.setValue(chatObj.from, forKey: "fromId")
             transc.setValue(chatObj.to, forKey: "toId")
-            transc.setValue(chatObj.text, forKey: "messagetext")
+            transc.setValue(chatObj.text, forKey: "messageText")
             transc.setValue(chatObj.profileUrl, forKey: "profileUrl")
+        
             
             //save the object
             do {
@@ -53,7 +53,7 @@ class ChatMethods{
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ChatCoreData")
         let predicatefrom = NSPredicate(format: "fromId == %@", userid)
         let predicateto = NSPredicate(format: "fromId == %@", userid)
-        let predicate = NSCo
+        let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateto,predicatefrom])
         fetchRequest.predicate = predicate
         
         do {
@@ -69,8 +69,8 @@ class ChatMethods{
                 var msg = ConversationModel()
                 
                 var msgtext:String = ""
-                if(trans.value(forKey: "messagetext") != nil){
-                msgtext = trans.value(forKey: "messagetext") as! String
+                if(trans.value(forKey: "messageText") != nil){
+                msgtext = trans.value(forKey: "messageText") as! String
                 }
                 var fromId:String = ""
                  if(trans.value(forKey: "fromId") != nil){
