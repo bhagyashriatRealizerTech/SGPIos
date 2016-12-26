@@ -53,12 +53,15 @@ class DownloadImage{
         if PhotosDataManager.sharedManager.cachedImage(urlString: imageurlString) != nil
         {
             userImg = PhotosDataManager.sharedManager.cachedImage(urlString: imageurlString)
+           
             imageView.image = userImg
         }
             
         else
         {
             if Reachability.isConnectedToNetwork() == true {
+                imageView.loadGif(name: "ring-alt")
+                imageView.startAnimating()
                 let urlString = imageurlString
                 let request = PhotosDataManager.sharedManager.getNetworkImage(urlString: urlString) {image in
                     userImg = image

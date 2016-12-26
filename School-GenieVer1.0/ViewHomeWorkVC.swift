@@ -96,23 +96,12 @@ class ViewHomeWorkVC: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellHW", for: indexPath as IndexPath) as? Homeworkcollectioncell {
             
-            //let gifimage = UIImage.gif(name: "default")
-            //cell.imghomework.image = #imageLiteral(resourceName: "default.gif")
-            cell.imghomework.loadGif(name: "ring-alt")
-            cell.imghomework.startAnimating()
        let temp = self.myImages[indexPath.row]
        let imagedownload = DownloadImage()
             imagedownload.setImage(imageurlString: temp, imageView: cell.imghomework)
             
         
-       /* let profileimage = imagedownload.userImage(imageurlString: temp)
-        
-        if(profileimage != nil){
-        cell.imghomework.image = profileimage
-            cell.updateCell(url: temp)
-            
-           }*/
-            return cell
+                 return cell
         }
         else{
             return UICollectionViewCell()

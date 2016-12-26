@@ -56,7 +56,17 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
         }
         
         // Do any additional setup after loading the view.
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(LoginVC.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        
     }
+    
+    func didTapView(){
+        self.view.endEditing(true)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

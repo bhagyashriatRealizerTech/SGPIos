@@ -270,20 +270,19 @@ func downloadHomework(completed: DownloadComplete){
                 }
             }
                 
+             }
+            else if(subarr.count == subjects.count){
+                
             }
-            else{
-                
-                
+            else if(subarr.count == 0){
                 print(subjects.count)
-
                 for index1 in 0...(subjects.count - 1){
                     subject = subjects[index1]
-                   // print(subarr)
+                    // print(subarr)
                     
                     downloadforAllSubDates(completed: {}, date: ipdate, subject: subject)
-                    
-                }
-        }
+              }
+          }
         
         }
     

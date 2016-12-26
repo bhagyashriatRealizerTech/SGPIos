@@ -17,6 +17,19 @@ class GallaryView: UIViewController,UICollectionViewDelegate,UICollectionViewDat
     var items = [String]()
     var images = [String]()
     //var img:UIImage=[UIImage]
+    
+    private var   _eventdtls:FunCenterEventModel!
+    var HWDtls : FunCenterEventModel
+        {
+        get{
+            return _eventdtls
+        }
+        set
+        {
+            _eventdtls = newValue
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,11 +40,14 @@ class GallaryView: UIViewController,UICollectionViewDelegate,UICollectionViewDat
         
 
         let imagemethods = FunCenterImageMethods()
-        let imagesList = imagemethods.getFunCenterEventImage()
-        
+        if(_eventdtls.EventId != nil){
+        let imagesList = imagemethods.getFunCenterEventImage(eventId: _eventdtls.EventId!)
+        if(imagesList.count > 0){
         for index in 0...(imagesList.count - 1){
             items.append(String(describing: imagesList[index].SrNo!))
             images.append(imagesList[index].fileName!)
+           }
+          }
         }
 
         // Do any additional setup after loading the view.
@@ -52,9 +68,7 @@ class GallaryView: UIViewController,UICollectionViewDelegate,UICollectionViewDat
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! funcentercell
          cell.lblevent.text=items[indexPath.item]
         
-        cell.imggallery.loadGif(name: "ring-alt")
-        cell.imggallery.startAnimating()
-        
+               
         let imagedownload = DownloadImage()
         let temp = images[indexPath.row]
         imagedownload.setImage(imageurlString: temp, imageView: cell.imggallery)

@@ -84,20 +84,14 @@ class ViewClassWorkVC: UIViewController,UICollectionViewDataSource,UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellCW", for: indexPath as IndexPath) as? Classworkimagecell{
         
-            cell.imgclasswork.loadGif(name: "ring-alt")
-            cell.imgclasswork.startAnimating()
+           
             
         let temp = self.myImages[indexPath.row]
         let imagedownload = DownloadImage()
         
             imagedownload.setImage(imageurlString: temp, imageView: cell.imgclasswork)
-       /* let profileimage = imagedownload.userImage(imageurlString: temp)
-        
-        if(profileimage != nil){
-            cell.imgclasswork.image = profileimage
-            cell.updateCell(url: temp)
+       
             
-        }*/
         return cell
     }
     else{

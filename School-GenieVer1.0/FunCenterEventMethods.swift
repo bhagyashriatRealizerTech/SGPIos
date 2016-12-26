@@ -112,8 +112,14 @@ class FunCenterEventMethods{
                 if(temp != nil){
                     creats = temp as! String
                 }
+                var evntId:String = ""
+                temp = trans.value(forKey: "eventId")
+                if(temp != nil){
+                    evntId = temp as! String
+                }
+
                 print(image)
-                event1.setEvents(createTs: creats, event: event, eventdate: eventdate, eventId: "", thumbnailImage: image, thumbnailPath: path)
+                event1.setEvents(createTs: creats, event: event, eventdate: eventdate, eventId: evntId, thumbnailImage: image, thumbnailPath: path)
                 eventlist.append(event1)
                 
             }

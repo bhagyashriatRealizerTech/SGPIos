@@ -14,14 +14,76 @@ class DashboardVC: UIViewController {
     @IBOutlet var dashbordview: UIView!
     
    
+    @IBOutlet weak var btnmypupil: UIButton!
     @IBOutlet weak var pupilprofilepic: UIImageView!
     @IBOutlet weak var pupilStdDiv: UILabel!
     @IBOutlet weak var pupilName: UILabel!
    
+    @IBOutlet weak var btnhomework: UIButton!
+    @IBOutlet weak var btnalert: UIButton!
     @IBOutlet weak var DashBoardBB: UIBarButtonItem!
+    @IBOutlet weak var btnclass: UIButton!
+    @IBOutlet weak var btnstar: UIButton!
+    @IBOutlet weak var btnchat: UIButton!
+    @IBOutlet weak var btnfun: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btnstar.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+        btnstar.layer.borderWidth = 1
+   btnstar.layer.borderColor = UIColor.black.cgColor
+        
+
+        
+        
+       btnmypupil.backgroundColor = .clear
+       // button.layer.cornerRadius = 5
+      btnmypupil.layer.borderWidth = 1
+        btnmypupil.layer.borderColor = UIColor.black.cgColor
+        
+        
+        
+      btnhomework.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+          btnhomework.layer.borderWidth = 1
+         btnhomework.layer.borderColor = UIColor.black.cgColor
+        
+        btnstar.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+     btntime.layer.borderWidth = 1
+       btntime.layer.borderColor = UIColor.black.cgColor
+        
+        btnchat.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+       btnchat.layer.borderWidth = 1
+        btnchat.layer.borderColor = UIColor.black.cgColor
+
+        
+        btnchat.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+        btnchat.layer.borderWidth = 1
+        btnchat.layer.borderColor = UIColor.black.cgColor
+        
+       btnfun.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+       btnfun.layer.borderWidth = 1
+       btnfun.layer.borderColor = UIColor.black.cgColor
+        
+        
+       btnalert.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+       btnalert.layer.borderWidth = 1
+       btnalert.layer.borderColor = UIColor.black.cgColor
+        
+
+       btnclass.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+       btnclass.layer.borderWidth = 1
+       btnclass.layer.borderColor = UIColor.black.cgColor
+       // btnclass.titleLabel="ClassWork"
+        
+
         
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
@@ -29,12 +91,13 @@ class DashboardVC: UIViewController {
         dashbordview.addGestureRecognizer(revealViewController().panGestureRecognizer())
  self.navigationController?.isNavigationBarHidden=false;
         self.navigationController?.navigationBar.barStyle=UIBarStyle.black
-       self.navigationController?.navigationBar.barTintColor=UIColor(red:36/255,green:73/255,blue:210/255,alpha:1.0)
+      // self.navigationController?.navigationBar.barTintColor=UIColor(red:36/255,green:73/255,blue:210/255,alpha:1.0)
         
-       self.navigationController?.navigationBar.tintColor=UIColor.white
+       self.navigationController?.navigationBar.tintColor=UIColor.black
         
         setprofileValue()
     }
+    @IBOutlet weak var btntime: UIButton!
     
     func setprofileValue(){
         
@@ -95,7 +158,16 @@ class DashboardVC: UIViewController {
 
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden=false;
+        
+        self.navigationController?.navigationBar.barStyle=UIBarStyle.default
+        // self.navigationController?.navigationBar.barTintColor=UIColor(red:36/255,green:73/255,blue:210/255,alpha:1.0)
+        
+        self.navigationController?.navigationBar.tintColor=UIColor.black
+        self.navigationItem.title="DashBoard"
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

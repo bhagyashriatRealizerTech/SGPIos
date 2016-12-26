@@ -66,10 +66,12 @@ class FunCenterImageMethods{
     }
     
     
-    func getFunCenterEventImage() -> [FunCenterImageModel] {
+    func getFunCenterEventImage(eventId:String) -> [FunCenterImageModel] {
         var imageList = [FunCenterImageModel]()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "FunCenterImageCoreData")
+        let predicate = NSPredicate(format: "eventId == %@", eventId)
+        fetchRequest.predicate = predicate
         //let fetchRequest: NSFetchRequest<PupilInformation> = PupilInformation.fetchRequest()
         
         do {

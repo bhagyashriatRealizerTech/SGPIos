@@ -19,6 +19,7 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = [String]()
     var images = [String]()
+    var eventIds = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,9 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         funview.addGestureRecognizer(revealViewController().panGestureRecognizer())
         var imageView = UIImageView()
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped(img:)))
+    //    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped(img:)))
         imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
+        //imageView.addGestureRecognizer(tapGestureRecognizer)
         // Do any additional setup after loading the view.
         let eventmthod = FunCenterEventMethods()
         var eventlist = [FunCenterEventModel]()
@@ -41,6 +42,7 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
         for index in 0...(eventlist.count - 1){
             images.append(eventlist[index].ThumbNailPath!)
             items.append(eventlist[index].Event!)
+            eventIds.append(eventlist[index].EventId!)
         }
         
         
@@ -56,8 +58,6 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectioncell
         cell.lblevents.text=items[indexPath.item]
         
-        cell.imggallery.loadGif(name: "ring-alt")
-        cell.imggallery.startAnimating()
         
         let imagedownload = DownloadImage()
         let temp = images[indexPath.row]
@@ -74,68 +74,48 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
     }
     // MARK: - UICollectionViewDataSource protocol
     
-    // tell the collection view how many cells to make
-   /* func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
-    }
-    
-    // make a cell for each cell index path
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectioncell
-        
-        
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        // cell.lblnumber.text = self.items[indexPath.item]
-        cell.imggallery.image=#imageLiteral(resourceName: "flower")
-        //cell.image=#imageLiteral(resourceName: "flower")
-        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-        
-        return cell
-    }
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    /*func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-     
-     let picDimension=collectionview.frame.size.width/3.0
-     let numberOfItemsPerRow: CGFloat = 3.0
-     // let heightAdjustment: CGFloat = 30.0
-     
-     let bounds = UIScreen.main.bounds
-     let width = (bounds.size.width) / numberOfItemsPerRow
-     let layout = collectionview.collectionViewLayout as! UICollectionViewFlowLayout
-     layout.itemSize = CGSize(width: width, height: width)
-     //let picDimension = self.view.frame.size.width / 3.0
-     return CGSize(width: width, height: width)
-     }*/
-    
-    /* func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-     let leftRightInset = self.view.frame.size.width / 14.0
-     return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
-     }*/
-    
     
     // MARK: - UICollectionViewDelegate protocol
-    */
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
-         performSegue(withIdentifier: "Sguefuncenter  ", sender: nil)
+        
+        let eventid:String = eventIds[indexPath.row]
+        let fe = FunCenterEventModel()
+        fe.setEvents(createTs: "", event: "", eventdate: "", eventId: eventid, thumbnailImage: "", thumbnailPath: "")
+        
+              performSegue(withIdentifier: "Sguefuncenter  ", sender: fe)
+        
             }
     
     
-    func imageTapped(img: AnyObject)
+  /*  func imageTapped(img: AnyObject)
     {
         performSegue(withIdentifier: "Sguefuncenter  ", sender: nil)
 
-    }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? GallaryView
+        {
+            if let HW = sender as? FunCenterEventModel{
+                
+                let eventid:String = HW.EventId!
+
+                HW.EventId =  eventid
+                destination.HWDtls = HW
+                
+                
+            }
+        }
+    }
+
     
 
     /*

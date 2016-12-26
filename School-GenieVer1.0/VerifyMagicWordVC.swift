@@ -65,9 +65,17 @@ class VerifyMagicWordVC: UIViewController {
         super.viewDidLoad()
         VerifyMagicwordView.layer.borderColor=UIColor.black.cgColor
     VerifyMagicwordView.layer.borderWidth=1
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(LoginVC.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+
 
         // Do any additional setup after loading the view.
     }
+    func didTapView(){
+        self.view.endEditing(true)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

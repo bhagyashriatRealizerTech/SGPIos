@@ -91,7 +91,16 @@ class VerifyMailVC: UIViewController {
         super.viewDidLoad()
         VerifyMailView.layer.borderColor=UIColor.black.cgColor
         VerifyMailView.layer.borderWidth=1
-            }
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(LoginVC.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        
+    }
+    
+    func didTapView(){
+        self.view.endEditing(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

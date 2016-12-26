@@ -74,9 +74,7 @@ class TimeTableDetailVC: UIViewController , UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "TimeTableCell", for: indexPath as IndexPath) as? TimeTableColViewCell {
             
-            cell.imgtimetable.loadGif(name: "ring-alt")
-            cell.imgtimetable.startAnimating()
-            
+           
             let temp = self.myImages[indexPath.row]
             let imagedownload = DownloadImage()
             imagedownload.setImage(imageurlString: temp, imageView: cell.imgtimetable)

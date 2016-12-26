@@ -63,7 +63,17 @@ class ResetPasswordVC: UIViewController {
        ResetPasswordView.layer.borderColor=UIColor.black.cgColor
         ResetPasswordView.layer.borderWidth=1
         // Do any additional setup after loading the view.
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(LoginVC.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        
     }
+    
+    func didTapView(){
+        self.view.endEditing(true)
+    }
+
     
 
     @IBAction func ResetPasswordCancleClick(_ sender: AnyObject) {

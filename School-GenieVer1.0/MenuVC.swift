@@ -48,7 +48,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let m9=Menu(menulabel: "Funcenter", menuimage:#imageLiteral(resourceName: "funcenterN"))
         
 
-        let m10=Menu(menulabel: "Tracking", menuimage:#imageLiteral(resourceName: "trakingN"))
+       
         
  let m11=Menu(menulabel: "Sync", menuimage:#imageLiteral(resourceName: "sync "))
         
@@ -64,8 +64,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         MenuArr.append(m8)
         MenuArr.append(m9)
         
-       MenuArr.append(m10)
-        
+               
         
         MenuArr.append(m11)
         MenuArr.append(m12)
@@ -145,8 +144,107 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        let rows = tableView.indexPathsForSelectedRows.map{$0.map{$0.row}}
         
-               
-        switch indexPath.row
+        let revealviewcontroller:SWRevealViewController=self.revealViewController()
+        let cell:MenuTableCell=tableView.cellForRow(at: indexPath) as! MenuTableCell
+        
+        if(cell.menu.text=="DashBoard"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="MyPupil"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "MyPupiScreenlVC") as! MyPupiScreenlVC
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="HomeWork"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "HomeWorkVC") as! HomeWorkVC
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="ClassWork"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "ClassWorkVC") as! ClassWorkVC
+            
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="TimeTable"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "TimeTableVC") as! TimeTableVC
+            
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="ViewStar"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "ViewStarVC") as! ViewStarVC
+            
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="Chat"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "ThreadListsVC") as! ThreadListsVC
+            
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="Alerts"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "AlertVC") as! AlertVC
+            
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="Funcenter"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "FuncentergalleryVC") as! FuncentergalleryVC
+            
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+        }
+        if(cell.menu.text=="Logout"){
+            
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+            let appDomain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: appDomain)
+            print("session end")
+        }
+        if(cell.menu.text=="Sync"){
+            
+            let manualsync = SyncUpCall()
+            manualsync.syncUpData()        }
+
+
+
+
+        /*switch indexPath.row
         {
         case 0 :
             performSegue(withIdentifier: "sguedashboard", sender: nil)
@@ -214,7 +312,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             break;
         default :
             print( "default case")
-        }
+        }*/
         
                     /*else if(indexPath == 1)
                 {
