@@ -58,54 +58,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "School-GenieVer1.0/HomeworkAPI.swift"
-            timestampString = "504439221.098272"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "downloadHomework(completed:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "School_GenieVer1_0.HomeworkAPI.downloadHomework (completed : () -&gt; ()) -&gt; ()"
-                  moduleName = "School-GenieVer1.0"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sachin/Desktop/School%20Genie/SG13Dec/21dec/SG/School-GenieVer1.0/HomeworkAPI.swift"
-                  timestampString = "504444482.690552"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "1888">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "School_GenieVer1_0.HomeworkAPI.(downloadHomework (completed : () -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "School-GenieVer1.0"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sachin/Desktop/School%20Genie/SG13Dec/21dec/SG/School-GenieVer1.0/HomeworkAPI.swift"
-                  timestampString = "504444482.692649"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School-GenieVer1.0/HomeworkAPI.swift"
             timestampString = "504439235.372012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -128,22 +80,6 @@
             startingLineNumber = "114"
             endingLineNumber = "114"
             landmarkName = "downloadHomework(completed:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School-GenieVer1.0/HomeworkAPI.swift"
-            timestampString = "504439251.952864"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "downloadforAllSubDates(completed:date:subject:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

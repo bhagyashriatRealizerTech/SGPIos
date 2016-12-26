@@ -29,7 +29,16 @@ class TimeTableCell: UITableViewCell {
     {
         givenBy.text = timeTable.timeTableGivenby
         timeTabletitle.text = timeTable.timeTableTitle
-        timeTableDate.text = timeTable.timeTableDate
+        
+        var datestring:String = timeTable.timeTableDate
+        let datefile = DateFile()
+        datestring = datefile.getDate(date: timeTable.timeTableDate.components(separatedBy: " ")[0], FLAG: "D")
+        if(datestring.isEmpty){
+            timeTableDate.text = timeTable.timeTableDate
+        }
+        else{
+        timeTableDate.text = datestring
+        }
         if(!timeTable.timeTableAttachment){
            attachmentImage.image = #imageLiteral(resourceName: "whiteN")
         }

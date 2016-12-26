@@ -38,11 +38,12 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
         let eventmthod = FunCenterEventMethods()
         var eventlist = [FunCenterEventModel]()
         eventlist = eventmthod.getFunCenterEvent()
-        
+        if(eventlist.count > 0){
         for index in 0...(eventlist.count - 1){
             images.append(eventlist[index].ThumbNailPath!)
             items.append(eventlist[index].Event!)
             eventIds.append(eventlist[index].EventId!)
+          }
         }
         
         

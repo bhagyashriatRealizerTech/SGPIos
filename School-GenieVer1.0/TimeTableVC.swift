@@ -62,11 +62,7 @@ class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSour
             timeTable1.timeTableDesc = description
             
             
-            var datestring:String = timeTable1.timeTableDate
-            let datefile = DateFile()
-            datestring = datefile.getDate(date: timeTable1.timeTableDate.components(separatedBy: " ")[0], FLAG: "D")
-            timeTable1.timeTableDate = datestring
-            
+                        
             cell.updateUI(timeTable1)
             
             return cell

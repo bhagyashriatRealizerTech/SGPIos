@@ -59,7 +59,7 @@ class TimeTable{
                 
             }
             else{
-                _timeTableDate=timeTableDate
+                _timeTableDate = timeTableDate
             }
         }
 
@@ -95,7 +95,7 @@ class TimeTable{
         }
         set{
             
-            _timeTableAttachment=timeTableAttachment
+            _timeTableAttachment = timeTableAttachment
             
         }
 
@@ -117,7 +117,7 @@ class TimeTable{
                 
             }
             else{
-                _timeTableDesc=timeTableDesc
+                _timeTableDesc = timeTableDesc
             }
         }
 
@@ -138,7 +138,7 @@ class TimeTable{
                 
             }
             else{
-                _timeTableAttachmentUrl=timeTableAttachmentUrl
+                _timeTableAttachmentUrl = timeTableAttachmentUrl
             }
         }
 

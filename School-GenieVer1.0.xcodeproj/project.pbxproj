@@ -119,6 +119,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03040C7A1E113BD000F45E25 /* School-GenieVer1.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "School-GenieVer1.0.entitlements"; sourceTree = "<group>"; };
 		030895651DEC0291006255F5 /* AlertViewImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewImageVC.swift; sourceTree = "<group>"; };
 		031DF8221DDF3A3900FDE382 /* selectChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectChat.swift; sourceTree = "<group>"; };
 		03291A3B1DE5CA1F00608066 /* MyCollectioncell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectioncell.swift; sourceTree = "<group>"; };
@@ -330,6 +331,7 @@
 		039E71531DBE5A1500E856EC /* School-GenieVer1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				03040C7A1E113BD000F45E25 /* School-GenieVer1.0.entitlements */,
 				03EB095A1E02770A00145941 /* APICall */,
 				03F2B05C1E00392E000AF6CB /* DatabaseFunction */,
 				03F2B0091E001A81000AF6CB /* ResponseModel */,
@@ -484,9 +486,14 @@
 				TargetAttributes = {
 					039E71501DBE5A1500E856EC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Y7W46MU58W;
+						DevelopmentTeam = B3V896CVNT;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -804,7 +811,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y7W46MU58W;
+				DEVELOPMENT_TEAM = B3V896CVNT;
 				INFOPLIST_FILE = "School-GenieVer1.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -824,7 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y7W46MU58W;
+				DEVELOPMENT_TEAM = B3V896CVNT;
 				INFOPLIST_FILE = "School-GenieVer1.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
