@@ -63,7 +63,7 @@ class ClassworkAPI{
             datestr = ipdate
 
             let datearr:[String] = datestr.components(separatedBy: "/")
-            let prevD:Int = Int(datearr[1])!
+            var prevD:Int = Int(datearr[1])!
             let prevM:Int = Int(datearr[0])!
             let prevY:Int = Int(datearr[2])!
             
@@ -86,6 +86,7 @@ class ClassworkAPI{
                         for index in 1...daydiff{
                             
                             let newDate:Int = prevD + (1)
+                            prevD = newDate
                             
                             ipdate = String(prevM)+"/"+String(newDate)+"/"+String(prevY)
                             
@@ -269,10 +270,10 @@ class ClassworkAPI{
                 }
             }
             
+        }else if(subarr.count == subjects.count){
+            
         }
-        else{
-            
-            
+        else if(subarr.count == 0){
             print(subjects.count)
             
             for index1 in 0...(subjects.count - 1){

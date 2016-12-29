@@ -165,9 +165,11 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
                 
                  let userId:String = UserDefaults.standard.value(forKey: "UserId") as! String
                 let username:String = UserDefaults.standard.value(forKey: "UserName") as! String
+                let profilepic:String = UserDefaults.standard.value(forKey: "ProfilePic") as! String
                 
                 let msgObj = ConversationModel()
-                msgObj.setMessage(chatId: uuid, fromteacher: false, schoolCode: "", fromId: userId, toId: selectedteacher, message: msgtxt, msgTime: date, profilePic: "")
+                
+                msgObj.setMessage(chatId: uuid, fromteacher: false, schoolCode: "", fromId: userId, toId: selectedteacher, message: msgtxt, msgTime: date, profilePic: "", senderN: profilepic)
                 
                 let chatMethods = ChatMethods()
                 let chatinitmethods = ChatInitiateMethods()

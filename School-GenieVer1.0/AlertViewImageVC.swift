@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlertViewImageVC: UIViewController {
+class AlertViewImageVC: UIViewController,UIScrollViewDelegate {
 
     @IBOutlet weak var lblimgname: UILabel!
     @IBOutlet weak var imgview: UIImageView!
@@ -40,7 +40,18 @@ class AlertViewImageVC: UIViewController {
         
 
         // Do any additional setup after loading the view.
+        scrollview.minimumZoomScale = 1.0
+        scrollview.maximumZoomScale = 6.0
+        
+        scrollview.delegate = self
     }
+    
+    @IBOutlet weak var scrollview: UIScrollView!
+    func viewForZooming(in scrollView: UIScrollView) -> UIView?
+    {
+        return imgview
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

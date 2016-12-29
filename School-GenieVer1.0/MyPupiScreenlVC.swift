@@ -64,11 +64,17 @@ class MyPupiScreenlVC: UIViewController {
         self.studentRollno.text =  "\(pupilInfo.classRollNo!)"
         self.studentDob.text = datestr
         self.studentAddress.text = pupilInfo.address
+        if(pupilInfo.hobbies==""){
+            self.studentHobbies.text = "-"
+
+        }
+        else{
         self.studentHobbies.text = pupilInfo.hobbies
+        }
         self.studentbloodGroup.text = pupilInfo.bldGrp
         self.studentContactNo.text = pupilInfo.contactNo
         self.studentEmergencyNo.text = pupilInfo.emergencyContactNo
-        self.teacherName.text = " - "
+       // self.teacherName.text = " - "
         
         
         

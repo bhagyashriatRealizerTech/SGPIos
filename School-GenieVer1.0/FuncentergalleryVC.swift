@@ -29,7 +29,7 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
-        funview.addGestureRecognizer(revealViewController().panGestureRecognizer())
+       // funview.addGestureRecognizer(revealViewController().panGestureRecognizer())
         var imageView = UIImageView()
     //    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped(img:)))
         imageView.isUserInteractionEnabled = true

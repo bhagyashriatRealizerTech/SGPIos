@@ -49,9 +49,10 @@ class DateFile{
     func getDate(date:String , FLAG: String) ->String{
         var datetimevalue:String = ""
         
+        let dateonly = date.components(separatedBy: " ")[0]
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "MM/dd/yyyy"
-        let d=dateformatter.date(from: date)
+        let d=dateformatter.date(from: dateonly)
         
         
         
@@ -66,15 +67,15 @@ class DateFile{
         // var outDateinput:Date = d.parse(outdate) as! Date
         var outtime: String = ""
         
-        if(date.components(separatedBy: "").count>1) {
-            var time:[String] = date.components(separatedBy: "")[0].components(separatedBy: ":")
+        if(date.components(separatedBy: " ").count>1) {
+            var time:[String] = date.components(separatedBy: " ")[1].components(separatedBy: ":")
             
             
-            // var t1:Int = Int.valueOf(time[0]);
+             //var t1:Int = Int.valueOf(time[0]);
             var tp:String = ""
             var t1:Int!
-            
-            if (t1==12)
+            t1 = Int(time[0])
+            if (t1 == 12)
             {
                 tp = "PM";
                 outtime = String(t1) + ":" + time[1] + " " + tp;
@@ -137,7 +138,7 @@ class DateFile{
                     }
                 }
                 
-                /* if (FLAG == "DT")
+                 /*if (FLAG == "DT")
                  {
                  var  datetimevalue = datetimevalue + " " + outtime
                  }
@@ -146,8 +147,13 @@ class DateFile{
                  datetimevalue = outtime
                  }
                  
-                 }        }*/
+                 }*/
                 
+            }
+            
+            if (FLAG == "DT")
+            {
+                  datetimevalue = datetimevalue + " " + outtime
             }
         }
         return datetimevalue;

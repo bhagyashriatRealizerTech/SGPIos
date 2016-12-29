@@ -66,6 +66,8 @@ class GallaryView: UIViewController,UICollectionViewDelegate,UICollectionViewDat
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! funcentercell
+        
+        
          cell.lblevent.text=items[indexPath.item]
         
                

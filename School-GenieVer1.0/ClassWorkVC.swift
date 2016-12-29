@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 
 
-class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate {
-    
+class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
+    @IBOutlet weak var hwpicker: UIPickerView!
+    var dates:[String]=[]
     @IBOutlet var classworkview: UIView!
     @IBOutlet weak var menu:UIBarButtonItem!
     
@@ -62,10 +63,10 @@ class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate {
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         //classworkview.addGestureRecognizer(revealViewController().panGestureRecognizer())
-               
         
-      datepickercontrol.minimumDate=NSDate() as Date
-        datepickercontrol.maximumDate=NSDate()  as Date
+        
+     // datepickercontrol.minimumDate=NSDate() as Date
+       // datepickercontrol.maximumDate=NSDate()  as Date
         
         
               /*  let c1=ClassWork(subject:"Math",subjectText:"calcutalions for first Standard need to be done today itsel" ,attachmentExists:true,attachimage:"car.jpg ")
@@ -83,15 +84,71 @@ class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate {
         ClassWorkArr.append(c4)*/
         
         let classworkmethod = ClassworkMethods()
-        ClassWorkArr = classworkmethod.getClasswork()
+       print( classworkmethod.getAllClassworkDate())
+      // s=classworkmethod.getClassworkSubjectForDate(date: <#T##String#>)
+        
+        
+        
+    dates=classworkmethod.getAllClassworkDate()
+        if(dates.count > 0){
+            ClassWorkArr = classworkmethod.getClasswork(date: dates[0])
+        }
         
         if(ClassWorkArr.count > 0){
+            
+            tblClassWork.dataSource=self
+            tblClassWork.delegate=self
+        }
         
-        tblClassWork.dataSource=self
-        tblClassWork.delegate=self
+        hwpicker.dataSource=self
+        hwpicker.delegate=self
+
+        
+    }
+    func datePickerChanged(picker: UIDatePicker) {
+        print(picker.date)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dates.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        
+        var dtfm=DateFormatter()
+        dtfm.dateFormat = "MM dd yyyy"
+        let dateN =   dtfm.date(from:dates[row])
+        // let d=dtfm.string(from: dateN!)
+        
+        return  dates[row]    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let cwmethod = ClassworkMethods()
+        ClassWorkArr.removeAll()
+        ClassWorkArr = cwmethod.getClasswork(date: dates[row])
+        
+        if(ClassWorkArr.count > 0){
+            tblClassWork.reloadData()
+            tblClassWork.dataSource=self
+            tblClassWork.delegate=self
         }
 
         
+        //TODO: Retrive data related to selected subject
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont(name: "Avenir", size: 17)//UIFont.boldSystemFontOfSize(17)//Font you want here
+        titleLabel.textAlignment = NSTextAlignment.center
+        titleLabel.text = dates[row]
+        return titleLabel
     }
 
     override func didReceiveMemoryWarning() {

@@ -26,61 +26,68 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var btnstar: UIButton!
     @IBOutlet weak var btnchat: UIButton!
     @IBOutlet weak var btnfun: UIButton!
+    @IBOutlet weak var starbtn: UIButton!
+    @IBOutlet weak var holiday: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnstar.backgroundColor = .clear
+        
+        //pupilprofilepic.layer.cornerRadius=35
+        
+       starbtn.backgroundColor = .clear
         // button.layer.cornerRadius = 5
-        btnstar.layer.borderWidth = 1
-   btnstar.layer.borderColor = UIColor.black.cgColor
+        starbtn.layer.borderWidth = 1
+   starbtn.layer.borderColor = UIColor.darkGray.cgColor
         
-
-        
+        holiday.backgroundColor = .clear
+        // button.layer.cornerRadius = 5
+       holiday.layer.borderWidth = 1
+        holiday.layer.borderColor = UIColor.darkGray.cgColor
         
        btnmypupil.backgroundColor = .clear
        // button.layer.cornerRadius = 5
       btnmypupil.layer.borderWidth = 1
-        btnmypupil.layer.borderColor = UIColor.black.cgColor
+        btnmypupil.layer.borderColor = UIColor.darkGray.cgColor
         
         
         
       btnhomework.backgroundColor = .clear
         // button.layer.cornerRadius = 5
           btnhomework.layer.borderWidth = 1
-         btnhomework.layer.borderColor = UIColor.black.cgColor
+         btnhomework.layer.borderColor = UIColor.darkGray.cgColor
         
         btnstar.backgroundColor = .clear
         // button.layer.cornerRadius = 5
      btntime.layer.borderWidth = 1
-       btntime.layer.borderColor = UIColor.black.cgColor
+       btntime.layer.borderColor = UIColor.darkGray.cgColor
         
         btnchat.backgroundColor = .clear
         // button.layer.cornerRadius = 5
        btnchat.layer.borderWidth = 1
-        btnchat.layer.borderColor = UIColor.black.cgColor
+        btnchat.layer.borderColor = UIColor.darkGray.cgColor
 
         
         btnchat.backgroundColor = .clear
         // button.layer.cornerRadius = 5
         btnchat.layer.borderWidth = 1
-        btnchat.layer.borderColor = UIColor.black.cgColor
+        btnchat.layer.borderColor = UIColor.darkGray.cgColor
         
        btnfun.backgroundColor = .clear
         // button.layer.cornerRadius = 5
        btnfun.layer.borderWidth = 1
-       btnfun.layer.borderColor = UIColor.black.cgColor
+       btnfun.layer.borderColor = UIColor.darkGray.cgColor
         
         
        btnalert.backgroundColor = .clear
         // button.layer.cornerRadius = 5
        btnalert.layer.borderWidth = 1
-       btnalert.layer.borderColor = UIColor.black.cgColor
+       btnalert.layer.borderColor = UIColor.darkGray.cgColor
         
 
        btnclass.backgroundColor = .clear
         // button.layer.cornerRadius = 5
        btnclass.layer.borderWidth = 1
-       btnclass.layer.borderColor = UIColor.black.cgColor
+       btnclass.layer.borderColor = UIColor.darkGray.cgColor
        // btnclass.titleLabel="ClassWork"
         
 
@@ -125,7 +132,7 @@ class DashboardVC: UIViewController {
             let img = ImageToText()
             let tempimg = img.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
              self.pupilprofilepic.layer.borderColor = UIColor.gray.cgColor
-             self.pupilprofilepic.layer.cornerRadius = 25.7
+             self.pupilprofilepic.layer.cornerRadius = 40
              self.pupilprofilepic.layer.masksToBounds = true
             self.pupilprofilepic.image = tempimg
             
@@ -165,7 +172,12 @@ class DashboardVC: UIViewController {
         // self.navigationController?.navigationBar.barTintColor=UIColor(red:36/255,green:73/255,blue:210/255,alpha:1.0)
         
         self.navigationController?.navigationBar.tintColor=UIColor.black
-        self.navigationItem.title="DashBoard"
+        self.navigationItem.title="Dashboard"
+        menu.target=self.revealViewController()
+        //menu.action=SWRevealViewController.revealToggle(self)
+        menu.action = #selector(SWRevealViewController.revealToggle(_:))
+        dashbordview.addGestureRecognizer(revealViewController().panGestureRecognizer())
+
 
     }
     override func didReceiveMemoryWarning() {

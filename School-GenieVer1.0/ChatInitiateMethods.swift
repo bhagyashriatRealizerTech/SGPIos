@@ -13,8 +13,7 @@ class ChatInitiateMethods{
     func storeThread (chatObj: LastMsgDtls) {
         let context = getContext()
         
-        deleteAnnouncement()
-        
+       
         //retrieve the entity that we just created
         let entity =  NSEntityDescription.entity(forEntityName: "InitiateThread", in: context)
         
@@ -43,12 +42,14 @@ class ChatInitiateMethods{
         
     }
     
+   
     
     func getThreadList() -> [LastMsgDtls] {
         
         var messageArr = [LastMsgDtls]()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "InitiateThread")
+        
         
         do {
             //go get the results
@@ -106,6 +107,49 @@ class ChatInitiateMethods{
         
         return messageArr
     }
+    
+    
+    func updateThread(userID:String,chatObj:ConversationModel)   {
+        
+        let context = getContext()
+        //create a fetch request, telling it about the entity
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "InitiateThread")
+        let predicate = NSPredicate(format: "threadId == %@", userID)
+        fetchRequest.predicate = predicate
+
+        
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            //I like to check the size of the returned results!
+            print ("num of results = \(searchResults.count)")
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for trans in searchResults as! [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+                trans.setValue(chatObj.from, forKey: "lastmsgSenderId")
+                trans.setValue(chatObj.profileUrl, forKey: "lstmsgSenderpic")
+                trans.setValue(chatObj.senderName, forKey: "lastmsgSenderName")
+                trans.setValue(chatObj.sentTime, forKey: "lastmsgTime")
+                trans.setValue(chatObj.text, forKey: "lastmsgText")
+
+                //save the object
+                do {
+                    try context.save()
+                    print("saved!")
+                } catch let error as NSError  {
+                    print("Could not save \(error), \(error.userInfo)")
+                } catch {
+                    
+                }
+                
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+           }
     
     
     func deleteAnnouncement(){

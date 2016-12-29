@@ -65,12 +65,14 @@ class HomeworkMethods{
     
     // Get All Homework
     
-    func getHomework() -> [HomeWork]{
+    func getHomework(date:String) -> [HomeWork]{
         
         var homeworkList = [HomeWork]()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "HomeworkCoreData")
-        //let fetchRequest: NSFetchRequest<PupilInformation> = PupilInformation.fetchRequest()
+        let date1:String = date
+        let predicate = NSPredicate(format: "hwDate == %@", date1)
+        fetchRequest.predicate = predicate
         
         do {
             //go get the results
@@ -157,6 +159,48 @@ class HomeworkMethods{
         return date
     }
     
+    func getallLastHomeworkDate() ->[String] {
+        //create a fetch request, telling it about the entity
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "HomeworkCoreData")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastSyncDateHw", ascending: false)]
+        var date:String = ""
+        var date1:[String]=[]
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            //I like to check the size of the returned results!
+            print ("num of results = \(searchResults.count)")
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for trans in searchResults as! [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+                if(trans.value(forKey: "hwDate") != nil){
+                    date = trans.value(forKey: "hwDate") as! String
+                    
+                    
+               /* let dtfm=DateFormatter()
+                dtfm.dateFormat = "MM-dd-yyyy"
+                print(dtfm.date(from: date))*/
+                    
+                    
+                    /*let strTime = "2015-07-27 19:29:50 +0000"
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+                    formatter.date(from: strTime)                    //var d1 = d as String
+                    print(formatter.date(from: strTime) )*/
+                    
+                    date1.append(date)
+                }
+                
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        return date1
+    }
+
     
     func getSubjectForDate(date:String) ->[String] {
         //create a fetch request, telling it about the entity

@@ -21,7 +21,6 @@ class FunCenterEventMethods{
             
         }
         else{
-            
             let date1:Date = Date()
             let calendar = Calendar.autoupdatingCurrent
             let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1)
@@ -39,10 +38,11 @@ class FunCenterEventMethods{
             
             for event in events as [FunCenterEventModel]
             {
+                let eid:String = getLastFunCenterEventById(event: event.EventId!)
+
+                if(eid.isEmpty){
                 let transc = NSManagedObject(entity: entity!, insertInto: context)
-                
-                
-                //set the entity values
+                                //set the entity values
                 transc.setValue(event.CreateTS, forKey: "createTS")
                 transc.setValue(event.Event, forKey: "event")
                 transc.setValue(event.EventDate, forKey: "eventDate")
@@ -59,6 +59,9 @@ class FunCenterEventMethods{
                 } catch {
                     
                 }
+                
+              }
+            
             }
             
         }
@@ -148,6 +151,37 @@ class FunCenterEventMethods{
             //You need to convert to NSManagedObject to use 'for' loops
             for trans in searchResults as! [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
+                if(trans.value(forKey: "eventId") != nil){
+                name = trans.value(forKey: "eventId") as! String
+                print(name)
+                }
+                //print("\(trans.value(forKey: "fName"))")
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        return name
+    }
+    
+    
+    
+    func getLastFunCenterEventById(event:String) ->String {
+        //create a fetch request, telling it about the entity
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "FunCenterEventCoreData")
+    
+        var name:String = ""
+        
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            //I like to check the size of the returned results!
+            print ("num of results = \(searchResults.count)")
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for trans in searchResults as! [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
                 name = trans.value(forKey: "lastSyncDateFe") as! String
                 print(name)
                 
@@ -159,9 +193,6 @@ class FunCenterEventMethods{
         
         return name
     }
-    
-    
-
     
     
     func deleteFunCenterEvent(){

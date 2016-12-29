@@ -16,15 +16,13 @@ class FunCenterEventAPI{
     
     let funcentereventmethod = FunCenterEventMethods()
     
-    func downloadFunCenterEvent(completed: DownloadComplete){
+    func downloadFunCenterEvent(completed: @escaping DownloadComplete){
         
        // funcentereventmethod.deleteFunCenterEvent()
         
         let datetime = funcentereventmethod.getLastFunCenterEventDate()
         //let datetime = "2016/12/15"
         var ipdate = String()
-        
-        
         
         if(datetime.isEmpty)
         {
@@ -84,16 +82,13 @@ class FunCenterEventAPI{
                 
                 if(res?.eventMDLst != nil){
                     //TODO Insert Value in Database
-            
-             self.funcentereventmethod.storeFunCenterEvent (events: (res?.eventMDLst)!)
-                    
-                }
+                self.funcentereventmethod.storeFunCenterEvent (events: (res?.eventMDLst)!)
                 
             }
         }
         
         completed()
     }
-    
+ }
     
 }

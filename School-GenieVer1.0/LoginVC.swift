@@ -324,10 +324,14 @@ func isValidEmail(testStr:String) -> Bool {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // menubar.target=self.revealViewController()
-        //menu.action=SWRevealViewController.revealToggle(self)
-      //  menubar.action = #selector(SWRevealViewController.revealToggle(_:))
-       // self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        
+        
+        
+        
+        menubar.target=self.revealViewController()
+       
+        menubar.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
        
        self.navigationController?.isNavigationBarHidden=true;
         

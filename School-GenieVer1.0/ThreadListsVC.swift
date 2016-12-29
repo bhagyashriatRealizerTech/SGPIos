@@ -54,14 +54,27 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
         {
             
             let LastMsg=LastMsgList[indexPath.row]
+            
+            
+            let dateT = LastMsg.LastMsgTime.components(separatedBy: " ")[0]
+            
+            
+            let dateD = DateFile()
+            let date = dateD.getDate(date: dateT, FLAG: "D")
+
+            
             var msg = "\(LastMsg.LastMsgSender):\(LastMsg.Lastmsgtext)"
-            cell.updateCell(lastMsgUser: LastMsg.ThreadName, lastMsgtext: "\(LastMsg.LastMsgSender):\(LastMsg.Lastmsgtext)", lastMsgSenderImg: LastMsg.LastmsgSenderimage, LastMsgTime: LastMsg.LastMsgTime)
+              //let date = dateFormatter.string(from: dateD!)
+            cell.updateCell(lastMsgUser: LastMsg.ThreadName, lastMsgtext: "\(LastMsg.LastMsgSender):\(LastMsg.Lastmsgtext)", lastMsgSenderImg: LastMsg.LastmsgSenderimage, LastMsgTime: date)
             
             return cell
         }
+        else{
+            tableView.isHidden=true
+            tableView.separatorColor=UIColor.white
         return UITableViewCell()
     }
-    
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let LastMsg=LastMsgList[indexPath.row]

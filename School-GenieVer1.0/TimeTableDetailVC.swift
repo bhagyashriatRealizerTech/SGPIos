@@ -68,6 +68,7 @@ class TimeTableDetailVC: UIViewController , UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.myImages.count
     }
+   
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -84,17 +85,27 @@ class TimeTableDetailVC: UIViewController , UICollectionViewDataSource, UICollec
             return UICollectionViewCell()
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let img=myImages[indexPath.row]
+      //  let srno = items[indexPath.row]
+        let alerts = Alerts(category: "1", msgText: "", attachmentExists: true, attachimage: img, aldate: "", initial: "")
+        
+        performSegue(withIdentifier: "squebigimage", sender: alerts)
+
+    }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? SelectMessageCenterListVC
+        if  let destination = segue.destination as? Timetableviewimage
         {
-            if let thread1 = sender as? LastMsgDtls{
-                destination.threadModel = thread1
+            if let alert = sender as? Alerts{
+                
+                destination.CWDtls = alert
             }
+            
             
         }
     }
-    
 
 
 }

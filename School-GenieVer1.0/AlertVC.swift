@@ -35,6 +35,10 @@ var alert=[Alerts]()
         alertTableview.delegate=self
        
         }
+        else{
+            alertTableview.isHidden=true
+            alertTableview.separatorColor=UIColor.white
+        }
            }
 
     override func didReceiveMemoryWarning() {
@@ -109,8 +113,11 @@ var alert=[Alerts]()
            return cell
             
         }
+        else{
             
- return UITableViewCell()
+            
+            return UITableViewCell()
+        }
         
     }
     

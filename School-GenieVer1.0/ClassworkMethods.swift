@@ -69,12 +69,15 @@ class ClassworkMethods{
     }
     
     
-    func getClasswork() -> [ClassWork] {
+    func getClasswork(date:String) -> [ClassWork] {
         
         var classwork = ClassWork()
         var classworkList = [ClassWork]()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ClassworkCoreData")
+        let date1:String = date
+        let predicate = NSPredicate(format: "cwDate == %@", date1)
+        fetchRequest.predicate = predicate
         //let fetchRequest: NSFetchRequest<PupilInformation> = PupilInformation.fetchRequest()
         
         do {
@@ -154,7 +157,37 @@ class ClassworkMethods{
         
         return datesync
     }
-    
+    func getAllClassworkDate() ->[String] {
+        //create a fetch request, telling it about the entity
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ClassworkCoreData")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastSyncdateCw", ascending: false)]
+        var datesync=""
+        var date:[String]=[]
+        do {
+            //go get the results
+            var searchResults = try getContext().fetch(fetchRequest)
+            
+            //I like to check the size of the returned results!
+            print ("num of results = \(searchResults.count)")
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for trans in searchResults as! [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+                if(trans.value(forKey: "cwDate") != nil){
+                    datesync = trans.value(forKey: "cwDate") as! String
+                    //searchResults.append(datesync)
+               date.append(datesync)
+                }
+                //print(datesync)
+                //print("\(trans.value(forKey: "fName"))")
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        return date
+    }
+
     
     func getClassworkSubjectForDate(date:String) ->[String] {
         //create a fetch request, telling it about the entity

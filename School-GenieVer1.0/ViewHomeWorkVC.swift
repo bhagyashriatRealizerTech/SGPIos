@@ -86,7 +86,14 @@ class ViewHomeWorkVC: UIViewController,UICollectionViewDelegate,UICollectionView
         
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let img=myImages[indexPath.row]
+       // let srno = items[indexPath.row]
+        let alerts = Alerts(category: "0", msgText: "", attachmentExists: true, attachimage: img, aldate: "", initial: "")
+        
+        performSegue(withIdentifier: "Squehomeworkattachment", sender: alerts)
+        
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.myImages.count
     }
@@ -107,5 +114,15 @@ class ViewHomeWorkVC: UIViewController,UICollectionViewDelegate,UICollectionView
             return UICollectionViewCell()
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if  let destination = segue.destination as? Homeworkviewimage
+        {
+            if let alert = sender as? Alerts{
+                
+                destination.CWDtls = alert
+            }
+            
+        
+        }
+}
 }

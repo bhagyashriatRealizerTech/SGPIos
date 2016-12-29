@@ -8,17 +8,18 @@
 
 import UIKit
 
-class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate
+class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource
 {
     @IBOutlet weak var menu: UIBarButtonItem!
 
+    @IBOutlet weak var hwpicker: UIPickerView!
     
     @IBOutlet var homeview: UIView!
     @IBOutlet weak var HWTableView: UITableView!
     @IBOutlet weak var hWdatePicker: UIDatePicker!
     var HomeWorkArr=[HomeWork]()
-
-    
+    var dates:[String]=[]
+    var dateformat:[String]=[]
     override func viewDidLoad() {
         super.viewDidLoad()
     self.setNeedsStatusBarAppearanceUpdate()
@@ -29,27 +30,87 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         var d=(NSDate() as Date)-7 as Date
           
-         hWdatePicker.setValue(1, forKeyPath: "alpha")
-        hWdatePicker.minimumDate=(NSDate() as Date)-7 as Date
+        // hWdatePicker.setValue(1, forKeyPath: "alpha")
+        //hWdatePicker.minimumDate=(NSDate() as Date)-7 as Date
       // hWdatePicker.maximumDate=NSDate(timeInterval: (7*24*60*60), since: NSDate() as Date)as Date
-        hWdatePicker.maximumDate=NSDate() as Date
+        //hWdatePicker.maximumDate = dateN as Date
         //hWdatePicker.minimumDate=Date(timeIntervalSinceNow: -7*24*60*60)
         
         
         
-        let hwmethod = HomeworkMethods()
-        HomeWorkArr = hwmethod.getHomework()
         
+        let hwmethod = HomeworkMethods()
+        let d2 = hwmethod.getLastHomeworkDate()
+        print(d2)
+        
+        let dtfm=DateFormatter()
+        dtfm.dateFormat = "yyyy-MM-dd"
+        let dateN:Date =   dtfm.date(from: d2)!
+        let dateN0 = dtfm.string(from: dateN)
+        print(dateN)
+        print(dateN0)
+        dates=hwmethod.getallLastHomeworkDate()
+        hwpicker.dataSource=self
+        hwpicker.delegate=self
+        
+        if(dates.count > 0){
+        HomeWorkArr = hwmethod.getHomework(date: dates[0])
+        }
         if(HomeWorkArr.count > 0){
         HWTableView.dataSource=self
         HWTableView.delegate=self
         }
         // Do any additional setup after loading the view.
         
+    
+    
         
     }
+func datePickerChanged(picker: UIDatePicker) {
+    print(picker.date)
+}
     
-
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dates.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        
+        var dtfm=DateFormatter()
+        dtfm.dateFormat = "MM dd yyyy"
+        let dateN =   dtfm.date(from:dates[row])
+       // let d=dtfm.string(from: dateN!)
+        
+        return  dates[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        let hwmethod = HomeworkMethods()
+        HomeWorkArr.removeAll()
+        HomeWorkArr = hwmethod.getHomework(date: dates[row])
+        
+        if(HomeWorkArr.count > 0){
+            HWTableView.reloadData()
+            HWTableView.dataSource=self
+            HWTableView.delegate=self
+        }
+        //TODO: Retrive data related to selected subject
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont(name: "Avenir", size: 17)//UIFont.boldSystemFontOfSize(17)//Font you want here
+        titleLabel.textAlignment = NSTextAlignment.center
+        titleLabel.text = dates[row]
+        return titleLabel
+    }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return UIStatusBarStyle.default;
     

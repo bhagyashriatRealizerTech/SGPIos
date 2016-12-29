@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03040C7C1E114EB500F45E25 /* classworkviewimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03040C7B1E114EB500F45E25 /* classworkviewimage.swift */; };
+		03040C7E1E114F3000F45E25 /* Timetableviewimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03040C7D1E114F3000F45E25 /* Timetableviewimage.swift */; };
+		03040C801E114F7100F45E25 /* Homeworkviewimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03040C7F1E114F7100F45E25 /* Homeworkviewimage.swift */; };
 		030895661DEC0291006255F5 /* AlertViewImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030895651DEC0291006255F5 /* AlertViewImageVC.swift */; };
 		031DF8231DDF3A3900FDE382 /* selectChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF8221DDF3A3900FDE382 /* selectChat.swift */; };
 		03291A3C1DE5CA1F00608066 /* MyCollectioncell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03291A3B1DE5CA1F00608066 /* MyCollectioncell.swift */; };
@@ -29,6 +32,13 @@
 		033A43811E0165ED000410F8 /* TextToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A437E1E0165ED000410F8 /* TextToImage.swift */; };
 		03442A481DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */; };
 		036166631DE2AF3900A9D375 /* SelectMessageCenterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */; };
+		036294921E12365A00D4CE11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036294911E12365A00D4CE11 /* Images.xcassets */; };
+		036294941E12432500D4CE11 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036294931E12432500D4CE11 /* Images-2.xcassets */; };
+		036294961E12433100D4CE11 /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036294951E12433100D4CE11 /* Images-3.xcassets */; };
+		036294981E1267B500D4CE11 /* holidaycell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036294971E1267B500D4CE11 /* holidaycell.swift */; };
+		0362949A1E126A1900D4CE11 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036294991E126A1900D4CE11 /* Holiday.swift */; };
+		0362949C1E126EEA00D4CE11 /* HolidayVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */; };
+		0362949E1E1276B500D4CE11 /* Images-4.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0362949D1E1276B500D4CE11 /* Images-4.xcassets */; };
 		0389DC0E1E0D0B8500FB7D9E /* ChatInitiateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */; };
 		038CE3B81DDD9CBC00E34DD2 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CE3B71DDD9CBC00E34DD2 /* Chat.swift */; };
 		039190191DD49F7A00F1E8A5 /* ViewClassWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039190181DD49F7A00F1E8A5 /* ViewClassWorkVC.swift */; };
@@ -120,6 +130,9 @@
 
 /* Begin PBXFileReference section */
 		03040C7A1E113BD000F45E25 /* School-GenieVer1.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "School-GenieVer1.0.entitlements"; sourceTree = "<group>"; };
+		03040C7B1E114EB500F45E25 /* classworkviewimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = classworkviewimage.swift; sourceTree = "<group>"; };
+		03040C7D1E114F3000F45E25 /* Timetableviewimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timetableviewimage.swift; sourceTree = "<group>"; };
+		03040C7F1E114F7100F45E25 /* Homeworkviewimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homeworkviewimage.swift; sourceTree = "<group>"; };
 		030895651DEC0291006255F5 /* AlertViewImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewImageVC.swift; sourceTree = "<group>"; };
 		031DF8221DDF3A3900FDE382 /* selectChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectChat.swift; sourceTree = "<group>"; };
 		03291A3B1DE5CA1F00608066 /* MyCollectioncell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectioncell.swift; sourceTree = "<group>"; };
@@ -143,6 +156,13 @@
 		033A437E1E0165ED000410F8 /* TextToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToImage.swift; sourceTree = "<group>"; };
 		03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPopupVC.swift; sourceTree = "<group>"; };
 		036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMessageCenterListVC.swift; sourceTree = "<group>"; };
+		036294911E12365A00D4CE11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		036294931E12432500D4CE11 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		036294951E12433100D4CE11 /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
+		036294971E1267B500D4CE11 /* holidaycell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = holidaycell.swift; sourceTree = "<group>"; };
+		036294991E126A1900D4CE11 /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayVC1.swift; sourceTree = "<group>"; };
+		0362949D1E1276B500D4CE11 /* Images-4.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-4.xcassets"; sourceTree = "<group>"; };
 		0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInitiateMethods.swift; sourceTree = "<group>"; };
 		038CE3B71DDD9CBC00E34DD2 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		039190181DD49F7A00F1E8A5 /* ViewClassWorkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassWorkVC.swift; sourceTree = "<group>"; };
@@ -286,6 +306,9 @@
 				03E96F071DF1372500EB41AC /* ThreadListsVC.swift */,
 				03E96F091DF1375A00EB41AC /* MessageCenterVC.swift */,
 				03EA704A1E0A7A04001CA57A /* TimeTableColViewCell.swift */,
+				03040C7D1E114F3000F45E25 /* Timetableviewimage.swift */,
+				03040C7F1E114F7100F45E25 /* Homeworkviewimage.swift */,
+				0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -306,6 +329,7 @@
 				03EFB1AC1DEEABB6004DB24B /* MenuTableCell.swift */,
 				03E96EF71DF1345F00EB41AC /* LastMsgTableCell.swift */,
 				03E96EF91DF134BA00EB41AC /* MessageCenterCell.swift */,
+				036294971E1267B500D4CE11 /* holidaycell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -350,6 +374,11 @@
 				032BA2151DED8AE200EC7739 /* School-GenieVer1.0-Bridging-Header.h */,
 				03F2B0321E0032B5000AF6CB /* SchoolGenie.xcdatamodeld */,
 				03EE72751E0BD95B0099988C /* Reachability.swift */,
+				03040C7B1E114EB500F45E25 /* classworkviewimage.swift */,
+				036294911E12365A00D4CE11 /* Images.xcassets */,
+				036294931E12432500D4CE11 /* Images-2.xcassets */,
+				036294951E12433100D4CE11 /* Images-3.xcassets */,
+				0362949D1E1276B500D4CE11 /* Images-4.xcassets */,
 			);
 			path = "School-GenieVer1.0";
 			sourceTree = "<group>";
@@ -383,6 +412,7 @@
 				032BA1B11DED402000EC7739 /* TimeTable.swift */,
 				03E96EFB1DF134EA00EB41AC /* LastMsgDtls.swift */,
 				03E96F051DF136C700EB41AC /* Message.swift */,
+				036294991E126A1900D4CE11 /* Holiday.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -520,7 +550,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036294941E12432500D4CE11 /* Images-2.xcassets in Resources */,
+				036294961E12433100D4CE11 /* Images-3.xcassets in Resources */,
 				039E715F1DBE5A1500E856EC /* LaunchScreen.storyboard in Resources */,
+				036294921E12365A00D4CE11 /* Images.xcassets in Resources */,
+				0362949E1E1276B500D4CE11 /* Images-4.xcassets in Resources */,
 				039E715C1DBE5A1500E856EC /* Assets.xcassets in Resources */,
 				03EE72521E0BA0A70099988C /* ring-alt.gif in Resources */,
 				039E715A1DBE5A1500E856EC /* Main.storyboard in Resources */,
@@ -583,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03EB095E1E02798F00145941 /* HomeworkAPI.swift in Sources */,
+				0362949C1E126EEA00D4CE11 /* HolidayVC1.swift in Sources */,
 				03F2B00F1E001B99000AF6CB /* ClassworkModel.swift in Sources */,
 				032BA1AC1DED3CF600EC7739 /* ViewStarVC.swift in Sources */,
 				033A437B1E0162C2000410F8 /* JsonDateFile.swift in Sources */,
@@ -593,6 +628,7 @@
 				03EB095C1E02775600145941 /* AnnouncemnetAttendanceAPI.swift in Sources */,
 				03F723F21DD32DAF00740780 /* ClassWorkVC.swift in Sources */,
 				039FEE9A1DE97D150040513D /* SelectCategoryVC.swift in Sources */,
+				0362949A1E126A1900D4CE11 /* Holiday.swift in Sources */,
 				039190191DD49F7A00F1E8A5 /* ViewClassWorkVC.swift in Sources */,
 				03F2B02F1E001D85000AF6CB /* TTList.swift in Sources */,
 				03F2B01B1E001C5F000AF6CB /* HomeworkModel.swift in Sources */,
@@ -617,6 +653,7 @@
 				03F2B0151E001BF3000AF6CB /* FunCenterEventModel.swift in Sources */,
 				03F2B0191E001C26000AF6CB /* FunCenterImageModel.swift in Sources */,
 				03F66D0D1E0124720024B66A /* LoginResponseMethods.swift in Sources */,
+				03040C7C1E114EB500F45E25 /* classworkviewimage.swift in Sources */,
 				03F2B0131E001BD4000AF6CB /* EventList.swift in Sources */,
 				032BA1B41DED405600EC7739 /* TimeTableVC.swift in Sources */,
 				03B1CCCB1DE81DE700929665 /* Homeworkcollectioncell.swift in Sources */,
@@ -629,9 +666,11 @@
 				03FD7EC81DDAD03800CF12F1 /* VerifyMailVC.swift in Sources */,
 				032BA1AA1DED3CCE00EC7739 /* ViewStarCell.swift in Sources */,
 				03F2B00B1E001AAF000AF6CB /* AnnouncementModel.swift in Sources */,
+				03040C7E1E114F3000F45E25 /* Timetableviewimage.swift in Sources */,
 				03E96EF81DF1345F00EB41AC /* LastMsgTableCell.swift in Sources */,
 				032BA1B81DED6D7200EC7739 /* menuViewController.swift in Sources */,
 				032BA1AE1DED3D1D00EC7739 /* ViewStarModel.swift in Sources */,
+				03040C801E114F7100F45E25 /* Homeworkviewimage.swift in Sources */,
 				03EB09641E02989C00145941 /* ClassworkMethods.swift in Sources */,
 				03EB23971DDC56B500B2DCCB /* HomeWorkVC.swift in Sources */,
 				03F2B0271E001D2D000AF6CB /* SubjectAllocate.swift in Sources */,
@@ -657,6 +696,7 @@
 				03EB23A91DDC636900B2DCCB /* HomeWork.swift in Sources */,
 				03EB09701E02B38A00145941 /* FunCenterImageMethods.swift in Sources */,
 				03EA704D1E0A81D4001CA57A /* DateFile.swift in Sources */,
+				036294981E1267B500D4CE11 /* holidaycell.swift in Sources */,
 				036166631DE2AF3900A9D375 /* SelectMessageCenterListVC.swift in Sources */,
 				039FEE9C1DE993670040513D /* ShowAlertsVC.swift in Sources */,
 				03EE727A1E0BEE080099988C /* ChatMethods.swift in Sources */,
@@ -809,6 +849,7 @@
 			baseConfigurationReference = 24920FA83F0831691E514E46 /* Pods-School-GenieVer1.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3V896CVNT;
@@ -829,6 +870,7 @@
 			baseConfigurationReference = 7411062CE6B573F5D56C3AF2 /* Pods-School-GenieVer1.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3V896CVNT;

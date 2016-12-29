@@ -28,25 +28,26 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         
         
-        let m1=Menu(menulabel: "DashBoard", menuimage:#imageLiteral(resourceName: "home"))
+        let m1=Menu(menulabel: "Dashboard", menuimage:#imageLiteral(resourceName: "home"))
         
-         let m2=Menu(menulabel: "MyPupil", menuimage:#imageLiteral(resourceName: "mypupilN"))
+         let m2=Menu(menulabel: "My Pupil", menuimage:#imageLiteral(resourceName: "mypupilN"))
         
-         let m3=Menu(menulabel: "HomeWork", menuimage:#imageLiteral(resourceName: "homeworkN"))
+         let m3=Menu(menulabel: "Homework", menuimage:#imageLiteral(resourceName: "homeworkN"))
         
-        let m4=Menu(menulabel: "TimeTable", menuimage:#imageLiteral(resourceName: "timetable"))
+        let m4=Menu(menulabel: "Time Table", menuimage:#imageLiteral(resourceName: "timetable"))
         
-        let m5=Menu(menulabel: "ClassWork", menuimage:#imageLiteral(resourceName: "classwork "))
+        let m5=Menu(menulabel: "Classwork", menuimage:#imageLiteral(resourceName: "classwork "))
         
-         let m6=Menu(menulabel: "ViewStar", menuimage:#imageLiteral(resourceName: "starN"))
+         let m6=Menu(menulabel: "View Star", menuimage:#imageLiteral(resourceName: "starN"))
         
         
         let m7=Menu(menulabel: "Chat", menuimage:#imageLiteral(resourceName: "chat"))
         
         let m8=Menu(menulabel: "Alerts", menuimage:#imageLiteral(resourceName: "alertN"))
         
-        let m9=Menu(menulabel: "Funcenter", menuimage:#imageLiteral(resourceName: "funcenterN"))
-        
+        let m9=Menu(menulabel: "Fun Center", menuimage:#imageLiteral(resourceName: "funcenterN"))
+        let m10=Menu(menulabel: "Holiday", menuimage:#imageLiteral(resourceName: "holidayN"))
+
 
        
         
@@ -63,7 +64,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         MenuArr.append(m7)
         MenuArr.append(m8)
         MenuArr.append(m9)
-        
+        MenuArr.append(m10)
                
         
         MenuArr.append(m11)
@@ -147,7 +148,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let revealviewcontroller:SWRevealViewController=self.revealViewController()
         let cell:MenuTableCell=tableView.cellForRow(at: indexPath) as! MenuTableCell
         
-        if(cell.menu.text=="DashBoard"){
+        if(cell.menu.text=="Dashboard"){
             
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC
@@ -155,7 +156,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             revealViewController().pushFrontViewController(frontview, animated:true)
         }
-        if(cell.menu.text=="MyPupil"){
+        if(cell.menu.text=="My Pupil"){
             
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "MyPupiScreenlVC") as! MyPupiScreenlVC
@@ -163,7 +164,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             revealViewController().pushFrontViewController(frontview, animated:true)
         }
-        if(cell.menu.text=="HomeWork"){
+        if(cell.menu.text=="Homework"){
             
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "HomeWorkVC") as! HomeWorkVC
@@ -171,7 +172,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             revealViewController().pushFrontViewController(frontview, animated:true)
         }
-        if(cell.menu.text=="ClassWork"){
+        if(cell.menu.text=="Classwork"){
             
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "ClassWorkVC") as! ClassWorkVC
@@ -180,7 +181,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             revealViewController().pushFrontViewController(frontview, animated:true)
         }
-        if(cell.menu.text=="TimeTable"){
+        if(cell.menu.text=="Time Table"){
             
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "TimeTableVC") as! TimeTableVC
@@ -189,7 +190,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             revealViewController().pushFrontViewController(frontview, animated:true)
         }
-        if(cell.menu.text=="ViewStar"){
+        if(cell.menu.text=="View Star"){
             
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "ViewStarVC") as! ViewStarVC
@@ -216,7 +217,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             revealViewController().pushFrontViewController(frontview, animated:true)
         }
-        if(cell.menu.text=="Funcenter"){
+        if(cell.menu.text=="Fun Center"){
             
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "FuncentergalleryVC") as! FuncentergalleryVC
@@ -227,19 +228,51 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
         if(cell.menu.text=="Logout"){
             
+           // let appDomain = Bundle.main.bundleIdentifier!
+            //UserDefaults.standard.removePersistentDomain(forName: appDomain)
+            print("session end")
+            
+            
+            let appDomain = Bundle.main.bundleIdentifier
+            UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+           // performSegue(withIdentifier: "squelogout", sender:self)
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            
             let frontview=UINavigationController.init(rootViewController:des)
             
             revealViewController().pushFrontViewController(frontview, animated:true)
-            let appDomain = Bundle.main.bundleIdentifier!
-            UserDefaults.standard.removePersistentDomain(forName: appDomain)
-            print("session end")
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        if(cell.menu.text=="Holiday"){
+            
+           
+            let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
+            let des=mainstorybord.instantiateViewController(withIdentifier: "HolidayVC1") as! HolidayVC1
+            let frontview=UINavigationController.init(rootViewController:des)
+            
+            revealViewController().pushFrontViewController(frontview, animated:true)
+           
+           // performSegue(withIdentifier: "sguelogout", sender: nil)
+           
         }
         if(cell.menu.text=="Sync"){
             
             let manualsync = SyncUpCall()
-            manualsync.syncUpData()        }
+            manualsync.syncUpData()
+          /*  let emailBtn = UIAlertController(title: "Sucess", message: "Sync up Completed", preferredStyle: .alert )
+            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler:nil)
+            
+            
+            emailBtn.addAction(okAction)
+            
+            present(emailBtn, animated: true, completion: {  })*/
+            
+
+        
+        }
 
 
 

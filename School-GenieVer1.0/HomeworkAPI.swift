@@ -63,7 +63,7 @@ func downloadHomework(completed: DownloadComplete){
         datestr = ipdate
         
         let datearr:[String] = datestr.components(separatedBy: "/")
-        let prevD:Int = Int(datearr[1])!
+        var prevD:Int = Int(datearr[1])!
         let prevM:Int = Int(datearr[0])!
         let prevY:Int = Int(datearr[2])!
         
@@ -86,6 +86,7 @@ func downloadHomework(completed: DownloadComplete){
                     for index in 1...daydiff{
                         
                         let newDate:Int = prevD + (1)
+                        prevD = newDate
                         
                         ipdate = String(prevM)+"/"+String(newDate)+"/"+String(prevY)
                         
@@ -113,7 +114,7 @@ func downloadHomework(completed: DownloadComplete){
                    
                 getHomeworkForMonth(day: day, month: month, year: prevY)
                      month = month + 1
-                    day = 1
+                     day = 1
                 
             }
                 

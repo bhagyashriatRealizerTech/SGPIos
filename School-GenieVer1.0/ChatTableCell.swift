@@ -28,10 +28,26 @@ class ChatTableCell: UITableViewCell {
     {
         lblusername.text = username;
         lblchatmsg.text = msgtext;
-        lbldate.text=currenttime;
+        
+        
+        var datestring:String = currenttime
+        let datefile = DateFile()
+        datestring = datefile.getDate(date: currenttime.components(separatedBy: " ")[0], FLAG: "D")
+        if(datestring.isEmpty){
+            lbldate.text = currenttime
+        }
+        else{
+            lbldate.text = datestring
+        }
+      
+
+        
+        
+        
+        
         if(!attachmentExists)
         {
-                        imgchatlogo.image=#imageLiteral(resourceName: "unselect")
+                        imgchatlogo.image=#imageLiteral(resourceName: "whiteN")
         }
 
         

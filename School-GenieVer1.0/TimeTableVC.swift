@@ -32,6 +32,10 @@ class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSour
         timeTableList.delegate = self
         timeTableList.dataSource = self
         }
+        else{
+            timeTableList.isHidden=true
+            timeTableList.separatorColor=UIColor.white
+        }
         
         
         // Do any additional setup after loading the view.
@@ -70,6 +74,8 @@ class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSour
         }
         else
         {
+            timeTableList.isHidden=true
+            timeTableList.separatorColor=UIColor.white
             return UITableViewCell()
         }
     }

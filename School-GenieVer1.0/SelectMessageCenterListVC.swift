@@ -84,7 +84,10 @@ class  SelectMessageCenterListVC: UIViewController,UITableViewDataSource,UITable
         {
             
             let LastMsgtest=LastMsg[indexPath.row]
-            cell.updateCell(MsgSender: LastMsgtest.from!, msgtext: LastMsgtest.text!, MsgTime: LastMsgtest.sentTime!, msgSenderimage: LastMsgtest.profileUrl!)
+            
+            let dateMethod = DateFile()
+            let dattime = dateMethod.getDate(date: LastMsgtest.sentTime!, FLAG: "DT")
+            cell.updateCell(MsgSender: LastMsgtest.from!, msgtext: LastMsgtest.text!, MsgTime: dattime, msgSenderimage: LastMsgtest.profileUrl!)
             return cell
         }
         return UITableViewCell()
@@ -118,13 +121,17 @@ class  SelectMessageCenterListVC: UIViewController,UITableViewDataSource,UITable
                 let uuid = UUID().uuidString
                 
                 let userId:String = UserDefaults.standard.value(forKey: "UserId") as! String
+                let username:String = UserDefaults.standard.value(forKey: "UserName") as! String
+                let profilepic:String = UserDefaults.standard.value(forKey: "ProfilePic") as! String
                 
                 let msgObj = ConversationModel()
-                msgObj.setMessage(chatId: uuid, fromteacher: false, schoolCode: "", fromId: userId, toId: _threadModel.ThreadId, message: msgtxt, msgTime: date, profilePic: "")
+                msgObj.setMessage(chatId: uuid, fromteacher: false, schoolCode: "", fromId: userId, toId: _threadModel.ThreadId, message: msgtxt, msgTime: date, profilePic: profilepic, senderN: username)
                 
                 let chatMethods = ChatMethods()
+                let initiate = ChatInitiateMethods()
                 
                 chatMethods.storeMessage(chatObj: msgObj)
+                initiate.updateThread(userID: _threadModel.ThreadId, chatObj: msgObj)
                 
                 sendMesssage(completed: {}, msgObj: msgObj)
                 
@@ -173,6 +180,17 @@ class  SelectMessageCenterListVC: UIViewController,UITableViewDataSource,UITable
                 let res:String = result.value!
                 if(res == "true"){
                     
+                    let methodchat = ChatMethods()
+                    self.LastMsg.removeAll()
+                    self.LastMsg = methodchat.getMessages(userid: self.threadModel.ThreadId)
+                    
+                    if(self.LastMsg.count > 0){
+                        
+                        self.MessageCenter.reloadData()
+                        self.MessageCenter.dataSource=self
+                        self.MessageCenter.delegate=self
+                    }
+
                    
                 }
                 else{

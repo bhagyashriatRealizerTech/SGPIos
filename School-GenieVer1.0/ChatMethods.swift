@@ -51,10 +51,10 @@ class ChatMethods{
         var messageArr = [ConversationModel]()
         //create a fetch request, telling it about the entity
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ChatCoreData")
-       // let predicatefrom = NSPredicate(format: "fromId == %@", userid)
-       // let predicateto = NSPredicate(format: "fromId == %@", userid)
-        //let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateto,predicatefrom])
-       // fetchRequest.predicate = predicate
+        let predicatefrom = NSPredicate(format: "fromId == %@", userid)
+        let predicateto = NSPredicate(format: "toId == %@", userid)
+        let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateto,predicatefrom])
+        fetchRequest.predicate = predicate
         
         do {
             //go get the results
@@ -90,6 +90,8 @@ class ChatMethods{
                 if(trans.value(forKey: "profileUrl") != nil){
                     pic = trans.value(forKey: "profileUrl") as! String
                 }
+                
+                msg.setMessage(chatId: "", fromteacher: false, schoolCode: "", fromId: fromId, toId: toId, message: msgtext, msgTime: msgtime, profilePic: pic,senderN: fromId)
                 
                 messageArr.append(msg)
                 

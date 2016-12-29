@@ -81,6 +81,13 @@ class ViewClassWorkVC: UIViewController,UICollectionViewDataSource,UICollectionV
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let img=myImages[indexPath.row]
+      //  let srno = items[indexPath.row]
+        let alerts = Alerts(category: "0", msgText: "", attachmentExists: true, attachimage: img, aldate: "", initial: "")
+        
+        performSegue(withIdentifier: "SgueCLASSWORKbigimage", sender: alerts)
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellCW", for: indexPath as IndexPath) as? Classworkimagecell{
         
@@ -98,6 +105,17 @@ class ViewClassWorkVC: UIViewController,UICollectionViewDataSource,UICollectionV
     return UICollectionViewCell()
     }
   }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  let destination = segue.destination as? classworkviewimage
+        {
+            if let alert = sender as? Alerts{
+                
+                destination.CWDtls = alert
+            }
+            
+            
+        }
+    }
 
 
 }
