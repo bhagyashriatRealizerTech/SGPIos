@@ -31,6 +31,10 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+      //  appDelegate.changeRootViewControllerToSWRevealViewController()
+        
+        
         
         //pupilprofilepic.layer.cornerRadius=35
         
@@ -145,7 +149,7 @@ class DashboardVC: UIViewController {
             if(profileimage != nil)
             {
                  self.pupilprofilepic.layer.borderColor = UIColor.gray.cgColor
-                 self.pupilprofilepic.layer.cornerRadius = 25.7
+                 self.pupilprofilepic.layer.cornerRadius = 40
                  self.pupilprofilepic.layer.masksToBounds = true
                  self.pupilprofilepic.image = profileimage
             }
@@ -154,7 +158,7 @@ class DashboardVC: UIViewController {
                 let img = ImageToText()
                 let tempimg = img.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
                 self.pupilprofilepic.layer.borderColor = UIColor.gray.cgColor
-                self.pupilprofilepic.layer.cornerRadius = 25.7
+                self.pupilprofilepic.layer.cornerRadius = 40
                 self.pupilprofilepic.layer.masksToBounds = true
                 self.pupilprofilepic.image = tempimg
                 

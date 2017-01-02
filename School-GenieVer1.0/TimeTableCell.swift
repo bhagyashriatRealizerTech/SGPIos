@@ -42,6 +42,9 @@ class TimeTableCell: UITableViewCell {
         if(!timeTable.timeTableAttachment){
            attachmentImage.image = #imageLiteral(resourceName: "whiteN")
         }
+        
+        
+        
     }
     
 }

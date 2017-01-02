@@ -10,6 +10,7 @@ import UIKit
 
 class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSource{
     
+    @IBOutlet weak var timetableview: UIView!
     @IBOutlet weak var timeTableList: UITableView!
     
     @IBOutlet weak var menu: UIBarButtonItem!
@@ -19,7 +20,7 @@ class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        timetableview.isHidden=true
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -35,6 +36,7 @@ class TimeTableVC: UIViewController , UITableViewDelegate ,  UITableViewDataSour
         else{
             timeTableList.isHidden=true
             timeTableList.separatorColor=UIColor.white
+        timetableview.isHidden=false
         }
         
         

@@ -13,13 +13,14 @@ import ObjectMapper
 class AlertVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var menualert: UIBarButtonItem!
     @IBOutlet var alertview: UIView!
+    @IBOutlet weak var hideview: UIView!
     @IBOutlet weak var alertTableview: UITableView!
 var alert=[Alerts]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        
+        hideview.isHidden=true
         menualert.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menualert.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -38,6 +39,7 @@ var alert=[Alerts]()
         else{
             alertTableview.isHidden=true
             alertTableview.separatorColor=UIColor.white
+            hideview.isHidden=false
         }
            }
 

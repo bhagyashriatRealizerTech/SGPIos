@@ -9,11 +9,14 @@
 import UIKit
 
 class HolidayVC1: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    @IBOutlet weak var holidayview: UIView!
     @IBOutlet weak var menu: UIBarButtonItem!
     var holydayArr=[Holiday]()
     @IBOutlet weak var holydayview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        holidayview.isHidden=true
           let c1=Holiday(holiday: "Diwali", fromDate: "30 Oct", attachmentExists: true, attachimage: "", toDate: "4 Nov")
             //ClassWork(subject:"Math",subjectText:"calcutalions for first Standard need to be done today itsel" ,attachmentExists:true,attachimage:"car.jpg ")
          

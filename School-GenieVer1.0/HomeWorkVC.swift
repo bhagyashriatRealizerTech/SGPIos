@@ -10,10 +10,17 @@ import UIKit
 
 class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource
 {
+    @IBOutlet weak var headerview: UIView!
+    @IBOutlet weak var lblheader: UILabel!
+    @IBOutlet weak var lblhomework: UILabel!
+    @IBOutlet weak var viewhmhide: UIView!
+    @IBOutlet weak var viewtable: UIView!
     @IBOutlet weak var menu: UIBarButtonItem!
 
+    @IBOutlet weak var homeline: UIView!
     @IBOutlet weak var hwpicker: UIPickerView!
     
+    @IBOutlet weak var viewhomehide: UIView!
     @IBOutlet var homeview: UIView!
     @IBOutlet weak var HWTableView: UITableView!
     @IBOutlet weak var hWdatePicker: UIDatePicker!
@@ -22,8 +29,9 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIP
     var dateformat:[String]=[]
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewhmhide.isHidden=true
     self.setNeedsStatusBarAppearanceUpdate()
-    
+   // viewhmhide.isHidden=true
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -45,10 +53,10 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIP
         
         let dtfm=DateFormatter()
         dtfm.dateFormat = "yyyy-MM-dd"
-        let dateN:Date =   dtfm.date(from: d2)!
-        let dateN0 = dtfm.string(from: dateN)
-        print(dateN)
-        print(dateN0)
+       // let dateN:Date =   dtfm.date(from: d2)!
+       // let dateN0 = dtfm.string(from: dateN)
+       // print(dateN)
+        //print(dateN0)
         dates=hwmethod.getallLastHomeworkDate()
         hwpicker.dataSource=self
         hwpicker.delegate=self
@@ -59,6 +67,17 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIP
         if(HomeWorkArr.count > 0){
         HWTableView.dataSource=self
         HWTableView.delegate=self
+        }
+        else{
+            HWTableView.isHidden=true
+            viewhmhide.isHidden=false
+            
+            hwpicker.isHidden=true
+            lblheader.isHidden=true
+            lblhomework.isHidden=true
+            headerview.isHidden=true
+            homeline.isHidden=true
+            
         }
         // Do any additional setup after loading the view.
         
@@ -99,6 +118,11 @@ func datePickerChanged(picker: UIDatePicker) {
             HWTableView.reloadData()
             HWTableView.dataSource=self
             HWTableView.delegate=self
+        }
+        else{
+            HWTableView.isHidden=true
+            viewtable.isHidden=false
+            
         }
         //TODO: Retrive data related to selected subject
     }

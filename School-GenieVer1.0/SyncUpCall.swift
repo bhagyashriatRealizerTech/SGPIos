@@ -41,8 +41,12 @@ class SyncUpCall{
         //FunCenter Image API
         let funcenterimageapi = FunCenterImageAPI()
         funcenterimageapi.downloadFunCenterImage {}
+        
+        
+        
     }
     
     
+
     
    }

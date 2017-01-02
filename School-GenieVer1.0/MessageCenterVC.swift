@@ -12,6 +12,7 @@ import AlamofireImage
 
 class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
     
+    @IBOutlet weak var viewhide: UIView!
     @IBOutlet weak var textviewmsg: UITextView!
     @IBOutlet weak var selectteacherbtn: UIButton!
     @IBOutlet weak var selectTecherpicker: UIPickerView!
@@ -33,6 +34,7 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewhide.isHidden=true
         textviewmsg.layer.borderColor=UIColor.black.cgColor
         textviewmsg.layer.borderWidth=1
         
@@ -53,6 +55,11 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
                 selectTecherpicker.dataSource=self
                 selectTecherpicker.delegate=self
             }
+        }
+        else{
+            viewhide.isHidden=false
+            selectTecherpicker.isHidden=true
+            
         }
         
         // Do any additional setup after loading the view.

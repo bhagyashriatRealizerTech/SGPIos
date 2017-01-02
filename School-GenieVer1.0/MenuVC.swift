@@ -235,15 +235,15 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             let appDomain = Bundle.main.bundleIdentifier
             UserDefaults.standard.removePersistentDomain(forName: appDomain!)
-           // performSegue(withIdentifier: "squelogout", sender:self)
+            //performSegue(withIdentifier: "squelogout", sender:self)
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
             let des=mainstorybord.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            
+             self.dismiss(animated: true, completion: nil)
             let frontview=UINavigationController.init(rootViewController:des)
             
             revealViewController().pushFrontViewController(frontview, animated:true)
             
-            self.dismiss(animated: true, completion: nil)
+           
         }
 
         if(cell.menu.text=="Holiday"){
@@ -260,15 +260,17 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
         if(cell.menu.text=="Sync"){
             
+            
             let manualsync = SyncUpCall()
+            
             manualsync.syncUpData()
-          /*  let emailBtn = UIAlertController(title: "Sucess", message: "Sync up Completed", preferredStyle: .alert )
+            let emailBtn = UIAlertController(title: "Sucess", message: "Sync up Completed", preferredStyle: .alert )
             let okAction = UIAlertAction(title: "Ok", style: .cancel, handler:nil)
             
             
             emailBtn.addAction(okAction)
             
-            present(emailBtn, animated: true, completion: {  })*/
+            present(emailBtn, animated: true, completion: {  })
             
 
         

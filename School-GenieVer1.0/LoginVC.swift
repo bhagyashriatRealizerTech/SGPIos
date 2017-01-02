@@ -98,6 +98,7 @@ func isValidEmail(testStr:String) -> Bool {
     
     @IBAction func logincClick(_ sender: AnyObject) {
         
+        
         if(!(txtUserId.text?.isEmpty)! && !(txtPassword.text?.isEmpty)!)
         {
         let methodName = "StudentLogin/"
@@ -122,6 +123,7 @@ func isValidEmail(testStr:String) -> Bool {
             }
         
         }
+        
         
     }
     
@@ -326,7 +328,15 @@ func isValidEmail(testStr:String) -> Bool {
         super.viewDidLoad()
         
         
+        let storybord=UIStoryboard.init(name: "Main", bundle: nil)
+        let sw=storybord.instantiateViewController(withIdentifier:"RevealViewController") as! SWRevealViewController
         
+        
+        self.view.window?.rootViewController=sw
+        
+        let des=self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        let nav=UINavigationController(rootViewController: des)
+        sw.pushFrontViewController(nav, animated: true)
         
         menubar.target=self.revealViewController()
        
@@ -347,6 +357,7 @@ func isValidEmail(testStr:String) -> Bool {
         self.view.endEditing(true)
     }
     
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return UIStatusBarStyle.default;
     }
@@ -355,7 +366,22 @@ func isValidEmail(testStr:String) -> Bool {
       
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden=true;  menubar.target=self.revealViewController()
+        
+        menubar.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        
+        let storybord=UIStoryboard.init(name: "Main", bundle: nil)
+        let sw=storybord.instantiateViewController(withIdentifier:"RevealViewController") as! SWRevealViewController
+        
+        
+        self.view.window?.rootViewController=sw
+        
+        let des=self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        let nav=UINavigationController(rootViewController: des)
+        sw.pushFrontViewController(nav, animated: true)
         self.navigationController?.isNavigationBarHidden=true;
+
     }
 
     func showActivityIndicator() {

@@ -10,8 +10,12 @@ import UIKit
 import Alamofire
 
 class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource , UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var lblheader: UILabel!
+    @IBOutlet weak var viewhide: UIView!
+    @IBOutlet weak var headerview: UIView!
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var subjectPicker: UIPickerView!
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet var timeview: UIView!
     
     @IBOutlet weak var starTableView: UITableView!
@@ -23,6 +27,9 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        viewhide.isHidden=true
         
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
@@ -52,6 +59,24 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         let s5 = ViewStarModel(starDate: "14 Nov 2016" , starComment: "Nice work", starImageUrl: "test")
         viewstars.append(s5)
+        
+        //else 
+        
+        
+    /*    lblheader.isHidden=true
+        starTableView.isHidden=true
+        subjectPicker.isHidden=true
+        headerview.isHidden=true
+        img.isHidden=true
+        teacherinfoview.isHidden=true
+        viewhide.isHidden=false
+         
+         
+         
+         
+        */
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

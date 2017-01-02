@@ -13,6 +13,8 @@ class GallaryView: UIViewController,UICollectionViewDelegate,UICollectionViewDat
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet var fview: UIView!
     @IBOutlet weak var gallarycollectionview: UICollectionView!
+    
+    @IBOutlet weak var hideview: UIView!
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = [String]()
     var images = [String]()
@@ -32,7 +34,7 @@ class GallaryView: UIViewController,UICollectionViewDelegate,UICollectionViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hideview.isHidden=true
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -48,6 +50,10 @@ class GallaryView: UIViewController,UICollectionViewDelegate,UICollectionViewDat
             images.append(imagesList[index].fileName!)
            }
           }
+        }
+        else{
+            hideview.isHidden=false
+            gallarycollectionview.isHidden=true
         }
 
         // Do any additional setup after loading the view.

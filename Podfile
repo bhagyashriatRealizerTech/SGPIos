@@ -10,6 +10,8 @@ target 'School-GenieVer1.0' do
     pod 'ObjectMapper', '~> 2.2'
     pod 'AlamofireImage', '~> 3.0’
     pod 'SwiftGifOrigin', '~> 1.6.1'
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging’
 
 
 

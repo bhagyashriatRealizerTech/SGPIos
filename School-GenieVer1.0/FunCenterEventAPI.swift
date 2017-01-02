@@ -40,7 +40,7 @@ class FunCenterEventAPI{
         else{
             
             let dateArr1:[String] = datetime.components(separatedBy: "/")
-            ipdate = dateArr1[1]+"/"+dateArr1[2]+"/"+dateArr1[0]
+           // ipdate = dateArr1[1]+"/"+dateArr1[2]+"/"+dateArr1[0]
             
         }
 

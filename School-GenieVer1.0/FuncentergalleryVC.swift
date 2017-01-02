@@ -16,6 +16,7 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
     @IBOutlet weak var fungallerycollectionView: UICollectionView!
     
     
+    @IBOutlet weak var viewfun: UIView!
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = [String]()
     var images = [String]()
@@ -25,7 +26,7 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
         super.viewDidLoad()
         
         
-        
+        viewfun.isHidden=true
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -44,6 +45,10 @@ class FuncentergalleryVC: UIViewController,UICollectionViewDelegate,UICollection
             items.append(eventlist[index].Event!)
             eventIds.append(eventlist[index].EventId!)
           }
+        }
+        else{
+            viewfun.isHidden=false
+            fungallerycollectionView.isHidden=true
         }
         
         

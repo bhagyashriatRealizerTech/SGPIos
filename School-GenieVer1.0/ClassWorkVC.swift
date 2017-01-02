@@ -11,7 +11,12 @@ import Alamofire
 
 
 class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
+    @IBOutlet weak var lblclass: UILabel!
+    @IBOutlet weak var viewheader: UIView!
+    @IBOutlet weak var lblheader: UILabel!
+    @IBOutlet weak var classline: UIView!
     @IBOutlet weak var hwpicker: UIPickerView!
+    @IBOutlet weak var viewhide: UIView!
     var dates:[String]=[]
     @IBOutlet var classworkview: UIView!
     @IBOutlet weak var menu:UIBarButtonItem!
@@ -53,6 +58,7 @@ class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate,U
     
     override func viewDidLoad() {
                 super.viewDidLoad()
+        viewhide.isHidden=true
         
         
         self.navigationController?.isNavigationBarHidden=false;
@@ -85,7 +91,7 @@ class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate,U
         
         let classworkmethod = ClassworkMethods()
        print( classworkmethod.getAllClassworkDate())
-      // s=classworkmethod.getClassworkSubjectForDate(date: <#T##String#>)
+    //s=classworkmethod.getClassworkSubjectForDate(date: <#T##String#>)
         
         
         
@@ -98,6 +104,15 @@ class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate,U
             
             tblClassWork.dataSource=self
             tblClassWork.delegate=self
+        }
+        else{
+            tblClassWork.isHidden=true
+            viewhide.isHidden=false
+            lblheader.isHidden=true
+            lblclass.isHidden=true
+            classline.isHidden=true
+            viewheader.isHidden=true
+            hwpicker.isHidden=true
         }
         
         hwpicker.dataSource=self
@@ -136,6 +151,10 @@ class ClassWorkVC : UIViewController,UITableViewDataSource,UITableViewDelegate,U
             tblClassWork.reloadData()
             tblClassWork.dataSource=self
             tblClassWork.delegate=self
+        }
+        else
+        {
+            
         }
 
         

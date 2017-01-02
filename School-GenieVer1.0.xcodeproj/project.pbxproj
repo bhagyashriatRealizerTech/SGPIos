@@ -31,6 +31,7 @@
 		033A43801E0165ED000410F8 /* PhotosDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A437D1E0165ED000410F8 /* PhotosDataManager.swift */; };
 		033A43811E0165ED000410F8 /* TextToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A437E1E0165ED000410F8 /* TextToImage.swift */; };
 		03442A481DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */; };
+		035D03CB1E1A7B2D00F7DD08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035D03CA1E1A7B2D00F7DD08 /* GoogleService-Info.plist */; };
 		036166631DE2AF3900A9D375 /* SelectMessageCenterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */; };
 		036294921E12365A00D4CE11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036294911E12365A00D4CE11 /* Images.xcassets */; };
 		036294941E12432500D4CE11 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036294931E12432500D4CE11 /* Images-2.xcassets */; };
@@ -155,6 +156,8 @@
 		033A437D1E0165ED000410F8 /* PhotosDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDataManager.swift; sourceTree = "<group>"; };
 		033A437E1E0165ED000410F8 /* TextToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToImage.swift; sourceTree = "<group>"; };
 		03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPopupVC.swift; sourceTree = "<group>"; };
+		035D03CA1E1A7B2D00F7DD08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		035D03CC1E1A7B6C00F7DD08 /* SchoolGenie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SchoolGenie.entitlements; sourceTree = "<group>"; };
 		036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMessageCenterListVC.swift; sourceTree = "<group>"; };
 		036294911E12365A00D4CE11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		036294931E12432500D4CE11 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
@@ -166,7 +169,7 @@
 		0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInitiateMethods.swift; sourceTree = "<group>"; };
 		038CE3B71DDD9CBC00E34DD2 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		039190181DD49F7A00F1E8A5 /* ViewClassWorkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassWorkVC.swift; sourceTree = "<group>"; };
-		039E71511DBE5A1500E856EC /* School-GenieVer1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School-GenieVer1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		039E71511DBE5A1500E856EC /* SchoolGenie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolGenie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		039E71541DBE5A1500E856EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		039E71561DBE5A1500E856EC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		039E71591DBE5A1500E856EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -347,7 +350,7 @@
 		039E71521DBE5A1500E856EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				039E71511DBE5A1500E856EC /* School-GenieVer1.0.app */,
+				039E71511DBE5A1500E856EC /* SchoolGenie.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,6 +358,8 @@
 		039E71531DBE5A1500E856EC /* School-GenieVer1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				035D03CC1E1A7B6C00F7DD08 /* SchoolGenie.entitlements */,
+				035D03CA1E1A7B2D00F7DD08 /* GoogleService-Info.plist */,
 				03040C7A1E113BD000F45E25 /* School-GenieVer1.0.entitlements */,
 				03EB095A1E02770A00145941 /* APICall */,
 				03F2B05C1E00392E000AF6CB /* DatabaseFunction */,
@@ -451,12 +456,12 @@
 				03F66D101E012AA00024B66A /* PublicHolidayMethods.swift */,
 				033A437A1E0162C2000410F8 /* JsonDateFile.swift */,
 				03EB09561E026FB600145941 /* AnnouncementMethods.swift */,
-				03EB09581E02758200145941 /* AttendaceMethods.swift */,
 				03EB095F1E02871000145941 /* HomeworkMethods.swift */,
 				03EB09631E02989C00145941 /* ClassworkMethods.swift */,
 				03EB09671E02A00900145941 /* TimeTableMethods.swift */,
 				03EB096B1E02A9B900145941 /* FunCenterEventMethods.swift */,
 				03EB096F1E02B38A00145941 /* FunCenterImageMethods.swift */,
+				03EB09581E02758200145941 /* AttendaceMethods.swift */,
 				03EA704C1E0A81D4001CA57A /* DateFile.swift */,
 				03EE72791E0BEE080099988C /* ChatMethods.swift */,
 				0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */,
@@ -501,7 +506,7 @@
 			);
 			name = "School-GenieVer1.0";
 			productName = "School-GenieVer1.0";
-			productReference = 039E71511DBE5A1500E856EC /* School-GenieVer1.0.app */;
+			productReference = 039E71511DBE5A1500E856EC /* SchoolGenie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -521,7 +526,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -552,6 +557,7 @@
 			files = (
 				036294941E12432500D4CE11 /* Images-2.xcassets in Resources */,
 				036294961E12433100D4CE11 /* Images-3.xcassets in Resources */,
+				035D03CB1E1A7B2D00F7DD08 /* GoogleService-Info.plist in Resources */,
 				039E715F1DBE5A1500E856EC /* LaunchScreen.storyboard in Resources */,
 				036294921E12365A00D4CE11 /* Images.xcassets in Resources */,
 				0362949E1E1276B500D4CE11 /* Images-4.xcassets in Resources */,
@@ -851,13 +857,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "School-GenieVer1.0/SchoolGenie.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3V896CVNT;
 				INFOPLIST_FILE = "School-GenieVer1.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "www.realizertech.com.School-GenieVer1-0";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = www.realizertech.com.SchoolGenie;
+				PRODUCT_NAME = SchoolGenie;
 				SWIFT_OBJC_BRIDGING_HEADER = "School-GenieVer1.0/School-GenieVer1.0-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -872,13 +879,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "School-GenieVer1.0/SchoolGenie.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3V896CVNT;
 				INFOPLIST_FILE = "School-GenieVer1.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "www.realizertech.com.School-GenieVer1-0";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = www.realizertech.com.SchoolGenie;
+				PRODUCT_NAME = SchoolGenie;
 				SWIFT_OBJC_BRIDGING_HEADER = "School-GenieVer1.0/School-GenieVer1.0-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

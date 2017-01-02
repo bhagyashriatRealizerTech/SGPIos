@@ -18,6 +18,7 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        chatviewhide.isHidden=true
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -32,6 +33,10 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
         tableview.dataSource=self
         tableview.delegate=self
         }
+        else{
+            tableview.isHidden=true
+            chatviewhide.isHidden=false
+        }
         
     }
     
@@ -41,6 +46,7 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var chatviewhide: UIView!
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

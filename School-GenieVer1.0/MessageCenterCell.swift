@@ -30,6 +30,53 @@ class MessageCenterCell: UITableViewCell {
         lbllastmsg.text = msgtext;
         lbllastmsgtime.text=MsgTime;
         
+        let v=lblusername.text
+        
+        let stArr = v?.components(separatedBy: " ")
+        var st=""
+        for s in stArr!{
+            if let      str=s.characters.first{
+                st+=String(str).capitalized
+            }
+        }
+        
+        if(msgSenderimage=="")
+        {
+            
+            
+            let img = ImageToText()
+            let tempimg = img.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+            self.imgteacher.layer.borderColor = UIColor.gray.cgColor
+            self.imgteacher.layer.cornerRadius = 25.7
+            self.imgteacher.layer.masksToBounds = true
+            imgteacher.image = tempimg
+            
+        }
+        else{
+            
+            let imagedownload = DownloadImage()
+            
+            let profileimage = imagedownload.userImage(imageurlString: msgSenderimage)
+            if(profileimage != nil)
+            {
+                self.imgteacher.layer.borderColor = UIColor.gray.cgColor
+                self.imgteacher.layer.cornerRadius = 25.7
+                self.imgteacher.layer.masksToBounds = true
+                imgteacher.image = profileimage
+            }
+            else
+            {
+                let img = ImageToText()
+                let tempimg = img.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+                self.imgteacher.layer.borderColor = UIColor.gray.cgColor
+                self.imgteacher.layer.cornerRadius = 25.7
+                self.imgteacher.layer.masksToBounds = true
+                imgteacher.image = tempimg
+                
+            }
+            
+            
+        }
         
         
     }
