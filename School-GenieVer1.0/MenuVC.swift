@@ -232,7 +232,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             //UserDefaults.standard.removePersistentDomain(forName: appDomain)
             print("session end")
             
-            
+            UserDefaults.standard.set(false, forKey: "IsLogin")
             let appDomain = Bundle.main.bundleIdentifier
             UserDefaults.standard.removePersistentDomain(forName: appDomain!)
             //performSegue(withIdentifier: "squelogout", sender:self)

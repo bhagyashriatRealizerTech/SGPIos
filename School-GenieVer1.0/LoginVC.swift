@@ -185,6 +185,7 @@ func isValidEmail(testStr:String) -> Bool {
                         UserDefaults.standard.set(std, forKey: "Std")
                         UserDefaults.standard.set(div, forKey: "Div")
                         UserDefaults.standard.set(academicyear, forKey: "AcademicYear")
+                        UserDefaults.standard.set(true, forKey: "IsLogin")
                         
                         print(res?.Phs?.count)
                         print(res?.sa?.subjAllocation?.count)
@@ -381,7 +382,16 @@ func isValidEmail(testStr:String) -> Bool {
         let nav=UINavigationController(rootViewController: des)
         sw.pushFrontViewController(nav, animated: true)
         self.navigationController?.isNavigationBarHidden=true;
-
+        
+        
+       /* var islogged:Bool = false
+        if(UserDefaults.standard.value(forKey: "IsLogin") != nil){
+            islogged = UserDefaults.standard.value(forKey: "IsLogin") as! Bool
+        }
+        if(islogged){
+        let next = storybord.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC
+        self.present(next, animated: true, completion: nil)
+        }*/
     }
 
     func showActivityIndicator() {

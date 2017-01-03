@@ -16,7 +16,7 @@
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -430,10 +430,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="Sp9-eg-Qd6" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="PsU-7O-3Hj"/>
-                        <segue destination="ORr-va-SNm" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Svw-vi-l7C"/>
-                        <segue destination="85k-Ya-aZd" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Q2c-lN-SGR"/>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Pbr-Oq-4kA"/>
+                        <segue destination="Sp9-eg-Qd6" kind="show" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Czp-PK-h6W"/>
+                        <segue destination="ORr-va-SNm" kind="show" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Ydv-ra-YPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KQ-Je-ODt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,7 +441,7 @@
         <!--VerifyMailVC-->
         <scene sceneID="HjU-9N-ylQ">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="LNT-YN-OKH" userLabel="VerifyMailVC" customClass="VerifyMailVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="LNT-YN-OKH" userLabel="VerifyMailVC" customClass="VerifyMailVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yf6-Eb-0bN"/>
                         <viewControllerLayoutGuide type="bottom" id="nG5-5O-tQr"/>
@@ -593,7 +591,7 @@
         <!--VerifyMagicwordVC-->
         <scene sceneID="DSn-Cz-WPt">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="ZsE-hk-MJF" userLabel="VerifyMagicwordVC" customClass="VerifyMagicWordVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="ZsE-hk-MJF" userLabel="VerifyMagicwordVC" customClass="VerifyMagicWordVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="20X-Jh-AUq"/>
                         <viewControllerLayoutGuide type="bottom" id="q3g-eP-uC5"/>
@@ -747,7 +745,7 @@
         <!--ResetPasswordVC-->
         <scene sceneID="2x1-sl-PJU">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="WHY-CD-IKX" userLabel="ResetPasswordVC" customClass="ResetPasswordVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="WHY-CD-IKX" userLabel="ResetPasswordVC" customClass="ResetPasswordVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K90-sI-Kzn"/>
                         <viewControllerLayoutGuide type="bottom" id="dFd-7s-zAl"/>
@@ -1062,7 +1060,7 @@
         <!--MenuVC-->
         <scene sceneID="2D3-Fk-Oge">
             <objects>
-                <viewController storyboardIdentifier="MenuVC" id="ORr-va-SNm" customClass="MenuVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuVC" id="ORr-va-SNm" customClass="MenuVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iYO-1i-f7u"/>
                         <viewControllerLayoutGuide type="bottom" id="OUs-Em-Mpi"/>
@@ -1118,11 +1116,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="0.98483573717948714" green="0.79357610086790664" blue="0.40255117179911715" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableCell" id="ZMa-Zn-Bn3" customClass="MenuTableCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableCell" id="ZMa-Zn-Bn3" customClass="MenuTableCell" customModule="SchoolGenie" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZMa-Zn-Bn3" id="pRr-Ed-qsx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="rWa-VQ-JlP">
@@ -1206,7 +1204,7 @@
         <!--Forgot Password PopupVC-->
         <scene sceneID="zfk-Lg-boi">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="eFs-bH-aPa" customClass="ForgotPasswordPopupVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="eFs-bH-aPa" customClass="ForgotPasswordPopupVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E3g-P8-fHm"/>
                         <viewControllerLayoutGuide type="bottom" id="NVd-0w-2dh"/>
@@ -1389,7 +1387,7 @@
         <!--Classwork-->
         <scene sceneID="4ta-Zx-KaH">
             <objects>
-                <viewController storyboardIdentifier="ClassWorkVC" id="yqR-Vx-F5n" customClass="ClassWorkVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClassWorkVC" id="yqR-Vx-F5n" customClass="ClassWorkVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HZV-78-jtO"/>
                         <viewControllerLayoutGuide type="bottom" id="xcU-xv-JuF"/>
@@ -1462,11 +1460,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="1" green="0.82189944319999997" blue="0.36787973610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="ClassWorkCell" rowHeight="45" id="LM4-Tu-xjo" userLabel="ClassworkCell" customClass="ClassWorkCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="ClassWorkCell" rowHeight="45" id="LM4-Tu-xjo" userLabel="ClassworkCell" customClass="ClassWorkCell" customModule="SchoolGenie" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="337" height="45"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LM4-Tu-xjo" id="3nZ-Sd-2pO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="337" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="337" height="44.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="TopLeft" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SqG-wk-eNH" userLabel="SVCW">
@@ -1574,7 +1572,7 @@
         <!--viewClassworkdatailVC-->
         <scene sceneID="uyL-0G-5LI">
             <objects>
-                <viewController storyboardIdentifier="ViewClassWorkVC" id="ff4-rD-4ki" userLabel="viewClassworkdatailVC" customClass="ViewClassWorkVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewClassWorkVC" id="ff4-rD-4ki" userLabel="viewClassworkdatailVC" customClass="ViewClassWorkVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rKQ-nc-6hS"/>
                         <viewControllerLayoutGuide type="bottom" id="42x-Rk-kwH"/>
@@ -1713,7 +1711,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCellCW" id="8Lb-Yh-iZ9" customClass="Classworkimagecell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCellCW" id="8Lb-Yh-iZ9" customClass="Classworkimagecell" customModule="SchoolGenie" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1799,7 +1797,7 @@
         <!--Dashboard-->
         <scene sceneID="xLD-vP-5Vl">
             <objects>
-                <viewController storyboardIdentifier="DashboardVC" id="85k-Ya-aZd" customClass="DashboardVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardVC" id="85k-Ya-aZd" customClass="DashboardVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TJs-oy-auq"/>
                         <viewControllerLayoutGuide type="bottom" id="G9S-ri-MFY"/>
@@ -1921,7 +1919,7 @@
                                 <color key="backgroundColor" red="0.25610519479999999" green="0.51402932400000001" blue="0.99835759400000001" alpha="1" colorSpace="calibratedRGB"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JsJ-4J-83M" userLabel="HeaderSV">
-                                <rect key="frame" x="130.5" y="50" width="114" height="165"/>
+                                <rect key="frame" x="130.5" y="94" width="114" height="165"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="mGf-IA-ZjO" userLabel="SVPupilDP">
                                         <rect key="frame" x="17" y="0.0" width="80" height="80"/>
@@ -2009,7 +2007,7 @@
         <!--HolidayVC-->
         <scene sceneID="9Rq-Z0-4tD">
             <objects>
-                <viewController storyboardIdentifier="HolidayVC1" id="u7t-Fg-Ywd" userLabel="HolidayVC" customClass="HolidayVC1" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HolidayVC1" id="u7t-Fg-Ywd" userLabel="HolidayVC" customClass="HolidayVC1" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bPB-pv-6ih"/>
                         <viewControllerLayoutGuide type="bottom" id="SiI-Vv-NLY"/>
@@ -2039,11 +2037,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="0.71413937630000002" blue="0.33402892480000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="holidaycell" rowHeight="70" id="FlC-q1-vIY" customClass="holidaycell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="holidaycell" rowHeight="70" id="FlC-q1-vIY" customClass="holidaycell" customModule="SchoolGenie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="364" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FlC-q1-vIY" id="6vd-iJ-JI3">
-                                            <rect key="frame" x="0.0" y="0.0" width="364" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pcf-K7-xfq">
@@ -2140,7 +2138,7 @@
         <!--Time Table-->
         <scene sceneID="5fJ-bd-Ljh">
             <objects>
-                <viewController storyboardIdentifier="TimeTableVC" id="hgI-IL-On6" customClass="TimeTableVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeTableVC" id="hgI-IL-On6" customClass="TimeTableVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="orq-gj-xER"/>
                         <viewControllerLayoutGuide type="bottom" id="Gz2-pO-xJ0"/>
@@ -2166,18 +2164,18 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8n6-Cj-evI">
-                                <rect key="frame" x="5" y="20" width="364" height="600.5"/>
+                                <rect key="frame" x="5" y="64" width="364" height="600.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZJ-G6-v5b">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="600.5"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="separatorColor" red="1" green="0.75901738200000002" blue="0.3265168947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableCell" rowHeight="56" id="Fv7-sV-F4C" customClass="TimeTableCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableCell" rowHeight="56" id="Fv7-sV-F4C" customClass="TimeTableCell" customModule="SchoolGenie" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1" width="364" height="56"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fv7-sV-F4C" id="q4y-CI-ITi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="55"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="55.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Uu4-Ev-Nxx" userLabel="MainSV">
@@ -2310,7 +2308,7 @@
         <!--ViewFuncenterImagesVC-->
         <scene sceneID="TQx-Pq-FPe">
             <objects>
-                <viewController id="Mjk-dl-mL8" userLabel="ViewFuncenterImagesVC" customClass="GallaryView" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mjk-dl-mL8" userLabel="ViewFuncenterImagesVC" customClass="GallaryView" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnV-9W-VhH"/>
                         <viewControllerLayoutGuide type="bottom" id="KnS-Zx-OEe"/>
@@ -2345,7 +2343,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="9wu-8c-6wi" customClass="funcentercell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="9wu-8c-6wi" customClass="funcentercell" customModule="SchoolGenie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2421,7 +2419,7 @@
         <!--AlertBigImageVC-->
         <scene sceneID="5wD-8u-Bde">
             <objects>
-                <viewController id="TEI-6i-K3c" userLabel="AlertBigImageVC" customClass="AlertViewImageVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TEI-6i-K3c" userLabel="AlertBigImageVC" customClass="AlertViewImageVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TRR-e7-XaH"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ln-Ar-oeM"/>
@@ -2487,7 +2485,7 @@
         <!--ThreadList-->
         <scene sceneID="7vd-Ah-coh">
             <objects>
-                <viewController storyboardIdentifier="ThreadListsVC" id="E6R-tx-1Ax" userLabel="ThreadList" customClass="ThreadListsVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThreadListsVC" id="E6R-tx-1Ax" userLabel="ThreadList" customClass="ThreadListsVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fcE-rO-Wzg"/>
                         <viewControllerLayoutGuide type="bottom" id="Uzu-dC-6r8"/>
@@ -2513,7 +2511,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="bottomRight" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-La-dSG">
-                                <rect key="frame" x="325" y="621" width="34" height="34"/>
+                                <rect key="frame" x="325" y="577" width="34" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="bottomRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k68-lo-STA">
                                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -2548,11 +2546,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="368" height="534"/>
                                         <color key="backgroundColor" red="0.99351546199999996" green="1" blue="0.94906504540000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LastMessageTableCell" rowHeight="77" id="HCR-Vw-mh1" userLabel="LastMSGCell" customClass="LastMessageTableCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LastMessageTableCell" rowHeight="77" id="HCR-Vw-mh1" userLabel="LastMSGCell" customClass="LastMessageTableCell" customModule="SchoolGenie" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1" width="368" height="77"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HCR-Vw-mh1" id="Di8-0z-6lO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="368" height="76"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="368" height="76.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="d2m-Fp-Yuc" userLabel="SVLastMsg">
@@ -2561,7 +2559,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NyE-UV-EyW" userLabel="SVLastSenderImg">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="60D587B9-F121-4CC7-937F-2FCBB185B9BF" translatesAutoresizingMaskIntoConstraints="NO" id="7vF-xx-teV" userLabel="ImgPupil">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C92485B2-85B2-4E69-B493-43B566F1532D" translatesAutoresizingMaskIntoConstraints="NO" id="7vF-xx-teV" userLabel="ImgPupil">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="50" id="fgi-FI-oo0"/>
@@ -2578,7 +2576,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-f5-l1N">
-                                                                    <rect key="frame" x="56" y="0.0" width="294" height="49.5"/>
+                                                                    <rect key="frame" x="56" y="0.5" width="294" height="49.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aCQ-mV-PIe" userLabel="SVLastMsgDtls">
                                                                             <rect key="frame" x="0.0" y="0.0" width="194.5" height="49.5"/>
@@ -2675,7 +2673,7 @@
         <!--AlertVC-->
         <scene sceneID="T5C-Kl-lkS">
             <objects>
-                <viewController storyboardIdentifier="AlertVC" id="Vbg-ZZ-djX" userLabel="AlertVC" customClass="AlertVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertVC" id="Vbg-ZZ-djX" userLabel="AlertVC" customClass="AlertVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Wq-ly-KjR"/>
                         <viewControllerLayoutGuide type="bottom" id="ocj-PS-nTT"/>
@@ -2705,11 +2703,11 @@
                                 <color key="backgroundColor" red="0.99351546199999996" green="1" blue="0.94906504540000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="0.82189944319999997" blue="0.36787973610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlertCell" rowHeight="80" id="vf5-RX-ENM" userLabel="AlertCell" customClass="AlertCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlertCell" rowHeight="80" id="vf5-RX-ENM" userLabel="AlertCell" customClass="AlertCell" customModule="SchoolGenie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="375.5" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vf5-RX-ENM" id="Kj1-RR-sA8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375.5" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375.5" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="g6x-Wq-kR3" userLabel="SVLastMsg">
@@ -2839,7 +2837,7 @@
         <!--AddAlertVC-->
         <scene sceneID="cNH-d7-bhZ">
             <objects>
-                <viewController id="Dfn-ft-9sm" userLabel="AddAlertVC" customClass="SelectCategoryVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dfn-ft-9sm" userLabel="AddAlertVC" customClass="SelectCategoryVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Llx-VT-WGo"/>
                         <viewControllerLayoutGuide type="bottom" id="OcN-f2-p2d"/>
@@ -3085,7 +3083,7 @@
         <!--Star-->
         <scene sceneID="0tt-ub-txX">
             <objects>
-                <viewController storyboardIdentifier="ViewStarVC" id="u4Y-q8-XXv" customClass="ViewStarVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewStarVC" id="u4Y-q8-XXv" customClass="ViewStarVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mZ0-6R-HrB"/>
                         <viewControllerLayoutGuide type="bottom" id="emH-XN-HuQ"/>
@@ -3109,7 +3107,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="center" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kmh-EM-hJJ" userLabel="Header">
-                                <rect key="frame" x="16" y="60" width="343" height="31"/>
+                                <rect key="frame" x="16" y="104" width="343" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select Subject" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8y-km-2NN">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
@@ -3181,7 +3179,7 @@
                                 </variation>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="TJ6-HO-NUf">
-                                <rect key="frame" x="8" y="179" width="360" height="184"/>
+                                <rect key="frame" x="8" y="223" width="360" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="DLy-Jr-sf6"/>
                                     <constraint firstAttribute="width" constant="360" id="FA6-8n-mGu"/>
@@ -3200,7 +3198,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcc-Hj-BJE">
-                                <rect key="frame" x="16" y="371" width="343" height="55"/>
+                                <rect key="frame" x="16" y="327" width="343" height="55"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="22N-FZ-kPf">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
@@ -3299,18 +3297,18 @@
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q0W-mf-Ndy">
-                                <rect key="frame" x="21" y="434" width="333" height="223"/>
+                                <rect key="frame" x="21" y="390" width="333" height="223"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="223" id="FdB-F0-Tdl"/>
                                 </constraints>
                                 <color key="separatorColor" red="0.9655253775" green="0.83484255559999998" blue="0.43737644209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ViewStarCell" rowHeight="65" id="Utp-BO-QxD" customClass="ViewStarCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ViewStarCell" rowHeight="65" id="Utp-BO-QxD" customClass="ViewStarCell" customModule="SchoolGenie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="333" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Utp-BO-QxD" id="Qzw-YQ-TM9">
-                                            <rect key="frame" x="0.0" y="0.0" width="333" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="333" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoQ-QZ-KQU">
@@ -3413,7 +3411,7 @@
                                 </prototypes>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lft-gF-8LO">
-                                <rect key="frame" x="122" y="99" width="132" height="72"/>
+                                <rect key="frame" x="122" y="143" width="132" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="132" id="VDp-KI-Vuh"/>
                                     <constraint firstAttribute="height" constant="72" id="eLV-70-unQ"/>
@@ -3515,7 +3513,7 @@
         <!--MyPupilVC-->
         <scene sceneID="kFp-4f-mm8">
             <objects>
-                <viewController storyboardIdentifier="MyPupiScreenlVC" id="dz1-ou-Pmq" userLabel="MyPupilVC" customClass="MyPupiScreenlVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPupiScreenlVC" id="dz1-ou-Pmq" userLabel="MyPupilVC" customClass="MyPupiScreenlVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3os-me-aP0"/>
                         <viewControllerLayoutGuide type="bottom" id="Bp4-q9-PVB"/>
@@ -3525,11 +3523,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pupilbackground" translatesAutoresizingMaskIntoConstraints="NO" id="rK7-8S-j4h">
-                                <rect key="frame" x="19" y="72" width="338" height="570"/>
+                                <rect key="frame" x="19" y="116" width="338" height="482"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UzQ-OD-vKF" userLabel="SVMain">
-                                <rect key="frame" x="36" y="130" width="304" height="341"/>
+                                <rect key="frame" x="36" y="174" width="304" height="341"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aqk-g7-Ach" userLabel="SVStudetName">
                                         <rect key="frame" x="90" y="0.0" width="124.5" height="27.5"/>
@@ -3696,7 +3694,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-A2-WQN">
-                                <rect key="frame" x="153" y="45" width="70" height="70"/>
+                                <rect key="frame" x="153" y="89" width="70" height="70"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="lwS-s7-brF">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -3765,7 +3763,7 @@
         <!--HomeWorkVC-->
         <scene sceneID="Uor-Yd-Yo8">
             <objects>
-                <viewController storyboardIdentifier="HomeWorkVC" id="Mjv-qO-IQ7" userLabel="HomeWorkVC" customClass="HomeWorkVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeWorkVC" id="Mjv-qO-IQ7" userLabel="HomeWorkVC" customClass="HomeWorkVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YHX-2z-yhi"/>
                         <viewControllerLayoutGuide type="bottom" id="33m-WA-rq7"/>
@@ -3841,11 +3839,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="1" green="0.82189944319999997" blue="0.36787973610000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="CellHomeWork" rowHeight="45" id="Ygl-mb-wQu" userLabel="HomeworkCell" customClass="CellHomeWork" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="CellHomeWork" rowHeight="45" id="Ygl-mb-wQu" userLabel="HomeworkCell" customClass="CellHomeWork" customModule="SchoolGenie" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="337" height="45"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ygl-mb-wQu" id="sEz-MH-bvO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="337" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="337" height="44.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="TopLeft" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kds-5h-gcI" userLabel="SVCW">
@@ -3958,7 +3956,7 @@
         <!--View HomeWorkVC-->
         <scene sceneID="Ifv-tD-bEb">
             <objects>
-                <viewController id="jEi-uY-9Ko" userLabel="View HomeWorkVC" customClass="ViewHomeWorkVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jEi-uY-9Ko" userLabel="View HomeWorkVC" customClass="ViewHomeWorkVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jPm-LR-pw2"/>
                         <viewControllerLayoutGuide type="bottom" id="GDB-0X-Tnz"/>
@@ -4109,7 +4107,7 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCellHW" id="Mhz-sb-uU1" customClass="Homeworkcollectioncell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCellHW" id="Mhz-sb-uU1" customClass="Homeworkcollectioncell" customModule="SchoolGenie" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="63"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4190,7 +4188,7 @@
         <!--FunCenterGallaryVC-->
         <scene sceneID="flw-Co-dwE">
             <objects>
-                <viewController storyboardIdentifier="FuncentergalleryVC" id="mze-A0-78M" userLabel="FunCenterGallaryVC" customClass="FuncentergalleryVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FuncentergalleryVC" id="mze-A0-78M" userLabel="FunCenterGallaryVC" customClass="FuncentergalleryVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WIl-Af-Hus"/>
                         <viewControllerLayoutGuide type="bottom" id="CIf-xM-OWq"/>
@@ -4225,7 +4223,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="l8u-9q-YMv" customClass="MyCollectioncell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="l8u-9q-YMv" customClass="MyCollectioncell" customModule="SchoolGenie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4319,7 +4317,7 @@
         <!--showAlertsVC-->
         <scene sceneID="RhF-XY-tzV">
             <objects>
-                <viewController id="0co-Qj-ojR" userLabel="showAlertsVC" customClass="ShowAlertsVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0co-Qj-ojR" userLabel="showAlertsVC" customClass="ShowAlertsVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LPW-28-NtU"/>
                         <viewControllerLayoutGuide type="bottom" id="pCx-SA-ZPl"/>
@@ -4329,7 +4327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-bW-YCZ" userLabel="SVMain">
-                                <rect key="frame" x="16" y="30" width="337.5" height="157"/>
+                                <rect key="frame" x="16" y="74" width="337.5" height="157"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="59m-xf-U4a" userLabel="SVCategory">
                                         <rect key="frame" x="0.0" y="0.0" width="203.5" height="23.5"/>
@@ -4465,7 +4463,7 @@
         <!--InitiateNewThread-->
         <scene sceneID="rJq-5z-2Cd">
             <objects>
-                <viewController id="azB-uy-N3a" userLabel="InitiateNewThread" customClass="MessageCenterVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="azB-uy-N3a" userLabel="InitiateNewThread" customClass="MessageCenterVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C4D-H8-MnG"/>
                         <viewControllerLayoutGuide type="bottom" id="w6V-oQ-6EZ"/>
@@ -4596,7 +4594,7 @@
         <!--MessageCenter-->
         <scene sceneID="BpW-nb-kyz">
             <objects>
-                <viewController id="lrR-k6-6A6" userLabel="MessageCenter" customClass="SelectMessageCenterListVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lrR-k6-6A6" userLabel="MessageCenter" customClass="SelectMessageCenterListVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yyc-q6-XU1"/>
                         <viewControllerLayoutGuide type="bottom" id="fP2-d8-2Co"/>
@@ -4613,11 +4611,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCenterCell" rowHeight="62" id="Z0b-yq-91m" customClass="MessageCenterCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCenterCell" rowHeight="62" id="Z0b-yq-91m" customClass="MessageCenterCell" customModule="SchoolGenie" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="368" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z0b-yq-91m" id="dQV-w5-scl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="368" height="61"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="368" height="61.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="center" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q9k-Qz-LNT">
@@ -4626,7 +4624,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FXg-cC-2Ks">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="60D587B9-F121-4CC7-937F-2FCBB185B9BF" translatesAutoresizingMaskIntoConstraints="NO" id="k6W-GX-LFu">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C92485B2-85B2-4E69-B493-43B566F1532D" translatesAutoresizingMaskIntoConstraints="NO" id="k6W-GX-LFu">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="50" id="Cxw-p4-w0M"/>
@@ -4782,7 +4780,7 @@
         <!--TimeTabledatailvc-->
         <scene sceneID="4Mr-zS-Ex5">
             <objects>
-                <viewController id="Bhz-Ld-f22" userLabel="TimeTabledatailvc" customClass="TimeTableDetailVC" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bhz-Ld-f22" userLabel="TimeTabledatailvc" customClass="TimeTableDetailVC" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HjA-n1-YMX"/>
                         <viewControllerLayoutGuide type="bottom" id="rtf-pr-qbK"/>
@@ -4922,7 +4920,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TimeTableCell" id="6vO-I1-uA9" customClass="TimeTableColViewCell" customModule="School_GenieVer1_0" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TimeTableCell" id="6vO-I1-uA9" customClass="TimeTableColViewCell" customModule="SchoolGenie" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -5004,7 +5002,7 @@
         <!--ClassworkATTACHMENTS-->
         <scene sceneID="gl8-Na-QuN">
             <objects>
-                <viewController id="tfK-RE-FcA" userLabel="ClassworkATTACHMENTS" customClass="classworkviewimage" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tfK-RE-FcA" userLabel="ClassworkATTACHMENTS" customClass="classworkviewimage" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ak-IO-W9l"/>
                         <viewControllerLayoutGuide type="bottom" id="f8Q-97-mak"/>
@@ -5067,7 +5065,7 @@
         <!--homeworkattachmentVC-->
         <scene sceneID="s7t-Z9-SZo">
             <objects>
-                <viewController id="KXy-BF-5q8" userLabel="homeworkattachmentVC" customClass="Homeworkviewimage" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KXy-BF-5q8" userLabel="homeworkattachmentVC" customClass="Homeworkviewimage" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xDE-kZ-yZA"/>
                         <viewControllerLayoutGuide type="bottom" id="2UI-Tn-gWD"/>
@@ -5130,7 +5128,7 @@
         <!--TimetablebigimageVC-->
         <scene sceneID="y79-qg-PYG">
             <objects>
-                <viewController id="OfL-AF-IzR" userLabel="TimetablebigimageVC" customClass="Timetableviewimage" customModule="School_GenieVer1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OfL-AF-IzR" userLabel="TimetablebigimageVC" customClass="Timetableviewimage" customModule="SchoolGenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oYA-kn-7j9"/>
                         <viewControllerLayoutGuide type="bottom" id="7ET-3D-n1X"/>
@@ -5195,7 +5193,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="60D587B9-F121-4CC7-937F-2FCBB185B9BF" width="1039" height="552">
+        <image name="C92485B2-85B2-4E69-B493-43B566F1532D" width="1039" height="552">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -43513,21 +43511,21 @@ AAAABAEAAAAAAAAAQQAAAAAAAAAAAAAAAAAjDEE
         <image name="unselect" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kCg-hw-Enp"/>
-        <segue reference="VM3-bD-zwe"/>
-        <segue reference="qhc-hL-rZ7"/>
-        <segue reference="u8t-g7-Isg"/>
-        <segue reference="te8-HJ-RCe"/>
-        <segue reference="YC3-Jl-BR4"/>
-        <segue reference="Wbu-GY-oIG"/>
-        <segue reference="5oO-Ao-qfu"/>
-        <segue reference="nys-mQ-Pbx"/>
-        <segue reference="k9T-vI-M0C"/>
+        <segue reference="FWm-jo-RkH"/>
         <segue reference="Gmt-sK-K4Z"/>
-        <segue reference="eh2-v0-GYp"/>
-        <segue reference="sU1-AK-Bc4"/>
+        <segue reference="5oO-Ao-qfu"/>
+        <segue reference="w4t-KP-9YP"/>
+        <segue reference="qhc-hL-rZ7"/>
         <segue reference="oyH-8S-p5V"/>
+        <segue reference="Tmu-bM-gEe"/>
+        <segue reference="j8b-IK-ey1"/>
+        <segue reference="Sik-gb-1aN"/>
+        <segue reference="ZKz-9T-B16"/>
         <segue reference="coV-TX-DH5"/>
+        <segue reference="d1G-pj-xv6"/>
+        <segue reference="X2s-xm-jSd"/>
+        <segue reference="dar-C8-e7s"/>
         <segue reference="EfN-j3-eYd"/>
+        <segue reference="kCg-hw-Enp"/>
     </inferredMetricsTieBreakers>
 </document>
