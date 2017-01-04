@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewStarCell: UITableViewCell {
 
     @IBOutlet weak var starDate: UILabel!
@@ -24,9 +25,18 @@ class ViewStarCell: UITableViewCell {
     
     func updateUI(_ viewstar: StarModels)
     {
-        starDate.text = viewstar.StarDate
+        let datemethod = DateFile()
+        let date:String = datemethod.getMediumDate(date: viewstar.StarDate!)
+        if(date.isEmpty){
+             starDate.text = viewstar.StarDate
+        }
+        else{
+           starDate.text = date
+        }
+       
         starComment.text = viewstar.Comment
         
+        setStarImage(imageview: starImage, star: viewstar.Star!)
     }
     
 

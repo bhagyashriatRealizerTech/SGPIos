@@ -43,7 +43,7 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         
         teacherinfoview.layer.borderWidth = 2.0
-        teacherinfoview.layer.borderColor = UIColor.orange.cgColor
+        teacherinfoview.layer.borderColor = UIColor.gray.cgColor
         
 
         let submethods = SubjectAllocationMethods()
@@ -52,6 +52,58 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         if(sub.count > 0){
             subjectPicker.dataSource = self
             subjectPicker.delegate = self
+            let starmethods = ViewStarMethods()
+            viewstars.removeAll()
+            viewstars = starmethods.getStars(subject: sub[0])
+            
+            if(viewstars.count > 0){
+                starTableView.dataSource = self
+                starTableView.delegate = self
+                starTableView.reloadData()
+                
+                lblheader.isHidden=false
+                starTableView.isHidden=false
+                subjectPicker.isHidden=false
+                headerview.isHidden=false
+                img.isHidden=false
+                teacherinfoview.isHidden=false
+                viewhide.isHidden=true
+                teacherPic.isHidden = false
+                teacherName.isHidden = false
+                
+                teacherName.text = viewstars[0].TeacherName
+                let picurl = viewstars[0].TeacherLoginId
+                
+                let v=teacherName.text
+                let stArr = v?.components(separatedBy: " ")
+                var st=""
+                for s in stArr!{
+                    if let str=s.characters.first{
+                        st+=String(str).capitalized
+                    }
+                }
+                
+                let img1 = ImageToText()
+                let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+                self.teacherPic.layer.borderColor = UIColor.gray.cgColor
+                self.teacherPic.layer.cornerRadius = 36.6
+                self.teacherPic.layer.masksToBounds = true
+                self.teacherPic.image = tempimg
+                
+
+            }
+            else{
+                lblheader.isHidden=true
+                starTableView.isHidden=true
+                subjectPicker.isHidden=true
+                headerview.isHidden=true
+                img.isHidden=true
+                teacherinfoview.isHidden=true
+                viewhide.isHidden=false
+                teacherPic.isHidden = true
+                teacherName.isHidden = true
+                
+            }
         }
         else{
             lblheader.isHidden=true
@@ -124,7 +176,7 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             let img1 = ImageToText()
             let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
             self.teacherPic.layer.borderColor = UIColor.gray.cgColor
-            self.teacherPic.layer.cornerRadius = 28.7
+            self.teacherPic.layer.cornerRadius = 36.6
             self.teacherPic.layer.masksToBounds = true
             self.teacherPic.image = tempimg
             

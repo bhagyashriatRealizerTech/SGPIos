@@ -109,6 +109,41 @@ class ChatInitiateMethods{
     }
     
     
+    func getThreadList(threadId:String) -> Bool {
+        
+        var isPresent:Bool = false
+        //create a fetch request, telling it about the entity
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "InitiateThread")
+        let predicate = NSPredicate(format: "threadId == %@", threadId)
+        fetchRequest.predicate = predicate
+        
+        
+        do {
+            //go get the results
+            let searchResults = try getContext().fetch(fetchRequest)
+            
+            //I like to check the size of the returned results!
+            print ("num of results = \(searchResults.count)")
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for trans in searchResults as! [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+
+                var threadid:String = ""
+                if(trans.value(forKey: "threadId") != nil){
+                    threadid = trans.value(forKey: "threadId") as! String
+                    isPresent = true
+                }
+                
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        return isPresent
+    }
+    
+    
     func updateThread(userID:String,chatObj:ConversationModel)   {
         
         let context = getContext()

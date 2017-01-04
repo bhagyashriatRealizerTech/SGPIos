@@ -43,19 +43,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        if let aps = userInfo["aps"] as? NSDictionary {
-           if let alert = aps["alert"] as? NSDictionary {
-                if let message = alert["message"] as? NSString {
-                    //Do stuff
-                }
-            } else if let alert = aps["alert"] as? NSString {
-                //Do stuff
-            }
-            else if let alert = aps["data"] as? NSString {
-                //Do stuff
-                print(alert)
-            }
+        var type:String = ""
+        
+        if let notitype = userInfo["Star"] as? String {
+            
+            type = notitype
         }
+        if(type == "Viewstar"){
+        var starName:String = ""
+        var starDate:String = ""
+        var comments:String = ""
+        var subject:String = ""
+        var teacherName:String = ""
+        var teacherId:String = ""
+        
+        if let star = userInfo["Star"] as? String {
+        
+            starName = star
+        }
+        if let date = userInfo["StarDate"] as? String {
+            
+            starDate = date
+        }
+        if let comment = userInfo["Comment"] as? String {
+            
+            comments = comment
+        }
+        if let sub = userInfo["Subject"] as? String {
+            
+            subject = sub
+        }
+        if let tname = userInfo["TeacherName"] as? String {
+            
+            teacherName = tname
+        }
+        if let pic = userInfo["TeacherThumbnailUrl"] as? String {
+            
+            teacherId = pic
+        }
+        
+        let starinfo = StarModels()
+        starinfo.setValue(notitype: "ViewStar", subject: subject, stardate: starDate, comment: comments, teachername: teacherName, teacherloginid: teacherId, star: starName)
+        
+        let starmethod = ViewStarMethods()
+        starmethod.storeStar(star: starinfo)
+        
+        }
+       /* else if(type == ""){
+            
+            var from:String = ""
+            var to:String = ""
+            var sendername:String = ""
+            var senderurl:String = ""
+            var senttime:String = ""
+            var msgtext:String = ""
+
+            if let fromid = userInfo["Star"] as? String {
+                
+                from = fromid
+            }
+            if let toid = userInfo["StarDate"] as? String {
+                
+                to = toid
+            }
+            if let sender = userInfo["Comment"] as? String {
+                
+                sendername = sender
+            }
+            if let pic = userInfo["Subject"] as? String {
+                
+                senderurl = pic
+            }
+            if let stime = userInfo["TeacherName"] as? String {
+                
+                senttime = stime
+            }
+            if let msg = userInfo["TeacherThumbnailUrl"] as? String {
+                
+                msgtext = msg
+            }
+            let chatmodel = ConversationModel()
+            chatmodel.setMessage(chatId: "", fromteacher: true, schoolCode: "", fromId: from, toId: to, message: msgtext, msgTime: senttime, profilePic: senderurl, senderN: sendername)
+            let chatmethod = ChatMethods()
+            chatmethod.storeMessage(chatObj: chatmodel)
+            
+
+            
+        }*/
         // If you are receiving a notification message while your app is in the background,
         // this callback will not be fired till the user taps on the notification launching the application.
         // TODO: Handle data of notification

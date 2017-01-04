@@ -20,3 +20,26 @@ func getContext () -> NSManagedObjectContext {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     return appDelegate.persistentContainer.viewContext
 }
+
+func setStarImage(imageview:UIImageView, star:String){
+    if(star == "Great"){
+        imageview.image = #imageLiteral(resourceName: "great")
+    }
+    else if(star == "WellDone"){
+        imageview.image = #imageLiteral(resourceName: "welldone")
+    }
+    else if(star == "NiceWork"){
+       imageview.image = #imageLiteral(resourceName: "nicework")
+    }
+    else if(star == "Terrific"){
+      imageview.image = #imageLiteral(resourceName: "terrific")
+    }
+    else if(star == "VeryGood"){
+      imageview.image = #imageLiteral(resourceName: "verygood")
+    }
+    else if(star == "Super"){
+      imageview.image = #imageLiteral(resourceName: "super")
+    }
+
+
+}

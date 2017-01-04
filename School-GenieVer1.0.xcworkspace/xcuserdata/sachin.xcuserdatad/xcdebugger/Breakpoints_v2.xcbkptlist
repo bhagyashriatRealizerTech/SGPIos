@@ -51,53 +51,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "School-GenieVer1.0/AppDelegate.swift"
-            timestampString = "505204392.847053"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SchoolGenie.AppDelegate.application (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;, fetchCompletionHandler : (__C.UIBackgroundFetchResult) -&gt; ()) -&gt; ()"
-                  moduleName = "SchoolGenie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sachin/Desktop/School%20Genie/SG13Dec/3Jan/SG/School-GenieVer1.0/AppDelegate.swift"
-                  timestampString = "505206366.709759"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SchoolGenie.AppDelegate.application (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;, fetchCompletionHandler : (__C.UIBackgroundFetchResult) -&gt; ()) -&gt; ()"
-                  moduleName = "SchoolGenie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sachin/Desktop/School%20Genie/SG13Dec/3Jan/SG/School-GenieVer1.0/AppDelegate.swift"
-                  timestampString = "505206366.712334"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "332">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
