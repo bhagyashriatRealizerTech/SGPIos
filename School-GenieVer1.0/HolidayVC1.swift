@@ -11,20 +11,20 @@ import UIKit
 class HolidayVC1: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var holidayview: UIView!
     @IBOutlet weak var menu: UIBarButtonItem!
-    var holydayArr=[Holiday]()
+    var holydayArr=[PublicHoliday]()
     @IBOutlet weak var holydayview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         holidayview.isHidden=true
-          let c1=Holiday(holiday: "Diwali", fromDate: "30 Oct", attachmentExists: true, attachimage: "", toDate: "4 Nov")
-            //ClassWork(subject:"Math",subjectText:"calcutalions for first Standard need to be done today itsel" ,attachmentExists:true,attachimage:"car.jpg ")
-         
         
-         
-       holydayArr.append(c1)
+        let holidaymethod = PublicHolidayMethods()
+        holydayArr = holidaymethod.getPublicHoliday()
+        
+        if(holydayArr.count > 0){
         holydayview.dataSource=self
         holydayview.delegate=self
+        }
  
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
@@ -50,23 +50,19 @@ class HolidayVC1: UIViewController,UITableViewDataSource,UITableViewDelegate {
         if let cell=tableView.dequeueReusableCell(withIdentifier: "holidaycell", for:indexPath) as? holidaycell
             
         {
-            let classwork=holydayArr[indexPath.row]
-            var subText = ""
+            let holiday=holydayArr[indexPath.row]
+            let dateformater = DateFormatter()
+            dateformater.dateStyle = .medium
+            dateformater.timeStyle = .none
             
+            let startDate = Date(jsonDate: holiday.PHStartDate!)
+            let startDateStr = dateformater.string(from: startDate!)
             
-           // let myNSString =  classwork.subjectText as NSString
-            /*if(myNSString.length > 55)
-            {
-                subText =    myNSString.substring(with: NSRange(location: 0, length: 54))
-                subText = subText.appending("...")
-            }
-            else
-            {
-                subText = classwork.subjectText
-            }*/
-            
-            cell.updateCell(holiday: "Diwali", fromdate: "30 Oct", attachmentExists: true, attachimage: "", todate: "4 Nov")
-           // cell.updateCell(SubjectText: subText, Subject: classwork.subject,isAttachment: classwork.attachmentExists)
+            let endDate = Date(jsonDate: holiday.PHEndDate!)
+            let endDateStr = dateformater.string(from: endDate!)
+                       
+            cell.updateCell(holiday: holiday.Holiday!, fromdate: startDateStr, attachmentExists: false, attachimage: "", todate: endDateStr)
+           
             return cell
             
         }

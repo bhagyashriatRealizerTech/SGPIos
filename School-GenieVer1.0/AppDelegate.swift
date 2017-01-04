@@ -42,6 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        if let aps = userInfo["aps"] as? NSDictionary {
+           if let alert = aps["alert"] as? NSDictionary {
+                if let message = alert["message"] as? NSString {
+                    //Do stuff
+                }
+            } else if let alert = aps["alert"] as? NSString {
+                //Do stuff
+            }
+            else if let alert = aps["data"] as? NSString {
+                //Do stuff
+                print(alert)
+            }
+        }
         // If you are receiving a notification message while your app is in the background,
         // this callback will not be fired till the user taps on the notification launching the application.
         // TODO: Handle data of notification

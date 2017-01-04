@@ -17,7 +17,7 @@ class StudentDetail : Mappable{
     var academicYear: String?
     var address: String?
     var bldGrp:String?
-    var classRollNo:Int?
+    var classRollNo:String?
     var comments:String?
     var contactNo: String?
     var division : String?
@@ -38,7 +38,7 @@ class StudentDetail : Mappable{
     var smallThumbnailURL: String?
     var std : String?
     var userId : String?
-   
+    
     
     required init?(map: Map) {
         
@@ -62,8 +62,9 @@ class StudentDetail : Mappable{
         let bldgp: String? = map["bldGrp"].value()
         self.bldGrp = bldgp
         
-        let classrno: Int? = map["classRollNo"].value()
+        let classrno: String? = map["classRollNo"].value()
         self.classRollNo = classrno
+        
         
         let comment:String? = map["comments"].value()
         self.comments = comment
@@ -88,13 +89,13 @@ class StudentDetail : Mappable{
         
         let firstName:String? = map["fName"].value()
         self.fName = firstName
-    
+        
         let fthrName:String? = map["fatherName"].value()
         self.fatherName = fthrName
         
         let active:Bool? = map["isActive"].value()
         self.isActive = active
-    
+        
         let lastName:String? = map["lName"].value()
         self.lName = lastName
         
@@ -109,9 +110,6 @@ class StudentDetail : Mappable{
         
         let password:String? = map["pwd"].value()
         self.pwd = password
-        
-        let _rollNo:Int? = map["rollNo"].value()
-        self.rollNo = _rollNo
         
         let _schoolCode:String? = map["schoolCode"].value()
         self.schoolCode = _schoolCode
@@ -138,14 +136,14 @@ class StudentDetail : Mappable{
         
         self.academicYear <- map["academicYear"]
         self.classRollNo <- map["classRollNo"]
-           }
+    }
     
-   
+    
     func setStudentdetail(_ActiveTill : String,_RegistrationCodes: [String],
-    _ThumbnailURL: String,_academicYear: String,_address: String,_bldGrp:String,
-    _classRollNo:Int,_comments:String,_contactNo: String,_division : String,_dob :String,_emailId : String,_emergencyContactNo : String,_fName : String,
-    _fatherName : String,_hobbies : String,_isActive : Bool,_lName : String,_mName : String,_magicWord : String,_motherName : String,_pwd : String,_rollNo : Int,
-    _schoolCode : String,_smallThumbnailURL: String,_std : String,_userId : String){
+                          _ThumbnailURL: String,_academicYear: String,_address: String,_bldGrp:String,
+                          _classRollNo:Int,_comments:String,_contactNo: String,_division : String,_dob :String,_emailId : String,_emergencyContactNo : String,_fName : String,
+                          _fatherName : String,_hobbies : String,_isActive : Bool,_lName : String,_mName : String,_magicWord : String,_motherName : String,_pwd : String,_rollNo : Int,
+                          _schoolCode : String,_smallThumbnailURL: String,_std : String,_userId : String){
         
         
         self.RegistrationCodes = _RegistrationCodes
@@ -153,7 +151,7 @@ class StudentDetail : Mappable{
         self.academicYear = _academicYear
         self.address = _address
         self.bldGrp = _bldGrp
-        self.classRollNo = _classRollNo
+        self.classRollNo = String(describing: _classRollNo)
         self.comments = _comments
         self.contactNo = _contactNo
         self.division = _division
@@ -173,7 +171,7 @@ class StudentDetail : Mappable{
         self.smallThumbnailURL = _smallThumbnailURL
         self.std = _std
         self.userId = _userId
-
+        
     }
     
 }

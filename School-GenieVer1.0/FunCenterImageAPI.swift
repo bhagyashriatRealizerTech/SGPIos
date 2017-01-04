@@ -17,10 +17,11 @@ import CoreData
 class FunCenterImageAPI{
     
     let funcenterimagemethod = FunCenterImageMethods()
+    let inputdate = Inputdate()
     
     func downloadFunCenterImage(completed: DownloadComplete){
         
-         //funcenterimagemethod.deleteFunCenterEventImage()
+        //funcenterimagemethod.deleteFunCenterEventImage()
         
         let datetime = funcenterimagemethod.getLastFunCenterEventImageDate()
         //let datetime = "2016/12/15"
@@ -37,16 +38,17 @@ class FunCenterImageAPI{
             let currentM:Int = components.month!
             let currentD:Int = components.day!
             
-            ipdate = String(currentM)+"/"+String(currentD)+"/"+String(currentY)
+            ipdate = inputdate.getInputDate(currentM: currentM, currentD: currentD, currentY: currentY)
+            
             
         }
         else{
             
             let dateArr1:[String] = datetime.components(separatedBy: "/")
-            ipdate = dateArr1[1]+"/"+dateArr1[2]+"/"+dateArr1[0]
+            ipdate = inputdate.getInputDate(currentM: Int(dateArr1[1])!, currentD: Int(dateArr1[2])!, currentY: Int(dateArr1[0])!)
             
         }
-
+        
         
         let methodName = "fetchDateSchoolEventImages"
         Current_Url = "\(BASE_URL)\(methodName)"

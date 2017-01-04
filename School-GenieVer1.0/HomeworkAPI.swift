@@ -18,145 +18,149 @@ class HomeworkAPI{
     var subjects = [String]()
     var ipdate = String()
     var subject = String()
-    
-
-func downloadHomework(completed: DownloadComplete){
-    
-   // hwmethod.deleteHomework()
-    
-    let tempdate = hwmethod.getLastHomeworkDate()
-    //let tempdate = "2016/12/15"
-    var datestr = String()
-    
-    
-    let suballocation = SubjectAllocationMethods()
-    subjects = suballocation.getAllSubjects()
-    
-    
-    let date1:Date = Date()
-    let calendar = Calendar.autoupdatingCurrent
-    let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1)
-    
-    let currentY:Int = components.year!
-    let currentM:Int = components.month!
-    let currentD:Int = components.day!
-    
-    ipdate = String(currentM)+"/"+String(currentD)+"/"+String(currentY)
+    let inputdate = Inputdate()
     
     
     
-    if(tempdate.isEmpty)
-    {
-        //var index = 0
+    func downloadHomework(completed: DownloadComplete){
         
-        for index in 0...(subjects.count-1)
+        // hwmethod.deleteHomework()
+        
+        let tempdate = hwmethod.getLastHomeworkDate()
+        //let tempdate = "2016/12/15"
+        var datestr = String()
+        
+        
+        let suballocation = SubjectAllocationMethods()
+        subjects = suballocation.getAllSubjects()
+        
+        
+        let date1:Date = Date()
+        let calendar = Calendar.autoupdatingCurrent
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1)
+        
+        let currentY:Int = components.year!
+        let currentM:Int = components.month!
+        let currentD:Int = components.day!
+        
+        ipdate = inputdate.getInputDate(currentM: currentM, currentD: currentD, currentY: currentY)
+        
+        
+        
+        
+        if(tempdate.isEmpty)
         {
-            subject = subjects[index]
-        downloadforAllSubDates(completed: {}, date: ipdate, subject: subject)
+            //var index = 0
             
-        }
-    }
-    else{
-        
-        let dateArr1:[String] = tempdate.components(separatedBy: "/")
-        ipdate = dateArr1[1]+"/"+dateArr1[2]+"/"+dateArr1[0]
-        datestr = ipdate
-        
-        let datearr:[String] = datestr.components(separatedBy: "/")
-        var prevD:Int = Int(datearr[1])!
-        let prevM:Int = Int(datearr[0])!
-        let prevY:Int = Int(datearr[2])!
-        
-        let yeardiff = currentY - prevY
-        let monthdiff = currentM - prevM
-        let daydiff = currentD - prevD
-        
-        if(yeardiff == 0)
-        {
-            if(monthdiff == 0)
+            for index in 0...(subjects.count-1)
             {
-                if(daydiff == 0){
-                    
-                    currentdayHomework(currentDate: ipdate)
-                }
-                else if(daydiff > 0){
-                    
-                    currentdayHomework(currentDate: ipdate)
-                    
-                    for index in 1...daydiff{
-                        
-                        let newDate:Int = prevD + (1)
-                        prevD = newDate
-                        
-                        ipdate = String(prevM)+"/"+String(newDate)+"/"+String(prevY)
-                        
-                        for index1 in 0...(subjects.count - 1){
-                            subject = subjects[index1]
-                            
-                            downloadforAllSubDates(completed: {}, date: ipdate, subject: subject)
-                            
-                        }
-                        
-                        
-                    }
-                }
-                
-            }
-            else if(monthdiff > 0){
-                
-                var month:Int = prevM
-                var day:Int = prevD + 1
-                
-                
-                currentdayHomework(currentDate: ipdate)
-                
-                for indexout in 0...monthdiff{
-                   
-                getHomeworkForMonth(day: day, month: month, year: prevY)
-                     month = month + 1
-                     day = 1
-                
-            }
-                
+                subject = subjects[index]
+                downloadforAllSubDates(completed: {}, date: ipdate, subject: subject)
                 
             }
         }
         else{
             
-            var month:Int = prevM
-            var day:Int = prevD + 1
-            var year:Int = prevY
+            let dateArr1:[String] = tempdate.components(separatedBy: "/")
+            ipdate = inputdate.getInputDate(currentM: Int(dateArr1[1])!, currentD: Int(dateArr1[2])!, currentY: Int(dateArr1[0])!)
             
-            currentdayHomework(currentDate: ipdate)
+            datestr = ipdate
             
-            for indexY in 0...yeardiff{
-                
-                for indexM in 1...12{
-                    if(month > 12)
-                    {
-                        year = year + 1
-                        month = 1
-                        day = 1
-                        break
-                    }
-                    else{
+            let datearr:[String] = datestr.components(separatedBy: "/")
+            var prevD:Int = Int(datearr[1])!
+            let prevM:Int = Int(datearr[0])!
+            let prevY:Int = Int(datearr[2])!
+            
+            let yeardiff = currentY - prevY
+            let monthdiff = currentM - prevM
+            let daydiff = currentD - prevD
+            
+            if(yeardiff == 0)
+            {
+                if(monthdiff == 0)
+                {
+                    if(daydiff == 0){
                         
-                        getHomeworkForMonth(day: prevD, month: month, year: prevY)
+                        currentdayHomework(currentDate: ipdate)
+                    }
+                    else if(daydiff > 0){
+                        
+                        currentdayHomework(currentDate: ipdate)
+                        
+                        for index in 1...daydiff{
+                            
+                            let newDate:Int = prevD + (1)
+                            prevD = newDate
+                            
+                            ipdate = inputdate.getInputDate(currentM: prevM, currentD: newDate, currentY: prevY)
+                            
+                            for index1 in 0...(subjects.count - 1){
+                                subject = subjects[index1]
+                                
+                                downloadforAllSubDates(completed: {}, date: ipdate, subject: subject)
+                                
+                            }
+                            
+                            
+                        }
+                    }
+                    
+                }
+                else if(monthdiff > 0){
+                    
+                    var month:Int = prevM
+                    var day:Int = prevD + 1
+                    
+                    
+                    currentdayHomework(currentDate: ipdate)
+                    
+                    for indexout in 0...monthdiff{
+                        
+                        getHomeworkForMonth(day: day, month: month, year: prevY)
                         month = month + 1
                         day = 1
-
+                        
                     }
+                    
+                    
                 }
+            }
+            else{
+                
+                var month:Int = prevM
+                var day:Int = prevD + 1
+                var year:Int = prevY
+                
+                currentdayHomework(currentDate: ipdate)
+                
+                for indexY in 0...yeardiff{
+                    
+                    for indexM in 1...12{
+                        if(month > 12)
+                        {
+                            year = year + 1
+                            month = 1
+                            day = 1
+                            break
+                        }
+                        else{
+                            
+                            getHomeworkForMonth(day: prevD, month: month, year: prevY)
+                            month = month + 1
+                            day = 1
+                            
+                        }
+                    }
+                    
+                }
+                
                 
             }
             
-            
         }
         
-    }
-    
-    
-    completed()
+        
+        completed()
     }
     
     
@@ -172,7 +176,7 @@ func downloadHomework(completed: DownloadComplete){
         numDays = range.count
         
         print(numDays)
-
+        
         return numDays
         
     }
@@ -195,7 +199,7 @@ func downloadHomework(completed: DownloadComplete){
         let headers1:HTTPHeaders = ["AccessToken":accesstoken,
                                     "Content-Type": "application/json",
                                     "Accept": "application/json"]
-
+        
         let parameters1 = ["std": std,"hwDate":date,"schoolCode":schoolcode,"division":div,
                            "subject":subject,"UserId":userid,"DeviceId":deviceid]
         
@@ -207,7 +211,7 @@ func downloadHomework(completed: DownloadComplete){
             
             let result = response.result
             
-              print(result.value)
+            print(result.value)
             
             if let dict = result.value as? Dictionary<String, AnyObject>
             {
@@ -230,7 +234,7 @@ func downloadHomework(completed: DownloadComplete){
             }
             
         }
-
+        
         completed()
     }
     
@@ -238,31 +242,31 @@ func downloadHomework(completed: DownloadComplete){
     
     func currentdayHomework(currentDate:String){
         
-            let subarr:[String] = hwmethod.getSubjectForDate(date: currentDate)
+        let subarr:[String] = hwmethod.getSubjectForDate(date: currentDate)
+        
+        if(subarr.count < subjects.count && subarr.count > 0){
+            var tempsubArr = [String]()
+            var counter:Int = 0;
             
-            if(subarr.count < subjects.count && subarr.count > 0){
-                var tempsubArr = [String]()
-                var counter:Int = 0;
-                
-                for subtemp in subjects
-                {
-                    counter = counter+1
-                    for temp in subarr{
-                        if(subtemp == temp)
+            for subtemp in subjects
+            {
+                counter = counter+1
+                for temp in subarr{
+                    if(subtemp == temp)
+                    {
+                        break
+                    }
+                    else{
+                        if(counter == subjects.count)
                         {
-                            break
-                        }
-                        else{
-                            if(counter == subjects.count)
-                            {
-                                tempsubArr.append(subtemp)
-                            }
+                            tempsubArr.append(subtemp)
                         }
                     }
                 }
-                
-                if(tempsubArr.count > 0)
-                {
+            }
+            
+            if(tempsubArr.count > 0)
+            {
                 for index in 0...tempsubArr.count{
                     
                     subject = tempsubArr[index]
@@ -270,22 +274,22 @@ func downloadHomework(completed: DownloadComplete){
                     downloadforAllSubDates(completed: {}, date: currentDate, subject: subject)
                 }
             }
-                
-             }
-            else if(subarr.count == subjects.count){
-                
-            }
-            else if(subarr.count == 0){
-                print(subjects.count)
-                for index1 in 0...(subjects.count - 1){
-                    subject = subjects[index1]
-                    // print(subarr)
-                    
-                    downloadforAllSubDates(completed: {}, date: ipdate, subject: subject)
-              }
-          }
-        
+            
         }
+        else if(subarr.count == subjects.count){
+            
+        }
+        else if(subarr.count == 0){
+            print(subjects.count)
+            for index1 in 0...(subjects.count - 1){
+                subject = subjects[index1]
+                // print(subarr)
+                
+                downloadforAllSubDates(completed: {}, date: ipdate, subject: subject)
+            }
+        }
+        
+    }
     
     
     func getHomeworkForMonth(day:Int , month:Int , year:Int)
@@ -297,13 +301,14 @@ func downloadHomework(completed: DownloadComplete){
         for dadyIndex in 1...numOfdays{
             if(dayTemp > numOfdays)
             {
-               // month = month + 1
+                // month = month + 1
                 break
             }
             else
             {
                 
-                ipdate = String(month)+"/"+String(dayTemp)+"/"+String(year)
+                ipdate = inputdate.getInputDate(currentM: month, currentD: dayTemp, currentY: year)
+                
                 
                 for index1 in 0...(subjects.count - 1){
                     subject = subjects[index1]

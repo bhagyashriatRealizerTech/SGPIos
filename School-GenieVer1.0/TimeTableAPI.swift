@@ -15,41 +15,43 @@ import CoreData
 class TimeTableAPI{
     
     let timetablemethod = TimeTableMethods()
+    let inputdate = Inputdate()
     
     func downloadTimeTable(completed: DownloadComplete){
         
         //timetablemethod.deleteTimeTable()
-    
+        
         let datetime = timetablemethod.getLastTimeTableDate()
-       // let datetime = "2016/12/15"
+        // let datetime = "2016/12/15"
         var ipdate = String()
         
         
         
         if(datetime.isEmpty)
         {
-        let date1:Date = Date()
-        let calendar = Calendar.autoupdatingCurrent
-        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1)
-        
-        let currentY:Int = components.year!
-        let currentM:Int = components.month!
-        let currentD:Int = components.day!
-        
-        ipdate = String(currentM)+"/"+String(currentD)+"/"+String(currentY)
+            let date1:Date = Date()
+            let calendar = Calendar.autoupdatingCurrent
+            let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1)
+            
+            let currentY:Int = components.year!
+            let currentM:Int = components.month!
+            let currentD:Int = components.day!
+            
+            ipdate = inputdate.getInputDate(currentM: currentM, currentD: currentD, currentY: currentY)
+            
             
         }
         else{
             
             let dateArr1:[String] = datetime.components(separatedBy: "/")
-            ipdate = dateArr1[1]+"/"+dateArr1[2]+"/"+dateArr1[0]
-
+            ipdate = inputdate.getInputDate(currentM: Int(dateArr1[1])!, currentD: Int(dateArr1[2])!, currentY: Int(dateArr1[0])!)
+            
         }
         
         let methodName = "FetchTimeTables"
         Current_Url = "\(BASE_URL)\(methodName)"
         print(Current_Url)
-
+        
         let current_url = URL(string: Current_Url)!
         
         
@@ -82,8 +84,8 @@ class TimeTableAPI{
                 let res = Mapper<TTList>().map(JSONObject: dict)
                 if(res != nil){
                     
-                //TODO Insert Value in Database
-                   
+                    //TODO Insert Value in Database
+                    
                     self.timetablemethod.storeTimeTable(timetables: (res?.TTLst)!)
                 }
                 

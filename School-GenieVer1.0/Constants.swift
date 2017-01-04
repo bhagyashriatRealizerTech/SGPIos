@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 let BASE_URL = "http://45.35.4.250/SJRestWCF/svcEmp.svc/"
-//let BASE_URL = "http://45.35.4.250/chat/api/chat/registerUser"
 
 typealias DownloadComplete = () -> ()
 

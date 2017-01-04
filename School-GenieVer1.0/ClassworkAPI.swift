@@ -18,6 +18,7 @@ class ClassworkAPI{
     var subjects = [String]()
     var ipdate:String = ""
     var subject = String()
+    let inputdate = Inputdate()
     
     
     func downloadClasswork(completed: DownloadComplete){
@@ -25,7 +26,7 @@ class ClassworkAPI{
         //cwmethod.deleteClasswork()
         
         let tempdate = cwmethod.getLastClassworkDate()
-       // let tempdate = "2016/12/15"
+        // let tempdate = "2016/12/15"
         var datestr = String()
         print(datestr)
         
@@ -42,7 +43,8 @@ class ClassworkAPI{
         let currentM:Int = components.month!
         let currentD:Int = components.day!
         
-        ipdate = String(currentM)+"/"+String(currentD)+"/"+String(currentY)
+        ipdate = inputdate.getInputDate(currentM: currentM, currentD: currentD, currentY: currentY)
+        
         
         
         
@@ -59,9 +61,10 @@ class ClassworkAPI{
         }
         else{
             let dateArr1:[String] = tempdate.components(separatedBy: "/")
-            ipdate = dateArr1[1]+"/"+dateArr1[2]+"/"+dateArr1[0]
+            ipdate = inputdate.getInputDate(currentM: Int(dateArr1[1])!, currentD: Int(dateArr1[2])!, currentY: Int(dateArr1[0])!)
+            
             datestr = ipdate
-
+            
             let datearr:[String] = datestr.components(separatedBy: "/")
             var prevD:Int = Int(datearr[1])!
             let prevM:Int = Int(datearr[0])!
@@ -88,7 +91,7 @@ class ClassworkAPI{
                             let newDate:Int = prevD + (1)
                             prevD = newDate
                             
-                            ipdate = String(prevM)+"/"+String(newDate)+"/"+String(prevY)
+                            ipdate = inputdate.getInputDate(currentM: prevM, currentD: newDate, currentY: prevY)
                             
                             for index1 in 0...(subjects.count - 1){
                                 subject = subjects[index1]
@@ -221,7 +224,7 @@ class ClassworkAPI{
                     {
                         print((res?.cwImage64Lst?.count)!)
                         
-                    self.cwmethod.storeClasswork(classwork: res!)
+                        self.cwmethod.storeClasswork(classwork: res!)
                         
                     }
                     
@@ -303,7 +306,7 @@ class ClassworkAPI{
             else
             {
                 
-                ipdate = String(month)+"/"+String(dayTemp)+"/"+String(year)
+                ipdate = inputdate.getInputDate(currentM: month, currentD: dayTemp, currentY: year)
                 
                 for index1 in 0...(subjects.count - 1){
                     subject = subjects[index1]
@@ -318,7 +321,7 @@ class ClassworkAPI{
             dayTemp = dayTemp + 1
         }
     }
-
+    
 }
 
 

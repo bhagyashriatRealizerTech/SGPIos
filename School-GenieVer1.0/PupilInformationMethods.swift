@@ -28,7 +28,7 @@ class PupilInformationMethods{
         transc.setValue(studentdetail.address, forKey: "address")
         
         transc.setValue(studentdetail.bldGrp, forKey: "bldGrp")
-        transc.setValue(studentdetail.classRollNo, forKey: "classRollNo")
+        transc.setValue(Int(studentdetail.classRollNo!), forKey: "classRollNo")
         transc.setValue(studentdetail.comments, forKey: "comments")
         transc.setValue(studentdetail.contactNo, forKey: "contactNo")
         transc.setValue(studentdetail.division, forKey: "division")
