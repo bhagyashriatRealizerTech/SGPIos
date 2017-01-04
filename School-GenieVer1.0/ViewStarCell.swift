@@ -22,10 +22,10 @@ class ViewStarCell: UITableViewCell {
     }
     
     
-    func updateUI(_ viewstar: ViewStarModel)
+    func updateUI(_ viewstar: StarModels)
     {
-        starDate.text = viewstar.starDate
-        starComment.text = viewstar.starComment
+        starDate.text = viewstar.StarDate
+        starComment.text = viewstar.Comment
         
     }
     

@@ -10,9 +10,12 @@ import Foundation
 
 class ViewStarModel{
     
-    fileprivate var _starDate: String!
-    fileprivate var _starComment: String!
-    fileprivate var _starImageUrl: String!
+    private var _starDate: String!
+    private var _starComment: String!
+    private var _starName: String!
+    private var _teacherName: String!
+    private var _teacherPic: String!
+    private var _starSubject: String!
     
     var starDate : String{
         return _starDate
@@ -22,16 +25,37 @@ class ViewStarModel{
         return _starComment
     }
     
-    var starImageUrl:String{
+    var starName:String{
         
-        return _starImageUrl
+        return _starName
     }
     
-    init(starDate:String, starComment:String, starImageUrl:String)
+    var starSubject : String{
+        return _starSubject
+    }
+    
+    var teacherName: String{
+        return _teacherName
+    }
+    
+    var teacherPic:String{
+        
+        return _teacherPic
+    }
+    
+    init() {
+        
+    }
+    
+
+    init(starDate:String, starComment:String, starName:String, teacherName:String, teacherPic:String, starSubject:String)
     {
         _starDate = starDate
         _starComment = starComment
-        _starImageUrl = starImageUrl
+        _starName = starName
+        _starSubject = starSubject
+        _teacherName = teacherName
+        _teacherPic = teacherPic
     }
     
 }

@@ -237,7 +237,7 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             UserDefaults.standard.removePersistentDomain(forName: appDomain!)
             //performSegue(withIdentifier: "squelogout", sender:self)
             let mainstorybord:UIStoryboard=UIStoryboard(name: "Main", bundle: nil)
-            let des=mainstorybord.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            let des=mainstorybord.instantiateViewController(withIdentifier: "MainVC") as! MainVC
              self.dismiss(animated: true, completion: nil)
             let frontview=UINavigationController.init(rootViewController:des)
             
@@ -254,8 +254,6 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             let frontview=UINavigationController.init(rootViewController:des)
             
             revealViewController().pushFrontViewController(frontview, animated:true)
-           
-           // performSegue(withIdentifier: "sguelogout", sender: nil)
            
         }
         if(cell.menu.text=="Sync"){
@@ -276,83 +274,6 @@ class MenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         }
 
-
-
-
-        /*switch indexPath.row
-        {
-        case 0 :
-            performSegue(withIdentifier: "sguedashboard", sender: nil)
-            print("Dashbord")
-            break;
-        case 1  :
-             performSegue(withIdentifier: "sguepupil", sender: nil)
-              self.navigationController?.isNavigationBarHidden=false;
-            print("pupil")
-            break  ;
-        case 2  :
-            
-             performSegue(withIdentifier: "sguehomework", sender: nil)
-            break;
-        case 3:
-             performSegue(withIdentifier: "sguetimetable", sender: nil)
-            break;
-        case 4:
-            performSegue(withIdentifier: "sgueclasswork", sender: nil)
-            break;
-        case 5:
-            
-           
-             performSegue(withIdentifier: "sguestar", sender: nil)
-            break;
-        case 6:
-             performSegue(withIdentifier: "sguechat", sender: nil)
-             
-           
-            break;
-        case 7:
-             performSegue(withIdentifier: "sguealert", sender: nil)
-             
-            break;
-        case 8:
-            performSegue(withIdentifier: "sguefuncenter", sender: nil)
-           
-            break;
-        case 9:
-            //tracking
-                //performSegue(withIdentifier: "sguelogout", sender: nil)
-          
-            break;
-        case 10:
-            //synk
-
-            if Reachability.isConnectedToNetwork() == true {
-                let manualsync = SyncUpCall()
-                manualsync.syncUpData()
-
-            } else {
-                
-                let credentialerror = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: .alert)
-                
-                let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler:nil)
-                
-                credentialerror.addAction(cancelAction)
-                self.present(credentialerror, animated: true, completion: {  })
-                
-            }
-            break;
-            
-           case 11:
-          performSegue(withIdentifier: "sguelogout", sender: nil)
-            break;
-        default :
-            print( "default case")
-        }*/
-        
-                    /*else if(indexPath == 1)
-                {
-                   performSegue(withIdentifier: "sguedashboard", sender: nil)
-               }*/
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell=tableView.dequeueReusableCell(withIdentifier: "MenuTableCell", for:indexPath) as? MenuTableCell

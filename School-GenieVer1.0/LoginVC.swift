@@ -12,7 +12,7 @@ import AlamofireImage
 import ObjectMapper
 
 class LoginVC : UIViewController , UITextFieldDelegate{
-    @IBOutlet weak var menubar: UIBarButtonItem!
+   // @IBOutlet weak var menubar: UIBarButtonItem!
 
     @IBOutlet weak var FWbtnsubmit: UIButton!
     @IBOutlet weak var FWbtnmagic: UIButton!
@@ -193,6 +193,10 @@ func isValidEmail(testStr:String) -> Bool {
                         let logindtls = LoginResponseMethods()
                         logindtls.storeLoginData(studentloginresponse: res!)
                         
+                        let tokenReg = TokenRegisterAPI()
+                        tokenReg.registerToken {
+                        }
+                        
                         self.performSegue(withIdentifier: "logintodashboard", sender: nil)
                         
                     }
@@ -329,7 +333,7 @@ func isValidEmail(testStr:String) -> Bool {
         super.viewDidLoad()
         
         
-        let storybord=UIStoryboard.init(name: "Main", bundle: nil)
+      /*  let storybord=UIStoryboard.init(name: "Main", bundle: nil)
         let sw=storybord.instantiateViewController(withIdentifier:"RevealViewController") as! SWRevealViewController
         
         
@@ -344,7 +348,7 @@ func isValidEmail(testStr:String) -> Bool {
         menubar.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
        
-       self.navigationController?.isNavigationBarHidden=true;
+       self.navigationController?.isNavigationBarHidden=true;*/
         
                 
         let tapRecognizer = UITapGestureRecognizer()
@@ -367,7 +371,7 @@ func isValidEmail(testStr:String) -> Bool {
       
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden=true;  menubar.target=self.revealViewController()
+       /* self.navigationController?.isNavigationBarHidden=true;  menubar.target=self.revealViewController()
         
         menubar.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
@@ -381,7 +385,7 @@ func isValidEmail(testStr:String) -> Bool {
         let des=self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
         let nav=UINavigationController(rootViewController: des)
         sw.pushFrontViewController(nav, animated: true)
-        self.navigationController?.isNavigationBarHidden=true;
+        self.navigationController?.isNavigationBarHidden=true;*/
         
         
        /* var islogged:Bool = false

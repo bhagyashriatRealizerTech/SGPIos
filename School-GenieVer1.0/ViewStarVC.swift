@@ -21,9 +21,13 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var starTableView: UITableView!
     
     @IBOutlet weak var teacherinfoview: UIView!
-    let sub = ["English","Math","Science","History","Marathi","Hindi"]
     
-    var viewstars = [ViewStarModel]()
+    @IBOutlet weak var teacherPic: UIImageView!
+    
+    @IBOutlet weak var teacherName: UILabel!
+    var sub = [String]()
+    
+    var viewstars = [StarModels]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,47 +40,32 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
        timeview.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
-        subjectPicker.dataSource = self
-        subjectPicker.delegate = self
-        starTableView.delegate = self
-        starTableView.dataSource = self
+        
         
         teacherinfoview.layer.borderWidth = 2.0
         teacherinfoview.layer.borderColor = UIColor.orange.cgColor
         
+
+        let submethods = SubjectAllocationMethods()
+        sub = submethods.getAllSubjects()
         
-        let s1 = ViewStarModel(starDate:"18 Nov 2016" , starComment:"Good Work!!", starImageUrl:"test")
-        viewstars.append(s1)
-        
-        let s2 = ViewStarModel(starDate : "17 Nov 2016" , starComment: "Great", starImageUrl: "test")
-        viewstars.append(s2)
-        
-        let s3 = ViewStarModel(starDate: "16 Nov 2016", starComment: "Well Done", starImageUrl: "dfghj")
-        viewstars.append(s3)
-        
-        let s4 = ViewStarModel(starDate: "15 Nov 2016" , starComment: "very good", starImageUrl: "test")
-        viewstars.append(s4)
-        
-        let s5 = ViewStarModel(starDate: "14 Nov 2016" , starComment: "Nice work", starImageUrl: "test")
-        viewstars.append(s5)
-        
-        //else 
-        
-        
-    /*    lblheader.isHidden=true
-        starTableView.isHidden=true
-        subjectPicker.isHidden=true
-        headerview.isHidden=true
-        img.isHidden=true
-        teacherinfoview.isHidden=true
-        viewhide.isHidden=false
-         
-         
-         
-         
-        */
+        if(sub.count > 0){
+            subjectPicker.dataSource = self
+            subjectPicker.delegate = self
+        }
+        else{
+            lblheader.isHidden=true
+            starTableView.isHidden=true
+            subjectPicker.isHidden=true
+            headerview.isHidden=true
+            img.isHidden=true
+            teacherinfoview.isHidden=true
+            viewhide.isHidden=false
+
+        }
         
         
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -100,6 +89,88 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         
         //TODO: Retrive data related to selected subject
+        
+        let starmethods = ViewStarMethods()
+        viewstars.removeAll()
+        viewstars = starmethods.getStars(subject: sub[row])
+        
+        if(viewstars.count > 0){
+            starTableView.dataSource = self
+            starTableView.delegate = self
+            starTableView.reloadData()
+            
+            lblheader.isHidden=false
+            starTableView.isHidden=false
+            subjectPicker.isHidden=false
+            headerview.isHidden=false
+            img.isHidden=false
+            teacherinfoview.isHidden=false
+            viewhide.isHidden=true
+            teacherPic.isHidden = false
+            teacherName.isHidden = false
+            
+            teacherName.text = viewstars[0].TeacherName
+            let picurl = viewstars[0].TeacherLoginId
+            
+            let v=teacherName.text
+            let stArr = v?.components(separatedBy: " ")
+            var st=""
+            for s in stArr!{
+                if let str=s.characters.first{
+                    st+=String(str).capitalized
+                }
+            }
+
+            let img1 = ImageToText()
+            let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+            self.teacherPic.layer.borderColor = UIColor.gray.cgColor
+            self.teacherPic.layer.cornerRadius = 28.7
+            self.teacherPic.layer.masksToBounds = true
+            self.teacherPic.image = tempimg
+            
+           /* if(picurl != nil){
+                if(picurl?.isEmpty)!{
+                    let img1 = ImageToText()
+                    let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+                    self.teacherPic.layer.borderColor = UIColor.gray.cgColor
+                    self.teacherPic.layer.cornerRadius = 28.7
+                    self.teacherPic.layer.masksToBounds = true
+                    self.teacherPic.image = tempimg
+
+                }
+                else{
+            let imagedownload = DownloadImage()
+            imagedownload.setImage(imageurlString: picurl!, imageView: teacherPic)
+                }
+            }
+            else{
+                
+                        let img1 = ImageToText()
+                    let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+                    self.teacherPic.layer.borderColor = UIColor.gray.cgColor
+                     self.teacherPic.layer.cornerRadius = 25.7
+                     self.teacherPic.layer.masksToBounds = true
+                    self.teacherPic.image = tempimg
+                    
+                
+                
+
+            }*/
+        }
+        else{
+            lblheader.isHidden=true
+            starTableView.isHidden=true
+            subjectPicker.isHidden=true
+            headerview.isHidden=true
+            img.isHidden=true
+            teacherinfoview.isHidden=true
+            viewhide.isHidden=false
+            teacherPic.isHidden = true
+            teacherName.isHidden = true
+            
+        }
+
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {

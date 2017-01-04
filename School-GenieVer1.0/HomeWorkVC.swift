@@ -38,14 +38,6 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIP
         view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         var d=(NSDate() as Date)-7 as Date
           
-        // hWdatePicker.setValue(1, forKeyPath: "alpha")
-        //hWdatePicker.minimumDate=(NSDate() as Date)-7 as Date
-      // hWdatePicker.maximumDate=NSDate(timeInterval: (7*24*60*60), since: NSDate() as Date)as Date
-        //hWdatePicker.maximumDate = dateN as Date
-        //hWdatePicker.minimumDate=Date(timeIntervalSinceNow: -7*24*60*60)
-        
-        
-        
         
         let hwmethod = HomeworkMethods()
         let d2 = hwmethod.getLastHomeworkDate()
@@ -53,10 +45,6 @@ class HomeWorkVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIP
         
         let dtfm=DateFormatter()
         dtfm.dateFormat = "yyyy-MM-dd"
-       // let dateN:Date =   dtfm.date(from: d2)!
-       // let dateN0 = dtfm.string(from: dateN)
-       // print(dateN)
-        //print(dateN0)
         dates=hwmethod.getallLastHomeworkDate()
         hwpicker.dataSource=self
         hwpicker.delegate=self

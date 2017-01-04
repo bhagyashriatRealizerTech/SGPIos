@@ -40,6 +40,10 @@
 		0362949A1E126A1900D4CE11 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036294991E126A1900D4CE11 /* Holiday.swift */; };
 		0362949C1E126EEA00D4CE11 /* HolidayVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */; };
 		0362949E1E1276B500D4CE11 /* Images-4.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0362949D1E1276B500D4CE11 /* Images-4.xcassets */; };
+		0377144F1E1B8FF600B305A3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0377144E1E1B8FF600B305A3 /* MainVC.swift */; };
+		037714511E1BA8E800B305A3 /* TokenRegisterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037714501E1BA8E800B305A3 /* TokenRegisterAPI.swift */; };
+		037D72B41E1BC8DD0068C4E0 /* FCMTokenMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D72B31E1BC8DD0068C4E0 /* FCMTokenMethods.swift */; };
+		037D72B61E1BCDBE0068C4E0 /* StarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D72B51E1BCDBE0068C4E0 /* StarModel.swift */; };
 		0389DC0E1E0D0B8500FB7D9E /* ChatInitiateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */; };
 		038CE3B81DDD9CBC00E34DD2 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CE3B71DDD9CBC00E34DD2 /* Chat.swift */; };
 		039190191DD49F7A00F1E8A5 /* ViewClassWorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039190181DD49F7A00F1E8A5 /* ViewClassWorkVC.swift */; };
@@ -57,6 +61,7 @@
 		03B1CCC91DE81DA200929665 /* Classworkimagecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1CCC81DE81DA200929665 /* Classworkimagecell.swift */; };
 		03B1CCCB1DE81DE700929665 /* Homeworkcollectioncell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1CCCA1DE81DE700929665 /* Homeworkcollectioncell.swift */; };
 		03C33D5B1DBF6ECB00F728F3 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33D5A1DBF6ECB00F728F3 /* DashboardVC.swift */; };
+		03DFC3221E1BBF46003D9338 /* ViewStarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC3211E1BBF46003D9338 /* ViewStarMethods.swift */; };
 		03E96EF81DF1345F00EB41AC /* LastMsgTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E96EF71DF1345F00EB41AC /* LastMsgTableCell.swift */; };
 		03E96EFA1DF134BA00EB41AC /* MessageCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E96EF91DF134BA00EB41AC /* MessageCenterCell.swift */; };
 		03E96EFC1DF134EA00EB41AC /* LastMsgDtls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E96EFB1DF134EA00EB41AC /* LastMsgDtls.swift */; };
@@ -166,6 +171,10 @@
 		036294991E126A1900D4CE11 /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayVC1.swift; sourceTree = "<group>"; };
 		0362949D1E1276B500D4CE11 /* Images-4.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-4.xcassets"; sourceTree = "<group>"; };
+		0377144E1E1B8FF600B305A3 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		037714501E1BA8E800B305A3 /* TokenRegisterAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRegisterAPI.swift; sourceTree = "<group>"; };
+		037D72B31E1BC8DD0068C4E0 /* FCMTokenMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCMTokenMethods.swift; sourceTree = "<group>"; };
+		037D72B51E1BCDBE0068C4E0 /* StarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarModel.swift; sourceTree = "<group>"; };
 		0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInitiateMethods.swift; sourceTree = "<group>"; };
 		038CE3B71DDD9CBC00E34DD2 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		039190181DD49F7A00F1E8A5 /* ViewClassWorkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassWorkVC.swift; sourceTree = "<group>"; };
@@ -185,6 +194,7 @@
 		03B1CCC81DE81DA200929665 /* Classworkimagecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classworkimagecell.swift; sourceTree = "<group>"; };
 		03B1CCCA1DE81DE700929665 /* Homeworkcollectioncell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homeworkcollectioncell.swift; sourceTree = "<group>"; };
 		03C33D5A1DBF6ECB00F728F3 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		03DFC3211E1BBF46003D9338 /* ViewStarMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStarMethods.swift; sourceTree = "<group>"; };
 		03E96EF71DF1345F00EB41AC /* LastMsgTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastMsgTableCell.swift; sourceTree = "<group>"; };
 		03E96EF91DF134BA00EB41AC /* MessageCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterCell.swift; sourceTree = "<group>"; };
 		03E96EFB1DF134EA00EB41AC /* LastMsgDtls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastMsgDtls.swift; sourceTree = "<group>"; };
@@ -312,6 +322,7 @@
 				03040C7D1E114F3000F45E25 /* Timetableviewimage.swift */,
 				03040C7F1E114F7100F45E25 /* Homeworkviewimage.swift */,
 				0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */,
+				0377144E1E1B8FF600B305A3 /* MainVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -399,6 +410,7 @@
 				03EB09691E02A5DE00145941 /* FunCenterEventAPI.swift */,
 				03EB096D1E02B05400145941 /* FunCenterImageAPI.swift */,
 				03EE72771E0BE9000099988C /* SendMessageAPI.swift */,
+				037714501E1BA8E800B305A3 /* TokenRegisterAPI.swift */,
 			);
 			name = APICall;
 			sourceTree = "<group>";
@@ -443,6 +455,7 @@
 				03F2B00E1E001B99000AF6CB /* ClassworkModel.swift */,
 				03F2B00C1E001B24000AF6CB /* AttendanceModel.swift */,
 				03F2B00A1E001AAF000AF6CB /* AnnouncementModel.swift */,
+				037D72B51E1BCDBE0068C4E0 /* StarModel.swift */,
 			);
 			name = ResponseModel;
 			sourceTree = "<group>";
@@ -465,6 +478,8 @@
 				03EA704C1E0A81D4001CA57A /* DateFile.swift */,
 				03EE72791E0BEE080099988C /* ChatMethods.swift */,
 				0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */,
+				03DFC3211E1BBF46003D9338 /* ViewStarMethods.swift */,
+				037D72B31E1BC8DD0068C4E0 /* FCMTokenMethods.swift */,
 			);
 			name = DatabaseFunction;
 			sourceTree = "<group>";
@@ -623,6 +638,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03EB095E1E02798F00145941 /* HomeworkAPI.swift in Sources */,
+				037D72B41E1BC8DD0068C4E0 /* FCMTokenMethods.swift in Sources */,
 				0362949C1E126EEA00D4CE11 /* HolidayVC1.swift in Sources */,
 				03F2B00F1E001B99000AF6CB /* ClassworkModel.swift in Sources */,
 				032BA1AC1DED3CF600EC7739 /* ViewStarVC.swift in Sources */,
@@ -634,6 +650,7 @@
 				03EB095C1E02775600145941 /* AnnouncemnetAttendanceAPI.swift in Sources */,
 				03F723F21DD32DAF00740780 /* ClassWorkVC.swift in Sources */,
 				039FEE9A1DE97D150040513D /* SelectCategoryVC.swift in Sources */,
+				037D72B61E1BCDBE0068C4E0 /* StarModel.swift in Sources */,
 				0362949A1E126A1900D4CE11 /* Holiday.swift in Sources */,
 				039190191DD49F7A00F1E8A5 /* ViewClassWorkVC.swift in Sources */,
 				03F2B02F1E001D85000AF6CB /* TTList.swift in Sources */,
@@ -680,6 +697,7 @@
 				03EB09641E02989C00145941 /* ClassworkMethods.swift in Sources */,
 				03EB23971DDC56B500B2DCCB /* HomeWorkVC.swift in Sources */,
 				03F2B0271E001D2D000AF6CB /* SubjectAllocate.swift in Sources */,
+				0377144F1E1B8FF600B305A3 /* MainVC.swift in Sources */,
 				03EB23A51DDC5AD200B2DCCB /* CellHomeWork.swift in Sources */,
 				03B1CCC91DE81DA200929665 /* Classworkimagecell.swift in Sources */,
 				03EE72781E0BE9000099988C /* SendMessageAPI.swift in Sources */,
@@ -702,6 +720,7 @@
 				03EB23A91DDC636900B2DCCB /* HomeWork.swift in Sources */,
 				03EB09701E02B38A00145941 /* FunCenterImageMethods.swift in Sources */,
 				03EA704D1E0A81D4001CA57A /* DateFile.swift in Sources */,
+				037714511E1BA8E800B305A3 /* TokenRegisterAPI.swift in Sources */,
 				036294981E1267B500D4CE11 /* holidaycell.swift in Sources */,
 				036166631DE2AF3900A9D375 /* SelectMessageCenterListVC.swift in Sources */,
 				039FEE9C1DE993670040513D /* ShowAlertsVC.swift in Sources */,
@@ -726,6 +745,7 @@
 				03EB09591E02758200145941 /* AttendaceMethods.swift in Sources */,
 				03EB23AB1DDC65B800B2DCCB /* ViewHomeWorkVC.swift in Sources */,
 				039E71551DBE5A1500E856EC /* AppDelegate.swift in Sources */,
+				03DFC3221E1BBF46003D9338 /* ViewStarMethods.swift in Sources */,
 				0331D0811DD44FC40028654C /* ClassWorkCell.swift in Sources */,
 				03EB09571E026FB600145941 /* AnnouncementMethods.swift in Sources */,
 				03EFB1B11DEEB1E6004DB24B /* Menu.swift in Sources */,

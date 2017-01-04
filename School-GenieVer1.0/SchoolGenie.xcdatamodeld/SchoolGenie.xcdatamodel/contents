@@ -35,6 +35,9 @@
         <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="FCMTokenCoreData" representedClassName="FCMTokenCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="tokenId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="FunCenterEventCoreData" syncable="YES">
         <attribute name="createTS" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
@@ -130,6 +133,15 @@
         <attribute name="uploadDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uploadedBy" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="ViewStarCoreData" representedClassName="ViewStarCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="star" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="syncdate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherPic" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="AnnouncementCoreData" positionX="-36" positionY="297" width="128" height="180"/>
         <element name="AttendanceCoreData" positionX="-27" positionY="306" width="128" height="75"/>
@@ -138,10 +150,12 @@
         <element name="FunCenterEventCoreData" positionX="45" positionY="351" width="128" height="150"/>
         <element name="FunCenterImageCoreData" positionX="0" positionY="297" width="128" height="165"/>
         <element name="HomeworkCoreData" positionX="-9" positionY="324" width="128" height="180"/>
+        <element name="InitiateThread" positionX="0" positionY="297" width="128" height="150"/>
         <element name="PublicHolidayCoreData" positionX="-18" positionY="324" width="128" height="105"/>
         <element name="PupilInformation" positionX="-54" positionY="144" width="128" height="435"/>
         <element name="SubjectAllocationCoreData" positionX="-36" positionY="315" width="128" height="150"/>
         <element name="TimeTableCoreData" positionX="27" positionY="342" width="128" height="210"/>
-        <element name="InitiateThread" positionX="0" positionY="297" width="128" height="150"/>
+        <element name="ViewStarCoreData" positionX="0" positionY="297" width="128" height="150"/>
+        <element name="FCMTokenCoreData" positionX="0" positionY="297" width="128" height="60"/>
     </elements>
 </model>

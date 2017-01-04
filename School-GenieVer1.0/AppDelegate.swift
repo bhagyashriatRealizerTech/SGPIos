@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //createSlidingMenu()
+    
         if #available(iOS 8.0, *){
             let settings:UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.tokenrefreshNotification(notification:)), name: NSNotification.Name.firInstanceIDTokenRefresh, object: nil)
+        
         
         return true
     }
@@ -135,7 +136,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let refreshedToken = FIRInstanceID.instanceID().token()!
         print("InstanceIdToken: \(refreshedToken)")
         
+        let fcmtokenmethods = FCMTokenMethods()
+        fcmtokenmethods.storeToken(token: refreshedToken)
         connectToFCM()
+        
     }
     
     
@@ -152,36 +156,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func createSlidingMenu(){
-        
-        var rootViewController = self.window!.rootViewController
-        var mainstorybord = rootViewController?.storyboard
-        
-        
-        let isloggedin:Bool = UserDefaults.standard.value(forKey: "IsLogin") as! Bool
-        
-        let frontViewController2 = mainstorybord?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC//create instance of frontVC
-        
-         let frontViewController1  = mainstorybord?.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC//create instance of rearVC(menuVC)
-        
-        let frontViewController  = mainstorybord?.instantiateViewController(withIdentifier: "DashboardVC") as! UINavigationController//create instance of rearVC(menuVC)
-        
-        let rearViewController  = mainstorybord?.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC//create instance of rearVC(menuVC)
-        
-        
-        //create instance of swRevealVC based on front and rear VC
-        var swRevealVC = SWRevealViewController(rearViewController: rearViewController, frontViewController: frontViewController);
-        if(isloggedin){
-        swRevealVC = SWRevealViewController(rearViewController: rearViewController, frontViewController: frontViewController1);
-        }
-        swRevealVC?.toggleAnimationType = SWRevealToggleAnimationType.easeOut;
-        swRevealVC?.toggleAnimationDuration = 0.30;
-        
-        //set swRevealVC as rootVC of windows
-        self.window?.rootViewController = swRevealVC!;
-        
-    }
-
 
 }
 
