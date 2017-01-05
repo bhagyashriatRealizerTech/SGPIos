@@ -109,7 +109,7 @@ class ChatInitiateMethods{
     }
     
     
-    func getThreadList(threadId:String) -> Bool {
+    func getThread(threadId:String) -> Bool {
         
         var isPresent:Bool = false
         //create a fetch request, telling it about the entity

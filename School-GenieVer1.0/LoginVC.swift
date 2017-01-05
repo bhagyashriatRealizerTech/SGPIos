@@ -333,24 +333,7 @@ func isValidEmail(testStr:String) -> Bool {
         super.viewDidLoad()
         
         
-      /*  let storybord=UIStoryboard.init(name: "Main", bundle: nil)
-        let sw=storybord.instantiateViewController(withIdentifier:"RevealViewController") as! SWRevealViewController
-        
-        
-        self.view.window?.rootViewController=sw
-        
-        let des=self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
-        let nav=UINavigationController(rootViewController: des)
-        sw.pushFrontViewController(nav, animated: true)
-        
-        menubar.target=self.revealViewController()
-       
-        menubar.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-       
-       self.navigationController?.isNavigationBarHidden=true;*/
-        
-                
+     
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(LoginVC.didTapView))
         self.view.addGestureRecognizer(tapRecognizer)
@@ -371,32 +354,7 @@ func isValidEmail(testStr:String) -> Bool {
       
     }
     override func viewWillAppear(_ animated: Bool) {
-       /* self.navigationController?.isNavigationBarHidden=true;  menubar.target=self.revealViewController()
-        
-        menubar.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-        
-        let storybord=UIStoryboard.init(name: "Main", bundle: nil)
-        let sw=storybord.instantiateViewController(withIdentifier:"RevealViewController") as! SWRevealViewController
-        
-        
-        self.view.window?.rootViewController=sw
-        
-        let des=self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
-        let nav=UINavigationController(rootViewController: des)
-        sw.pushFrontViewController(nav, animated: true)
-        self.navigationController?.isNavigationBarHidden=true;*/
-        
-        
-       /* var islogged:Bool = false
-        if(UserDefaults.standard.value(forKey: "IsLogin") != nil){
-            islogged = UserDefaults.standard.value(forKey: "IsLogin") as! Bool
-        }
-        if(islogged){
-        let next = storybord.instantiateViewController(withIdentifier: "DashboardVC") as! DashboardVC
-        self.present(next, animated: true, completion: nil)
-        }*/
-    }
+          }
 
     func showActivityIndicator() {
         

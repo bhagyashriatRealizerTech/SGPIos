@@ -48,6 +48,43 @@ class AnnouncementMethods{
         
     }
     
+    func storeSinglAnnouncement (annobj: Alerts) {
+        let context = getContext()
+        
+        //deleteAnnouncement()
+        
+        //retrieve the entity that we just created
+        let entity =  NSEntityDescription.entity(forEntityName: "AnnouncementCoreData", in: context)
+        
+        
+            let transc = NSManagedObject(entity: entity!, insertInto: context)
+            
+            //set the entity values
+            transc.setValue("", forKey: "schoolCode")
+            transc.setValue("", forKey: "announcementId")
+            transc.setValue("", forKey: "std")
+            transc.setValue("", forKey: "division")
+            transc.setValue("", forKey: "academicYr")
+            transc.setValue(annobj.msgText, forKey: "announcementText")
+            transc.setValue(annobj.category, forKey: "category")
+            transc.setValue(annobj.attachimage, forKey: "sentBy")
+            transc.setValue(annobj.aldate, forKey: "createTS")
+            
+            //save the object
+            do {
+                try context.save()
+                print("saved!")
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            } catch {
+                
+            }
+            
+        
+        
+    }
+    
+
     
     func getAnnouncement() -> [Alerts] {
         

@@ -31,7 +31,9 @@ class ShowAlertsVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        lblcategory.text=ALDtls.category
+        let alertcell = AlertCell()
+        lblcategory.text=alertcell.getCategory(initials: ALDtls.category)
+        
         
         lblmsg.text=ALDtls.msgText
         lblteachername.text="Aparna Patil"

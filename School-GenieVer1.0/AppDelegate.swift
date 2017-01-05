@@ -43,99 +43,92 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        var type:String = ""
-        
-        if let notitype = userInfo["Star"] as? String {
+        if(application.applicationState == UIApplicationState.active) {
             
-            type = notitype
-        }
-        if(type == "Viewstar"){
-        var starName:String = ""
-        var starDate:String = ""
-        var comments:String = ""
-        var subject:String = ""
-        var teacherName:String = ""
-        var teacherId:String = ""
-        
-        if let star = userInfo["Star"] as? String {
-        
-            starName = star
-        }
-        if let date = userInfo["StarDate"] as? String {
+            //app is currently active, can update badges count here
             
-            starDate = date
-        }
-        if let comment = userInfo["Comment"] as? String {
+            var type:String = ""
             
-            comments = comment
-        }
-        if let sub = userInfo["Subject"] as? String {
-            
-            subject = sub
-        }
-        if let tname = userInfo["TeacherName"] as? String {
-            
-            teacherName = tname
-        }
-        if let pic = userInfo["TeacherThumbnailUrl"] as? String {
-            
-            teacherId = pic
-        }
-        
-        let starinfo = StarModels()
-        starinfo.setValue(notitype: "ViewStar", subject: subject, stardate: starDate, comment: comments, teachername: teacherName, teacherloginid: teacherId, star: starName)
-        
-        let starmethod = ViewStarMethods()
-        starmethod.storeStar(star: starinfo)
-        
-        }
-       /* else if(type == ""){
-            
-            var from:String = ""
-            var to:String = ""
-            var sendername:String = ""
-            var senderurl:String = ""
-            var senttime:String = ""
-            var msgtext:String = ""
-
-            if let fromid = userInfo["Star"] as? String {
+            if let notitype = userInfo["NotiType"] as? String {
                 
-                from = fromid
+                type = notitype
             }
-            if let toid = userInfo["StarDate"] as? String {
+            if(type == "Viewstar"){
                 
-                to = toid
-            }
-            if let sender = userInfo["Comment"] as? String {
+                let starnotif = StarNotification()
+                starnotif.setStar(userInfo: userInfo)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
                 
-                sendername = sender
             }
-            if let pic = userInfo["Subject"] as? String {
+            else if(type == "Chat"){
                 
-                senderurl = pic
-            }
-            if let stime = userInfo["TeacherName"] as? String {
+                let chatnotif = ChatNotification()
+                chatnotif.setChat(userInfo: userInfo)
                 
-                senttime = stime
-            }
-            if let msg = userInfo["TeacherThumbnailUrl"] as? String {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadThread"), object: nil)
                 
-                msgtext = msg
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadMessage"), object: nil)
+                
             }
-            let chatmodel = ConversationModel()
-            chatmodel.setMessage(chatId: "", fromteacher: true, schoolCode: "", fromId: from, toId: to, message: msgtext, msgTime: senttime, profilePic: senderurl, senderN: sendername)
-            let chatmethod = ChatMethods()
-            chatmethod.storeMessage(chatObj: chatmodel)
+            else if(type == "Announcement"){
+                
+                let alertNotif = AlertsNotification()
+                alertNotif.setAlert(userInfo: userInfo)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAlert"), object: nil)
+                
+            }
             
+            // Print full message.
+            print(userInfo)
 
             
-        }*/
-        // If you are receiving a notification message while your app is in the background,
-        // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
-    
-        // Print full message.
-        print(userInfo)
+        }else if(application.applicationState == UIApplicationState.background){
+            
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            
+            var type:String = ""
+            
+            if let notitype = userInfo["NotiType"] as? String {
+                
+                type = notitype
+            }
+            if(type == "Viewstar"){
+                
+                let starnotif = StarNotification()
+                starnotif.setStar(userInfo: userInfo)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                
+            }
+            else if(type == "Chat"){
+                
+                let chatnotif = ChatNotification()
+                chatnotif.setChat(userInfo: userInfo)
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadThread"), object: nil)
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadMessage"), object: nil)
+                
+            }
+            else if(type == "Announcement"){
+                
+                let alertNotif = AlertsNotification()
+                alertNotif.setAlert(userInfo: userInfo)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAlert"), object: nil)
+                
+            }
+            
+            // Print full message.
+            print(userInfo)
+
+            
+        }else if(application.applicationState == UIApplicationState.inactive){
+            
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+            
+            
+            
+        }
+        
         
         completionHandler(UIBackgroundFetchResult.newData)
     }
@@ -221,11 +214,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func tokenrefreshNotification(notification: NSNotification){
+        if(FIRInstanceID.instanceID().token() != nil){
         let refreshedToken = FIRInstanceID.instanceID().token()!
         print("InstanceIdToken: \(refreshedToken)")
         
         let fcmtokenmethods = FCMTokenMethods()
         fcmtokenmethods.storeToken(token: refreshedToken)
+        }
         connectToFCM()
         
     }

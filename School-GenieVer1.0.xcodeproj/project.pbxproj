@@ -11,6 +11,7 @@
 		03040C7E1E114F3000F45E25 /* Timetableviewimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03040C7D1E114F3000F45E25 /* Timetableviewimage.swift */; };
 		03040C801E114F7100F45E25 /* Homeworkviewimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03040C7F1E114F7100F45E25 /* Homeworkviewimage.swift */; };
 		030895661DEC0291006255F5 /* AlertViewImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030895651DEC0291006255F5 /* AlertViewImageVC.swift */; };
+		0316F38E1E1E4C22007D096D /* AlertsNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316F38D1E1E4C22007D096D /* AlertsNotification.swift */; };
 		031DF8231DDF3A3900FDE382 /* selectChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF8221DDF3A3900FDE382 /* selectChat.swift */; };
 		03291A3C1DE5CA1F00608066 /* MyCollectioncell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03291A3B1DE5CA1F00608066 /* MyCollectioncell.swift */; };
 		03291A421DE5D94100608066 /* funcentercell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03291A411DE5D94100608066 /* funcentercell.swift */; };
@@ -41,6 +42,8 @@
 		0362949C1E126EEA00D4CE11 /* HolidayVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */; };
 		0362949E1E1276B500D4CE11 /* Images-4.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0362949D1E1276B500D4CE11 /* Images-4.xcassets */; };
 		0362CF9D1E1CD4740065B137 /* Inputdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362CF9C1E1CD4740065B137 /* Inputdate.swift */; };
+		0362CFA21E1E2DE60065B137 /* StarNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362CFA11E1E2DE50065B137 /* StarNotification.swift */; };
+		0362CFA41E1E2E760065B137 /* ChatNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362CFA31E1E2E760065B137 /* ChatNotification.swift */; };
 		0377144F1E1B8FF600B305A3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0377144E1E1B8FF600B305A3 /* MainVC.swift */; };
 		037714511E1BA8E800B305A3 /* TokenRegisterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037714501E1BA8E800B305A3 /* TokenRegisterAPI.swift */; };
 		037D72B41E1BC8DD0068C4E0 /* FCMTokenMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D72B31E1BC8DD0068C4E0 /* FCMTokenMethods.swift */; };
@@ -141,6 +144,7 @@
 		03040C7D1E114F3000F45E25 /* Timetableviewimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timetableviewimage.swift; sourceTree = "<group>"; };
 		03040C7F1E114F7100F45E25 /* Homeworkviewimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homeworkviewimage.swift; sourceTree = "<group>"; };
 		030895651DEC0291006255F5 /* AlertViewImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewImageVC.swift; sourceTree = "<group>"; };
+		0316F38D1E1E4C22007D096D /* AlertsNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsNotification.swift; sourceTree = "<group>"; };
 		031DF8221DDF3A3900FDE382 /* selectChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectChat.swift; sourceTree = "<group>"; };
 		03291A3B1DE5CA1F00608066 /* MyCollectioncell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectioncell.swift; sourceTree = "<group>"; };
 		03291A411DE5D94100608066 /* funcentercell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = funcentercell.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 		0362949B1E126EEA00D4CE11 /* HolidayVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayVC1.swift; sourceTree = "<group>"; };
 		0362949D1E1276B500D4CE11 /* Images-4.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-4.xcassets"; sourceTree = "<group>"; };
 		0362CF9C1E1CD4740065B137 /* Inputdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inputdate.swift; sourceTree = "<group>"; };
+		0362CFA11E1E2DE50065B137 /* StarNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarNotification.swift; sourceTree = "<group>"; };
+		0362CFA31E1E2E760065B137 /* ChatNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatNotification.swift; sourceTree = "<group>"; };
 		0377144E1E1B8FF600B305A3 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		037714501E1BA8E800B305A3 /* TokenRegisterAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRegisterAPI.swift; sourceTree = "<group>"; };
 		037D72B31E1BC8DD0068C4E0 /* FCMTokenMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCMTokenMethods.swift; sourceTree = "<group>"; };
@@ -350,6 +356,16 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		0362CFA01E1E2DCC0065B137 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				0362CFA11E1E2DE50065B137 /* StarNotification.swift */,
+				0362CFA31E1E2E760065B137 /* ChatNotification.swift */,
+				0316F38D1E1E4C22007D096D /* AlertsNotification.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
 		039E71481DBE5A1500E856EC = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +387,7 @@
 		039E71531DBE5A1500E856EC /* School-GenieVer1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				0362CFA01E1E2DCC0065B137 /* Notification */,
 				035D03CC1E1A7B6C00F7DD08 /* SchoolGenie.entitlements */,
 				035D03CA1E1A7B2D00F7DD08 /* GoogleService-Info.plist */,
 				03040C7A1E113BD000F45E25 /* School-GenieVer1.0.entitlements */,
@@ -543,6 +560,9 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -654,6 +674,7 @@
 				03F723F21DD32DAF00740780 /* ClassWorkVC.swift in Sources */,
 				039FEE9A1DE97D150040513D /* SelectCategoryVC.swift in Sources */,
 				037D72B61E1BCDBE0068C4E0 /* StarModel.swift in Sources */,
+				0316F38E1E1E4C22007D096D /* AlertsNotification.swift in Sources */,
 				0362949A1E126A1900D4CE11 /* Holiday.swift in Sources */,
 				039190191DD49F7A00F1E8A5 /* ViewClassWorkVC.swift in Sources */,
 				03F2B02F1E001D85000AF6CB /* TTList.swift in Sources */,
@@ -745,12 +766,14 @@
 				03EB09551E02515300145941 /* SyncUpCall.swift in Sources */,
 				039FEE961DE95ABA0040513D /* AlertCell.swift in Sources */,
 				03EFB1B31DEEB407004DB24B /* MenuVC.swift in Sources */,
+				0362CFA21E1E2DE60065B137 /* StarNotification.swift in Sources */,
 				03F2B00D1E001B24000AF6CB /* AttendanceModel.swift in Sources */,
 				03EB09591E02758200145941 /* AttendaceMethods.swift in Sources */,
 				03EB23AB1DDC65B800B2DCCB /* ViewHomeWorkVC.swift in Sources */,
 				039E71551DBE5A1500E856EC /* AppDelegate.swift in Sources */,
 				03DFC3221E1BBF46003D9338 /* ViewStarMethods.swift in Sources */,
 				0331D0811DD44FC40028654C /* ClassWorkCell.swift in Sources */,
+				0362CFA41E1E2E760065B137 /* ChatNotification.swift in Sources */,
 				03EB09571E026FB600145941 /* AnnouncementMethods.swift in Sources */,
 				03EFB1B11DEEB1E6004DB24B /* Menu.swift in Sources */,
 				032BA1B01DED400600EC7739 /* TimeTableCell.swift in Sources */,
@@ -889,6 +912,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.realizertech.com.SchoolGenie;
 				PRODUCT_NAME = SchoolGenie;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "School-GenieVer1.0/School-GenieVer1.0-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -911,6 +936,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.realizertech.com.SchoolGenie;
 				PRODUCT_NAME = SchoolGenie;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "School-GenieVer1.0/School-GenieVer1.0-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

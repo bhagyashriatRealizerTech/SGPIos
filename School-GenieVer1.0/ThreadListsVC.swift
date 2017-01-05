@@ -24,6 +24,8 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         
         chatview.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)),name:NSNotification.Name(rawValue: "loadThread"), object: nil)
     
         let chatinitiatemethod = ChatInitiateMethods()
         LastMsgList = chatinitiatemethod.getThreadList()
@@ -38,6 +40,27 @@ class ThreadListsVC: UIViewController,UITableViewDataSource,UITableViewDelegate 
             chatviewhide.isHidden=false
         }
         
+    }
+    
+    func loadList(notification: NSNotification){
+        
+        let chatinitiatemethod = ChatInitiateMethods()
+        LastMsgList = chatinitiatemethod.getThreadList()
+        
+        if(LastMsgList.count>0)
+        {
+            tableview.isHidden=false
+            chatviewhide.isHidden=true
+
+            tableview.dataSource=self
+            tableview.delegate=self
+            tableview.reloadData()
+        }
+        else{
+            tableview.isHidden=true
+            chatviewhide.isHidden=false
+        }
+
     }
     
     

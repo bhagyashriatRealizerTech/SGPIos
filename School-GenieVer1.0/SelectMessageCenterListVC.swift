@@ -41,15 +41,8 @@ class  SelectMessageCenterListVC: UIViewController,UITableViewDataSource,UITable
         TextviewMessage.layer.borderColor=UIColor.black.cgColor
         TextviewMessage.layer.borderWidth=1
         
-       /* let m1=Message(MsgSender: "Swapnali", msgtext: "Please Resolve Swift issues, its taing time ", MsgTime: "07:30 AM", msgSenderimage: "car.jpg")
+       NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)),name:NSNotification.Name(rawValue: "loadMessage"), object: nil)
         
-        
-        
-        let m2=Message(MsgSender: "Bhagyashri", msgtext: "Android APK is deployed and ready for Demo", MsgTime: "Yesterday", msgSenderimage: "car.jpg")
-        
-        
-        LastMsg.append(m1)
-        LastMsg.append(m2)*/
         
         let methodchat = ChatMethods()
         LastMsg = methodchat.getMessages(userid: threadModel.ThreadId)
@@ -62,6 +55,21 @@ class  SelectMessageCenterListVC: UIViewController,UITableViewDataSource,UITable
         }
         
     }
+    
+    func loadList(notification: NSNotification){
+        let methodchat = ChatMethods()
+        LastMsg = methodchat.getMessages(userid: threadModel.ThreadId)
+        
+        if(LastMsg.count > 0){
+            
+            MessageCenter.dataSource=self
+            MessageCenter.delegate=self
+            MessageCenter.reloadData()
+        }
+
+    }
+    
+    
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !TextviewMessage.text.isEmpty
     }

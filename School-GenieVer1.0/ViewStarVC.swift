@@ -38,7 +38,8 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         menu.target=self.revealViewController()
         //menu.action=SWRevealViewController.revealToggle(self)
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
-       timeview.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        timeview.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)),name:NSNotification.Name(rawValue: "load"), object: nil)
         
         
         
@@ -61,48 +62,18 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
                 starTableView.delegate = self
                 starTableView.reloadData()
                 
-                lblheader.isHidden=false
-                starTableView.isHidden=false
-                subjectPicker.isHidden=false
-                headerview.isHidden=false
-                img.isHidden=false
-                teacherinfoview.isHidden=false
-                viewhide.isHidden=true
-                teacherPic.isHidden = false
-                teacherName.isHidden = false
+                dispalyTable()
                 
                 teacherName.text = viewstars[0].TeacherName
-                let picurl = viewstars[0].TeacherLoginId
-                
-                let v=teacherName.text
-                let stArr = v?.components(separatedBy: " ")
-                var st=""
-                for s in stArr!{
-                    if let str=s.characters.first{
-                        st+=String(str).capitalized
-                    }
+                var picurl = viewstars[0].TeacherLoginId
+                if(picurl != nil){
+                    picurl = ""
                 }
-                
-                let img1 = ImageToText()
-                let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
-                self.teacherPic.layer.borderColor = UIColor.gray.cgColor
-                self.teacherPic.layer.cornerRadius = 36.6
-                self.teacherPic.layer.masksToBounds = true
-                self.teacherPic.image = tempimg
-                
+                setPic(picurl: picurl!)
 
             }
             else{
-                lblheader.isHidden=true
-                starTableView.isHidden=true
-                subjectPicker.isHidden=true
-                headerview.isHidden=true
-                img.isHidden=true
-                teacherinfoview.isHidden=true
-                viewhide.isHidden=false
-                teacherPic.isHidden = true
-                teacherName.isHidden = true
-                
+                hideTable()
             }
         }
         else{
@@ -116,7 +87,58 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 
         }
         
+    }
+    func dispalyTable(){
+        lblheader.isHidden=false
+        starTableView.isHidden=false
+        subjectPicker.isHidden=false
+        headerview.isHidden=false
+        img.isHidden=false
+        teacherinfoview.isHidden=false
+        viewhide.isHidden=true
+        teacherPic.isHidden = false
+        teacherName.isHidden = false
+
+    }
+    
+    func hideTable(){
+        lblheader.isHidden=true
+        starTableView.isHidden=true
+        subjectPicker.isHidden=true
+        headerview.isHidden=true
+        img.isHidden=true
+        teacherinfoview.isHidden=true
+        viewhide.isHidden=false
+        teacherPic.isHidden = true
+        teacherName.isHidden = true
+
+    }
+
+    
+    func loadList(notification: NSNotification){
+        //load data here
+        let starmethods = ViewStarMethods()
+        viewstars.removeAll()
+        viewstars = starmethods.getStars(subject: sub[0])
         
+        if(viewstars.count > 0){
+            starTableView.dataSource = self
+            starTableView.delegate = self
+            starTableView.reloadData()
+            
+            dispalyTable()
+            teacherName.text = viewstars[0].TeacherName
+            var picurl = viewstars[0].TeacherLoginId
+            
+            if(picurl != nil){
+                picurl = ""
+            }
+            setPic(picurl: picurl!)
+
+        }
+        else{
+            hideTable()
+        }
 
     }
     
@@ -151,75 +173,18 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             starTableView.delegate = self
             starTableView.reloadData()
             
-            lblheader.isHidden=false
-            starTableView.isHidden=false
-            subjectPicker.isHidden=false
-            headerview.isHidden=false
-            img.isHidden=false
-            teacherinfoview.isHidden=false
-            viewhide.isHidden=true
-            teacherPic.isHidden = false
-            teacherName.isHidden = false
-            
+            dispalyTable()
             teacherName.text = viewstars[0].TeacherName
-            let picurl = viewstars[0].TeacherLoginId
+            var picurl = viewstars[0].TeacherLoginId
             
-            let v=teacherName.text
-            let stArr = v?.components(separatedBy: " ")
-            var st=""
-            for s in stArr!{
-                if let str=s.characters.first{
-                    st+=String(str).capitalized
-                }
+            if(picurl != nil){
+                picurl = ""
             }
-
-            let img1 = ImageToText()
-            let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
-            self.teacherPic.layer.borderColor = UIColor.gray.cgColor
-            self.teacherPic.layer.cornerRadius = 36.6
-            self.teacherPic.layer.masksToBounds = true
-            self.teacherPic.image = tempimg
+            setPic(picurl: picurl!)
             
-           /* if(picurl != nil){
-                if(picurl?.isEmpty)!{
-                    let img1 = ImageToText()
-                    let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
-                    self.teacherPic.layer.borderColor = UIColor.gray.cgColor
-                    self.teacherPic.layer.cornerRadius = 28.7
-                    self.teacherPic.layer.masksToBounds = true
-                    self.teacherPic.image = tempimg
-
-                }
-                else{
-            let imagedownload = DownloadImage()
-            imagedownload.setImage(imageurlString: picurl!, imageView: teacherPic)
-                }
-            }
-            else{
-                
-                        let img1 = ImageToText()
-                    let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
-                    self.teacherPic.layer.borderColor = UIColor.gray.cgColor
-                     self.teacherPic.layer.cornerRadius = 25.7
-                     self.teacherPic.layer.masksToBounds = true
-                    self.teacherPic.image = tempimg
-                    
-                
-                
-
-            }*/
-        }
+                    }
         else{
-            lblheader.isHidden=true
-            starTableView.isHidden=true
-            subjectPicker.isHidden=true
-            headerview.isHidden=true
-            img.isHidden=true
-            teacherinfoview.isHidden=true
-            viewhide.isHidden=false
-            teacherPic.isHidden = true
-            teacherName.isHidden = true
-            
+            hideTable()
         }
 
         
@@ -254,7 +219,53 @@ class ViewStarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         return viewstars.count
     }
     
-    
+    func setPic(picurl:String) {
+        let v=teacherName.text
+        let stArr = v?.components(separatedBy: " ")
+        var st=""
+        for s in stArr!{
+            if let str=s.characters.first{
+                st+=String(str).capitalized
+            }
+        }
+        
+        let img1 = ImageToText()
+        let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+        self.teacherPic.layer.borderColor = UIColor.gray.cgColor
+        self.teacherPic.layer.cornerRadius = 36.6
+        self.teacherPic.layer.masksToBounds = true
+        self.teacherPic.image = tempimg
+        
+        /* if(picurl != nil){
+         if(picurl?.isEmpty)!{
+         let img1 = ImageToText()
+         let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+         self.teacherPic.layer.borderColor = UIColor.gray.cgColor
+         self.teacherPic.layer.cornerRadius = 28.7
+         self.teacherPic.layer.masksToBounds = true
+         self.teacherPic.image = tempimg
+         
+         }
+         else{
+         let imagedownload = DownloadImage()
+         imagedownload.setImage(imageurlString: picurl!, imageView: teacherPic)
+         }
+         }
+         else{
+         
+         let img1 = ImageToText()
+         let tempimg = img1.textToImage(drawText: st as NSString, inImage: #imageLiteral(resourceName: "greybg"), atPoint: CGPoint(x: 20.0, y: 20.0))
+         self.teacherPic.layer.borderColor = UIColor.gray.cgColor
+         self.teacherPic.layer.cornerRadius = 25.7
+         self.teacherPic.layer.masksToBounds = true
+         self.teacherPic.image = tempimg
+         
+         
+         
+         
+         }*/
+
+    }
     
 
     

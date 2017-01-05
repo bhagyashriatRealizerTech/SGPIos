@@ -183,7 +183,14 @@ class MessageCenterVC: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSo
                 
                 let chatobj = LastMsgDtls(LastMsgSender: username, Lastmsgtext: msgtxt, LastMsgTime: date, LastmsgSenderimage: "", LastMessageSenderID: userId, ThraedID: selectedteacher, ThreadName: selectedteachername)
                 
-                chatinitmethods.storeThread(chatObj: chatobj)
+                if(chatinitmethods.getThread(threadId: selectedteacher)){
+                    
+                    chatinitmethods.updateThread(userID: selectedteacher, chatObj: msgObj)
+                }
+                else{
+                    chatinitmethods.storeThread(chatObj: chatobj)
+                }
+                
                 chatMethods.storeMessage(chatObj: msgObj)
                 sendMesssage(completed: {}, msgObj: msgObj)
                 

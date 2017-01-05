@@ -37,7 +37,7 @@ func setStarImage(imageview:UIImageView, star:String){
     else if(star == "VeryGood"){
       imageview.image = #imageLiteral(resourceName: "verygood")
     }
-    else if(star == "Super"){
+    else if(star == "SupreStar"){
       imageview.image = #imageLiteral(resourceName: "super")
     }
 

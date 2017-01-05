@@ -26,6 +26,7 @@ var alert=[Alerts]()
         menualert.action = #selector(SWRevealViewController.revealToggle(_:))
         alertview.addGestureRecognizer(revealViewController().panGestureRecognizer())
 
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)),name:NSNotification.Name(rawValue: "loadAlert"), object: nil)
      
         let announcement = AnnouncementMethods()
         alert = announcement.getAnnouncement()
@@ -41,7 +42,31 @@ var alert=[Alerts]()
             alertTableview.separatorColor=UIColor.white
             hideview.isHidden=false
         }
-           }
+  }
+    
+    func loadList(notification: NSNotification){
+        
+        let announcement = AnnouncementMethods()
+        alert = announcement.getAnnouncement()
+
+        if(alert.count>0){
+            alert.reverse()
+            alertTableview.dataSource=self
+            alertTableview.delegate=self
+            alertTableview.reloadData()
+            
+            alertTableview.isHidden=false
+            alertTableview.separatorColor=UIColor.orange
+            hideview.isHidden=true
+            
+        }
+        else{
+            alertTableview.isHidden=true
+            alertTableview.separatorColor=UIColor.white
+            hideview.isHidden=false
+        }
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,21 +121,13 @@ var alert=[Alerts]()
             }
             
 
-            let v=at.category
-            let stArr=v.components(separatedBy: " ")
-            var st=""
-            for s in stArr{
-                if let      str=s.characters.first{
-                    st+=String(str)
-                }
-                
-            }
+            
             
             var datestring:String = at.aldate
             let datefile = DateFile()
             datestring = datefile.getDate(date: at.aldate.components(separatedBy: " ")[0], FLAG: "D")
             //print(st)
-          cell.updateCell(category: at.category, msgtext: subText, isAttachment:at.attachmentExists, msgtime: datestring,initial: st)
+          cell.updateCell(category: at.category, msgtext: subText, isAttachment:at.attachmentExists, msgtime: datestring,initial: at.category)
         
            return cell
             
