@@ -42,12 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
+        var title:String = ""
+        var message:String = ""
         if(application.applicationState == UIApplicationState.active) {
             
             //app is currently active, can update badges count here
             
             var type:String = ""
+           
             
             if let notitype = userInfo["NotiType"] as? String {
                 
@@ -56,27 +58,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if(type == "Viewstar"){
                 
                 let starnotif = StarNotification()
-                starnotif.setStar(userInfo: userInfo)
+                let star = starnotif.setStar(userInfo: userInfo)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                title = "Star"
+                let star1 = star.Star
+                let tname = star.TeacherName
+                let sub = star.Subject
+                message = "Recieved \(star1) star from \(tname) \(sub)"
+                
                 
             }
             else if(type == "Chat"){
                 
                 let chatnotif = ChatNotification()
-                chatnotif.setChat(userInfo: userInfo)
+                let chat = chatnotif.setChat(userInfo: userInfo)
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadThread"), object: nil)
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadMessage"), object: nil)
                 
+                title = "Message"
+                message = "Recieved message from " + chat.LastMsgSender + "\nMessage: "+chat.Lastmsgtext
+                
             }
             else if(type == "Announcement"){
                 
                 let alertNotif = AlertsNotification()
-                alertNotif.setAlert(userInfo: userInfo)
+                let alertmodel = alertNotif.setAlert(userInfo: userInfo)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAlert"), object: nil)
                 
+                
+                title = "Alert"
+                let alertcell = AlertCell()
+                message = "Recieved Alert for " + alertcell.getCategory(initials: alertmodel.category)+" : " +
+                    alertmodel.msgText
+                
             }
+            
+         let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+            
+            let alertmethod = ActiveDashboardMethods()
+            alertmethod.storeActiveDashboard(activeNotif: alert)
+            
             
             // Print full message.
             print(userInfo)
@@ -95,27 +118,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if(type == "Viewstar"){
                 
                 let starnotif = StarNotification()
-                starnotif.setStar(userInfo: userInfo)
+                let star = starnotif.setStar(userInfo: userInfo)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                
+                title = "Star"
+                let star1 = star.Star
+                let tname = star.TeacherName
+                let sub = star.Subject
+                message = "Recieved \(star1) star from \(tname) \(sub)"
                 
             }
             else if(type == "Chat"){
                 
                 let chatnotif = ChatNotification()
-                chatnotif.setChat(userInfo: userInfo)
+                let chat = chatnotif.setChat(userInfo: userInfo)
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadThread"), object: nil)
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadMessage"), object: nil)
                 
+                title = "Message"
+                message = "Recieved message from " + chat.LastMsgSender + "\nMessage: "+chat.Lastmsgtext
+                
             }
             else if(type == "Announcement"){
                 
                 let alertNotif = AlertsNotification()
-                alertNotif.setAlert(userInfo: userInfo)
+                let alertmodel = alertNotif.setAlert(userInfo: userInfo)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAlert"), object: nil)
+                title = "Alert"
+                let alertcell = AlertCell()
+                message = "Recieved Alert for " + alertcell.getCategory(initials: alertmodel.category)+" : " +
+                alertmodel.msgText
                 
             }
+            
+            let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+            
+            let alertmethod = ActiveDashboardMethods()
+            alertmethod.storeActiveDashboard(activeNotif: alert)
+            
+            
             
             // Print full message.
             print(userInfo)

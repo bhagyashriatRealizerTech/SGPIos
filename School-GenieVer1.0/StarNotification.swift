@@ -10,7 +10,7 @@ import Foundation
 
 class StarNotification{
     
-    func setStar(userInfo: [AnyHashable: Any]) {
+    func setStar(userInfo: [AnyHashable: Any]) ->StarModels {
         
         var starName:String = ""
         var starDate:String = ""
@@ -50,5 +50,6 @@ class StarNotification{
         let starmethod = ViewStarMethods()
         starmethod.storeStar(star: starinfo)
         
+        return starinfo 
     }
 }

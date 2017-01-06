@@ -10,7 +10,7 @@ import Foundation
 
 class AlertsNotification{
     
-    func setAlert(userInfo: [AnyHashable: Any]){
+    func setAlert(userInfo: [AnyHashable: Any]) -> Alerts{
         
         var alertText:String = ""
         var createTs:String = ""
@@ -40,6 +40,6 @@ class AlertsNotification{
         let alertMethod = AnnouncementMethods()
         alertMethod.storeSinglAnnouncement(annobj: alertmodel)
         
-        
+        return alertmodel
     }
 }

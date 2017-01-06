@@ -10,7 +10,7 @@ import Foundation
 
 class ChatNotification{
     
-    func setChat(userInfo: [AnyHashable: Any]) {
+    func setChat(userInfo: [AnyHashable: Any]) -> LastMsgDtls {
         var from:String = ""
         var to:String = ""
         var sendername:String = ""
@@ -64,5 +64,6 @@ class ChatNotification{
         chatMethods.storeMessage(chatObj: msgObj)
         
 
+        return chatobj
     }
 }

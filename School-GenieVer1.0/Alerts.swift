@@ -11,7 +11,7 @@ class Alerts
 
 {
     private var _AlDate:String!
-     private var _aldate:String!
+    private var _aldate:String!
     private var _category:String!
     private var _msgText:String!
     private var _attachmentExists:Bool!

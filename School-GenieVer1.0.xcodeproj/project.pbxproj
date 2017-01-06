@@ -32,6 +32,8 @@
 		033A43801E0165ED000410F8 /* PhotosDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A437D1E0165ED000410F8 /* PhotosDataManager.swift */; };
 		033A43811E0165ED000410F8 /* TextToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A437E1E0165ED000410F8 /* TextToImage.swift */; };
 		03442A481DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */; };
+		0344872A1E1E7C73006D5F6A /* ActiveDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034487291E1E7C73006D5F6A /* ActiveDashboard.swift */; };
+		0344872C1E1E8079006D5F6A /* ActiveDashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344872B1E1E8079006D5F6A /* ActiveDashboardCell.swift */; };
 		035D03CB1E1A7B2D00F7DD08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035D03CA1E1A7B2D00F7DD08 /* GoogleService-Info.plist */; };
 		036166631DE2AF3900A9D375 /* SelectMessageCenterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */; };
 		036294921E12365A00D4CE11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036294911E12365A00D4CE11 /* Images.xcassets */; };
@@ -65,6 +67,7 @@
 		03B1CCC91DE81DA200929665 /* Classworkimagecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1CCC81DE81DA200929665 /* Classworkimagecell.swift */; };
 		03B1CCCB1DE81DE700929665 /* Homeworkcollectioncell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1CCCA1DE81DE700929665 /* Homeworkcollectioncell.swift */; };
 		03C33D5B1DBF6ECB00F728F3 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33D5A1DBF6ECB00F728F3 /* DashboardVC.swift */; };
+		03D9FB011E1FAFEF00C67B89 /* ActiveDashboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9FB001E1FAFEF00C67B89 /* ActiveDashboardMethods.swift */; };
 		03DFC3221E1BBF46003D9338 /* ViewStarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DFC3211E1BBF46003D9338 /* ViewStarMethods.swift */; };
 		03E96EF81DF1345F00EB41AC /* LastMsgTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E96EF71DF1345F00EB41AC /* LastMsgTableCell.swift */; };
 		03E96EFA1DF134BA00EB41AC /* MessageCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E96EF91DF134BA00EB41AC /* MessageCenterCell.swift */; };
@@ -166,6 +169,8 @@
 		033A437D1E0165ED000410F8 /* PhotosDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDataManager.swift; sourceTree = "<group>"; };
 		033A437E1E0165ED000410F8 /* TextToImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToImage.swift; sourceTree = "<group>"; };
 		03442A471DD9C8DA003676A3 /* ForgotPasswordPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPopupVC.swift; sourceTree = "<group>"; };
+		034487291E1E7C73006D5F6A /* ActiveDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDashboard.swift; sourceTree = "<group>"; };
+		0344872B1E1E8079006D5F6A /* ActiveDashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDashboardCell.swift; sourceTree = "<group>"; };
 		035D03CA1E1A7B2D00F7DD08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		035D03CC1E1A7B6C00F7DD08 /* SchoolGenie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SchoolGenie.entitlements; sourceTree = "<group>"; };
 		036166621DE2AF3900A9D375 /* SelectMessageCenterListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMessageCenterListVC.swift; sourceTree = "<group>"; };
@@ -202,6 +207,7 @@
 		03B1CCC81DE81DA200929665 /* Classworkimagecell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classworkimagecell.swift; sourceTree = "<group>"; };
 		03B1CCCA1DE81DE700929665 /* Homeworkcollectioncell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homeworkcollectioncell.swift; sourceTree = "<group>"; };
 		03C33D5A1DBF6ECB00F728F3 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		03D9FB001E1FAFEF00C67B89 /* ActiveDashboardMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDashboardMethods.swift; sourceTree = "<group>"; };
 		03DFC3211E1BBF46003D9338 /* ViewStarMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStarMethods.swift; sourceTree = "<group>"; };
 		03E96EF71DF1345F00EB41AC /* LastMsgTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastMsgTableCell.swift; sourceTree = "<group>"; };
 		03E96EF91DF134BA00EB41AC /* MessageCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterCell.swift; sourceTree = "<group>"; };
@@ -352,6 +358,7 @@
 				03E96EF71DF1345F00EB41AC /* LastMsgTableCell.swift */,
 				03E96EF91DF134BA00EB41AC /* MessageCenterCell.swift */,
 				036294971E1267B500D4CE11 /* holidaycell.swift */,
+				0344872B1E1E8079006D5F6A /* ActiveDashboardCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -450,6 +457,7 @@
 				03E96EFB1DF134EA00EB41AC /* LastMsgDtls.swift */,
 				03E96F051DF136C700EB41AC /* Message.swift */,
 				036294991E126A1900D4CE11 /* Holiday.swift */,
+				034487291E1E7C73006D5F6A /* ActiveDashboard.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 				0389DC0D1E0D0B8500FB7D9E /* ChatInitiateMethods.swift */,
 				03DFC3211E1BBF46003D9338 /* ViewStarMethods.swift */,
 				037D72B31E1BC8DD0068C4E0 /* FCMTokenMethods.swift */,
+				03D9FB001E1FAFEF00C67B89 /* ActiveDashboardMethods.swift */,
 			);
 			name = DatabaseFunction;
 			sourceTree = "<group>";
@@ -710,6 +719,8 @@
 				033A43811E0165ED000410F8 /* TextToImage.swift in Sources */,
 				03EE72761E0BD95B0099988C /* Reachability.swift in Sources */,
 				03EB096A1E02A5DE00145941 /* FunCenterEventAPI.swift in Sources */,
+				0344872C1E1E8079006D5F6A /* ActiveDashboardCell.swift in Sources */,
+				03D9FB011E1FAFEF00C67B89 /* ActiveDashboardMethods.swift in Sources */,
 				03F2AF371E00129E000AF6CB /* SWRevealViewController.m in Sources */,
 				03FD7EC81DDAD03800CF12F1 /* VerifyMailVC.swift in Sources */,
 				032BA1AA1DED3CCE00EC7739 /* ViewStarCell.swift in Sources */,
@@ -720,6 +731,7 @@
 				032BA1AE1DED3D1D00EC7739 /* ViewStarModel.swift in Sources */,
 				03040C801E114F7100F45E25 /* Homeworkviewimage.swift in Sources */,
 				03EB09641E02989C00145941 /* ClassworkMethods.swift in Sources */,
+				0344872A1E1E7C73006D5F6A /* ActiveDashboard.swift in Sources */,
 				03EB23971DDC56B500B2DCCB /* HomeWorkVC.swift in Sources */,
 				03F2B0271E001D2D000AF6CB /* SubjectAllocate.swift in Sources */,
 				0377144F1E1B8FF600B305A3 /* MainVC.swift in Sources */,

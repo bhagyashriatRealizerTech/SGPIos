@@ -41,6 +41,14 @@ class FunCenterEventMethods{
                 let eid:String = getLastFunCenterEventById(event: event.EventId!)
 
                 if(eid.isEmpty){
+                    
+                    var title:String = "Fun Center Event"
+                    var message:String = "Downloaded Fun Center Event "+event.Event!
+                    let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+                    
+                    let alertmethod = ActiveDashboardMethods()
+                    alertmethod.storeActiveDashboard(activeNotif: alert)
+                    
                 let transc = NSManagedObject(entity: entity!, insertInto: context)
                                 //set the entity values
                 transc.setValue(event.CreateTS, forKey: "createTS")

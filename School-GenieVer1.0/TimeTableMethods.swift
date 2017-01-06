@@ -21,6 +21,7 @@ class TimeTableMethods{
         }
         else{
             
+            
             let date1:Date = Date()
             let calendar = Calendar.autoupdatingCurrent
             let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1)
@@ -36,6 +37,15 @@ class TimeTableMethods{
             
             for timetable in timetables as [TimeTableModel]
             {
+                var title:String = "Timetable"
+                var message:String = "Downloaded Timetable for "+timetable.TimeTableText!
+                
+                let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+                
+                let alertmethod = ActiveDashboardMethods()
+                alertmethod.storeActiveDashboard(activeNotif: alert)
+
+                
                 let transc = NSManagedObject(entity: entity!, insertInto: context)
                 
                 
@@ -61,6 +71,8 @@ class TimeTableMethods{
                 } catch {
                     
                 }
+                
+                
             }
             
         }

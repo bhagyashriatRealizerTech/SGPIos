@@ -18,6 +18,13 @@ class HomeworkMethods{
             
         }
         else{
+            var title:String = "Homework"
+            var message:String = "Downloaded Homework for "+homework.subject!
+            
+            let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+            
+            let alertmethod = ActiveDashboardMethods()
+            alertmethod.storeActiveDashboard(activeNotif: alert)
             
             let date1:Date = Date()
             let calendar = Calendar.autoupdatingCurrent
@@ -56,6 +63,8 @@ class HomeworkMethods{
             } catch {
                 
             }
+            
+            
             
         }
         

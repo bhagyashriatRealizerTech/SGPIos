@@ -22,6 +22,13 @@ class ClassworkMethods{
             
         }
         else{
+            var title:String = "Classwork"
+            var message:String = "Downloaded Classwork for "+classwork.subject!
+            
+            let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+            
+            let alertmethod = ActiveDashboardMethods()
+            alertmethod.storeActiveDashboard(activeNotif: alert)
             
             let date1:Date = Date()
             let calendar = Calendar.autoupdatingCurrent
@@ -63,7 +70,7 @@ class ClassworkMethods{
             } catch {
                 
             }
-            
+
         }
         
     }

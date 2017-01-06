@@ -38,6 +38,15 @@ class FunCenterImageMethods{
             
             for image in images as [FunCenterImageModel]
             {
+                
+                var title:String = "Fun Center Image"
+                var message:String = "Downloaded Fun Center Image"
+                let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+                
+                let alertmethod = ActiveDashboardMethods()
+                alertmethod.storeActiveDashboard(activeNotif: alert)
+                
+                
                 let imId = getLastFunCenterImageById(imageId: image.ImageId!)
                 if(imId.isEmpty){
                 let transc = NSManagedObject(entity: entity!, insertInto: context)
@@ -60,6 +69,7 @@ class FunCenterImageMethods{
                 } catch {
                     
                 }
+                    
               }
             }
             

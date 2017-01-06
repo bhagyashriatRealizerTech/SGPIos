@@ -8,11 +8,14 @@
 
 import UIKit
 
-class DashboardVC: UIViewController {
+class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var pupilnameStackV: UIStackView!
+    @IBOutlet weak var pupildpStackV: UIStackView!
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet var dashbordview: UIView!
     
+    @IBOutlet weak var activedashboard: UITableView!
    
     @IBOutlet weak var btnmypupil: UIButton!
     @IBOutlet weak var pupilprofilepic: UIImageView!
@@ -28,15 +31,33 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var btnfun: UIButton!
     @IBOutlet weak var starbtn: UIButton!
     @IBOutlet weak var holiday: UIButton!
+    
+    var activeNotification:[ActiveDashboard] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
-      //  appDelegate.changeRootViewControllerToSWRevealViewController()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList(notification:)),name:NSNotification.Name(rawValue: "loadActive"), object: nil)
+       
+        let activemethods = ActiveDashboardMethods()
+        activeNotification = activemethods.getActiveDashboard()
+        
+        if(activeNotification.count > 0){
+            
+            activedashboard.isHidden = false
+            pupildpStackV.isHidden = true
+            pupilnameStackV.isHidden = true
+            
+            activedashboard.delegate = self
+            activedashboard.dataSource = self
+            
+        }
+        else{
+            activedashboard.isHidden = true
+            pupildpStackV.isHidden = false
+            pupilnameStackV.isHidden = false
+        }
         
         
-        
-        //pupilprofilepic.layer.cornerRadius=35
         
        starbtn.backgroundColor = .clear
         // button.layer.cornerRadius = 5
@@ -109,6 +130,32 @@ class DashboardVC: UIViewController {
         setprofileValue()
     }
     @IBOutlet weak var btntime: UIButton!
+    
+    func loadList(notification: NSNotification){
+        
+        let activemethods = ActiveDashboardMethods()
+        activeNotification = activemethods.getActiveDashboard()
+        
+        if(activeNotification.count > 0){
+            
+            activedashboard.isHidden = false
+            pupildpStackV.isHidden = true
+            pupilnameStackV.isHidden = true
+            
+            activedashboard.delegate = self
+            activedashboard.dataSource = self
+            activedashboard.reloadData()
+            
+        }
+        else{
+            activedashboard.isHidden = true
+            pupildpStackV.isHidden = false
+            pupilnameStackV.isHidden = false
+        }
+        
+        
+    }
+
     
     func setprofileValue(){
         
@@ -189,6 +236,68 @@ class DashboardVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return activeNotification.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let v:UIView = UIView()
+        v.backgroundColor = UIColor.clear
+        return v
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell=tableView.dequeueReusableCell(withIdentifier: "ActiveDashboardCell", for:indexPath) as? ActiveDashboardCell
+            
+        {
+            let activeNotif=activeNotification[indexPath.section]
+            var msgText = ""
+            
+            
+            let myNSString =  activeNotif.Message as NSString
+            if(myNSString.length > 55)
+            {
+                msgText =    myNSString.substring(with: NSRange(location: 0, length: 54))
+                msgText = msgText.appending("...")
+            }
+            else
+            {
+                msgText = activeNotif.Message
+            }
+            
+            var datestring:String = activeNotif.Date
+            let datefile = DateFile()
+            //datestring = datefile.getDate(date: activeNotif.Date.components(separatedBy: " ")[0], FLAG: "D")
+            
+            
+            cell.updateCell(Notiftitle: activeNotif.Title, msgtext: msgText, date: activeNotif.Date)
+            
+           
+            var cellBackgroundView:UIImageView = UIImageView(image: #imageLiteral(resourceName: "cellbg1"))
+            cellBackgroundView.image = #imageLiteral(resourceName: "cellbg1")
+            cell.backgroundView = cellBackgroundView
+            cell.layer.cornerRadius = 8
+            return cell
+            
+        }
+            
+        else{
+            
+            return UITableViewCell()
+            
+        }
+
+    }
 
    
 }
