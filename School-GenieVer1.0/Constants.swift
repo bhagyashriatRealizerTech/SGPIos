@@ -43,3 +43,33 @@ func setStarImage(imageview:UIImageView, star:String){
 
 
 }
+
+func setNotifImage(imageview:UIImageView, notif:String){
+    if(notif == "Timetable"){
+        imageview.image = #imageLiteral(resourceName: "timetable")
+    }
+    else if(notif == "Homework"){
+        imageview.image = #imageLiteral(resourceName: "homeworkN")
+    }
+    else if(notif == "Classwork"){
+        imageview.image = #imageLiteral(resourceName: "classwork ")
+    }
+    else if(notif == "Fun Center Event"){
+        imageview.image = #imageLiteral(resourceName: "funcenterN")
+    }
+    else if(notif == "Fun Center Image"){
+        imageview.image = #imageLiteral(resourceName: "funcenterN")
+    }
+    else if(notif == "Chat"){
+        imageview.image = #imageLiteral(resourceName: "chat")
+    }
+    else if(notif == "Alert"){
+        imageview.image = #imageLiteral(resourceName: "alertN")
+    }
+    else if(notif == "Attendance"){
+        imageview.image = #imageLiteral(resourceName: "mypupilN")
+    }
+    imageview.layer.borderColor = UIColor.gray.cgColor
+    imageview.layer.cornerRadius = 25.7
+    imageview.clipsToBounds = true
+}

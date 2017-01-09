@@ -21,6 +21,7 @@ class AnnouncementMethods{
         
         for annobj in announcements as [AnnouncementModel]
         {
+            
             let transc = NSManagedObject(entity: entity!, insertInto: context)
             
             //set the entity values
@@ -53,6 +54,13 @@ class AnnouncementMethods{
         
         //deleteAnnouncement()
         
+        let title:String = "Alert"
+        let message:String = "Recieved alert for "+annobj.category+": "+annobj.msgText
+        
+        let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+        
+        let alertmethod = ActiveDashboardMethods()
+        alertmethod.storeActiveDashboard(activeNotif: alert)
         //retrieve the entity that we just created
         let entity =  NSEntityDescription.entity(forEntityName: "AnnouncementCoreData", in: context)
         

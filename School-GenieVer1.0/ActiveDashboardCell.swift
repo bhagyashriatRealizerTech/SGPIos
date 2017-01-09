@@ -29,10 +29,21 @@ class ActiveDashboardCell: UITableViewCell {
         
         title.text = Notiftitle
         msgnotif.text = msgtext
-        datenotif.text = date
+        let datefile = DateFile()
+        let dateArr:[String] = date.components(separatedBy: "/")
         
-        notifImage.layer.cornerRadius = 25.7
-        notifImage.clipsToBounds = true
+        let ipdate:String = dateArr[1]+"/"+dateArr[2]+"/"+dateArr[0]
+        var dateStr = datefile.getDate(date: ipdate, FLAG: "D")
+        
+        if(dateStr.isEmpty){
+            dateStr = ipdate
+        }
+        datenotif.text = dateStr
+        
+        
+        
+        setNotifImage(imageview: notifImage, notif: Notiftitle)
+        
         
     }
     

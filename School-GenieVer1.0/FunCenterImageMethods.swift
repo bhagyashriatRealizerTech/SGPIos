@@ -39,8 +39,8 @@ class FunCenterImageMethods{
             for image in images as [FunCenterImageModel]
             {
                 
-                var title:String = "Fun Center Image"
-                var message:String = "Downloaded Fun Center Image"
+                let title:String = "Fun Center Image"
+                let message:String = "Downloaded Fun Center Image"
                 let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
                 
                 let alertmethod = ActiveDashboardMethods()

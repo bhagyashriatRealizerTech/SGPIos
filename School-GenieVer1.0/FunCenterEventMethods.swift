@@ -42,8 +42,8 @@ class FunCenterEventMethods{
 
                 if(eid.isEmpty){
                     
-                    var title:String = "Fun Center Event"
-                    var message:String = "Downloaded Fun Center Event "+event.Event!
+                    let title:String = "Fun Center Event"
+                    let message:String = "Downloaded Fun Center Event "+event.Event!
                     let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
                     
                     let alertmethod = ActiveDashboardMethods()

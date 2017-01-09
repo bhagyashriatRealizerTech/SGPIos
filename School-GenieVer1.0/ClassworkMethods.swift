@@ -22,8 +22,8 @@ class ClassworkMethods{
             
         }
         else{
-            var title:String = "Classwork"
-            var message:String = "Downloaded Classwork for "+classwork.subject!
+            let title:String = "Classwork"
+            let message:String = "Downloaded Classwork for "+classwork.subject!
             
             let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
             

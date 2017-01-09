@@ -18,8 +18,8 @@ class HomeworkMethods{
             
         }
         else{
-            var title:String = "Homework"
-            var message:String = "Downloaded Homework for "+homework.subject!
+            let title:String = "Homework"
+            let message:String = "Downloaded Homework for "+homework.subject!
             
             let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
             

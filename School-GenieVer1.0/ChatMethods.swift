@@ -14,7 +14,14 @@ class ChatMethods{
     func storeMessage (chatObj: ConversationModel) {
         let context = getContext()
         
-    
+        let title:String = "Chat"
+        let message:String = "Message Recieved "+chatObj.senderName!+": "+chatObj.text!
+        
+        let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
+        
+        let alertmethod = ActiveDashboardMethods()
+        alertmethod.storeActiveDashboard(activeNotif: alert)
+
         
         //retrieve the entity that we just created
         let entity =  NSEntityDescription.entity(forEntityName: "ChatCoreData", in: context)

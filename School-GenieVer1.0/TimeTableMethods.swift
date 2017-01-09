@@ -37,8 +37,8 @@ class TimeTableMethods{
             
             for timetable in timetables as [TimeTableModel]
             {
-                var title:String = "Timetable"
-                var message:String = "Downloaded Timetable for "+timetable.TimeTableText!
+                let title:String = "Timetable"
+                let message:String = "Downloaded Timetable for "+timetable.TimeTableText!
                 
                 let alert = ActiveDashboard(date: "", msg: message, title: title, messageID: "")
                 
