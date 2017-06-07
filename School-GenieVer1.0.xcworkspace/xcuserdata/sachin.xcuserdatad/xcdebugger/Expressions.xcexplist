@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ChatVC.ChatArr.getter:ChatVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "current">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ForgotPwdVC.imagetest(AnyObject) -&gt; ():ForgotPwdVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageButton.state">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

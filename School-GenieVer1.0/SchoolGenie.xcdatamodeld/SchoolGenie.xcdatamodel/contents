@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ActiveDashboardCoreData" representedClassName="ActiveDashboardCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="msg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msgId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recievedDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AnnouncementCoreData" syncable="YES">
+        <attribute name="academicYr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="announcementId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="announcementText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="division" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schoolCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sentBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AttendanceCoreData" syncable="YES">
+        <attribute name="attDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isPresent" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="ChatCoreData" syncable="YES">
+        <attribute name="fromId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromTeacher" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="messageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="messageTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ClassworkCoreData" syncable="YES">
+        <attribute name="cwDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cwImage64Lst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cwTxtLst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="div" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="givenBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSyncdateCw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schoolCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FCMTokenCoreData" representedClassName="FCMTokenCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="tokenId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FunCenterEventCoreData" syncable="YES">
+        <attribute name="createTS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="event" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSyncDateFe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbNailImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbNailPath" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FunCenterImageCoreData" syncable="YES">
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageCaption" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSyncDateFi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="srNo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="uploadDate" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HomeworkCoreData" syncable="YES">
+        <attribute name="div" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="givenBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hwDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hwImage64Lst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hwTxtLst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSyncDateHw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schoolCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="InitiateThread" representedClassName="InitiateThread" syncable="YES" codeGenerationType="class">
+        <attribute name="lastmsgSenderId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastmsgSenderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastmsgText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastmsgTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lstmsgSenderpic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="threadId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="threadName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PublicHolidayCoreData" syncable="YES">
+        <attribute name="createdBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="holiday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phEndDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phStartDate" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PupilInformation" syncable="YES">
+        <attribute name="academicYear" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bldGrp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="classRollNo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contactNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="division" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dob" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergencyContactNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fatherName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hobbies" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="magicWord" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="motherName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pwd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="registrationCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rollNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schoolCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallThumbnailURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SubjectAllocationCoreData" syncable="YES">
+        <attribute name="division" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallThumbNailURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherUserId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbNailURL" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TimeTableCoreData" syncable="YES">
+        <attribute name="academicYr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptiontxt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="division" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSyncUpDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schoolCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeTableImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeTableText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uploadDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uploadedBy" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ViewStarCoreData" representedClassName="ViewStarCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="star" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="syncdate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherPic" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AnnouncementCoreData" positionX="-36" positionY="297" width="128" height="180"/>
+        <element name="AttendanceCoreData" positionX="-27" positionY="306" width="128" height="75"/>
+        <element name="ChatCoreData" positionX="0" positionY="297" width="128" height="150"/>
+        <element name="ClassworkCoreData" positionX="9" positionY="333" width="128" height="180"/>
+        <element name="FCMTokenCoreData" positionX="0" positionY="297" width="128" height="60"/>
+        <element name="FunCenterEventCoreData" positionX="45" positionY="351" width="128" height="150"/>
+        <element name="FunCenterImageCoreData" positionX="0" positionY="297" width="128" height="165"/>
+        <element name="HomeworkCoreData" positionX="-9" positionY="324" width="128" height="180"/>
+        <element name="InitiateThread" positionX="0" positionY="297" width="128" height="150"/>
+        <element name="PublicHolidayCoreData" positionX="-18" positionY="324" width="128" height="105"/>
+        <element name="PupilInformation" positionX="-54" positionY="144" width="128" height="435"/>
+        <element name="SubjectAllocationCoreData" positionX="-36" positionY="315" width="128" height="150"/>
+        <element name="TimeTableCoreData" positionX="27" positionY="342" width="128" height="210"/>
+        <element name="ViewStarCoreData" positionX="0" positionY="297" width="128" height="150"/>
+        <element name="ActiveDashboardCoreData" positionX="0" positionY="297" width="128" height="105"/>
+    </elements>
+</model>
